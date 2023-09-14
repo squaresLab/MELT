@@ -1,0 +1,20 @@
+[0;31m------ [0m[0;1m/Users/anon/temp/eval/scipy-repos/open_AR_Sandbox/sandbox/sensor/sensor_api.py[0m
+[0;32m++++++ [0m[0;1m/Users/anon/temp/eval/scipy-repos/open_AR_Sandbox/sandbox/sensor/sensor_api.py[0m
+[0;100;30m@|[0m[0;1m-109,7 +109,7[0m ============================================================
+[0;100;30m |[0m        depth = numpy.ma.mean(depth_array_masked, axis=2)
+[0;100;30m |[0m        if gauss_filter:
+[0;100;30m |[0m            # apply gaussian filter
+[0;43;30m!|[0m            depth = scipy.ndimage.[0;31mfilters.[0mgaussian_filter(depth, self.sigma_gauss)
+[0;100;30m |[0m        else:
+[0;100;30m |[0m            depth = depth.data
+[0;100;30m |[0m
+[0;31m------ [0m[0;1m/Users/anon/temp/eval/scipy-repos/open_AR_Sandbox/sandbox/modules/devito/seismic_sandbox.py[0m
+[0;32m++++++ [0m[0;1m/Users/anon/temp/eval/scipy-repos/open_AR_Sandbox/sandbox/modules/devito/seismic_sandbox.py[0m
+[0;100;30m@|[0m[0;1m-212,7 +212,7[0m ============================================================
+[0;100;30m |[0m        Returns:
+[0;100;30m |[0m            Smothed array
+[0;100;30m |[0m        """
+[0;43;30m!|[0m        return ndimage.[0;31mfilters.[0mgaussian_filter(topo, [sigma_y, sigma_x], mode='nearest')
+[0;100;30m |[0m
+[0;100;30m |[0m    def create_velocity_model(self, topo: np.ndarray, norm: bool=True, vmax: float = 5.0,
+[0;100;30m |[0m                              vmin: float = 2.0, smooth: bool = False, sigma_x: int = 2, sigma_y: int = 2,

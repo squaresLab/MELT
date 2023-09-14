@@ -1,0 +1,113 @@
+
+
+EXAMPLE 1:
+:[[a]] = :[[e]].:[[d]].:[[c]]({:[f]: :[g]}).render() --> 
+:[[a]] = :[[e]].:[[d]].:[[c]]({:[f]: :[g]}).to_html()
+
+EXAMPLE 2:
+:[[a]] = :[[c]].dot(:[[c]].dot(:[[e]].:[[d]], :[[e]]), :[[f]]) --> 
+:[[a]] = :[[c]].linalg.multi_dot([:[[e]].:[[d]], :[[e]], :[[f]]])
+
+EXAMPLE 3:
+:[[c]].:[[b]]((:[[e]].:[[d]][:, :[f]], :[[e]].:[[g]][:, :[f]])).:[[a]](:[[c]].int32) --> 
+:[[c]].:[[b]]((:[[e]].:[[d]][:, :[f]], :[[e]].:[[g]][:, :[f]])).:[[a]](:[[c]].int64)
+
+EXAMPLE 4:
+return :[[b]].:[[a]](:[[d]].:[[c]], :[[e]], :[[f]]) --> 
+list(:[[b]].:[[a]](:[[d]].:[[c]], :[[e]], :[[f]]))
+
+EXAMPLE 5:
+molecule_file = str(tempfile.NamedTemporaryFile().name) --> 
+hydrogenated_io = StringIO()
+
+EXAMPLE 6:
+doc = :[[c]]().:[[b]](:[[d]]) --> 
+:[[c]]().:[[b]](:[[d]])
+
+EXAMPLE 7:
+:[[a]] = :[[b]](kind=:[c], parts=:[[d]]) --> 
+:[[a]] = :[[b]](kind=:[c], parts=:[[d]], pos=(:[[d]][0].pos[0], :[[d]][-1].pos[1]))
+
+EXAMPLE 10:
+:[[a]] = :[[c]].:[[b]](:[[c]].greater(:[[e]], 0), :[[c]].:[[g]]) --> 
+:[[a]] = :[[c]].:[[b]](:[[c]].sequence_mask(sequence_length_2D(:[[e]]) + 1, :[[e]].shape[1]), dtype=:[[c]].:[[g]])
+
+EXAMPLE 11:
+:[[a]] = :[[c]].:[[b]]() --> 
+with :[[c]].snapshot() as snapshot:
+    :[[a]] = snapshot.:[[b]]()
+
+EXAMPLE 14:
+for (:[[a]], :[[b]], :[[c]], :[[d]]) in :[[e]](:[[f]], :[[g]], :[[h]], :[[i]]):
+    :[[j]](:[k]) --> 
+for (:[[a]], :[[b]], :[[c]], :[[d]]) in :[[e]](np.broadcast_arrays(:[[f]], :[[g]], :[[h]], :[[i]])):
+    :[[j]](:[k])
+
+EXAMPLE 15:
+if 'title' in :[[b]]:
+    :[[a]] = :[[b]]['title'].:[[c]]()
+else:
+    :[[a]] = :[d] --> 
+:[[a]] = :[[b]].get('title', :[d]).:[[c]]()
+
+EXAMPLE 16:
+:[[a]] = []
+for :[[b]] in :[[c]]:
+    :[[a]].append(:[[b]].:[[e]]()(:[[b]])) --> 
+:[[a]] = [:[[b]].:[[e]]()(:[[b]]) for :[[b]] in :[[c]]]
+
+EXAMPLE 1:
+:[[a]] = :[[e]].:[[d]].:[[c]]({:[f]: :[g]}).render() --> 
+:[[a]] = :[[e]].:[[d]].:[[c]]({:[f]: :[g]}).to_html()
+
+EXAMPLE 2:
+:[[a]] = :[[c]].dot(:[[c]].dot(:[[e]].:[[d]], :[[e]]), :[[f]]) --> 
+:[[a]] = :[[c]].linalg.multi_dot([:[[e]].:[[d]], :[[e]], :[[f]]])
+
+EXAMPLE 3:
+:[[c]].:[[b]]((:[[e]].:[[d]][:, :[f]], :[[e]].:[[g]][:, :[f]])).:[[a]](:[[c]].int32) --> 
+:[[c]].:[[b]]((:[[e]].:[[d]][:, :[f]], :[[e]].:[[g]][:, :[f]])).:[[a]](:[[c]].int64)
+
+EXAMPLE 4:
+return :[[b]].:[[a]](:[[d]].:[[c]], :[[e]], :[[f]]) --> 
+list(:[[b]].:[[a]](:[[d]].:[[c]], :[[e]], :[[f]]))
+
+EXAMPLE 5:
+molecule_file = str(tempfile.NamedTemporaryFile().name) --> 
+hydrogenated_io = StringIO()
+
+EXAMPLE 6:
+doc = :[[c]]().:[[b]](:[[d]]) --> 
+:[[c]]().:[[b]](:[[d]])
+
+EXAMPLE 7:
+:[[a]] = :[[b]](kind=:[c], parts=:[[d]]) --> 
+:[[a]] = :[[b]](kind=:[c], parts=:[[d]], pos=(:[[d]][0].pos[0], :[[d]][-1].pos[1]))
+
+EXAMPLE 10:
+:[[a]] = :[[c]].:[[b]](:[[c]].greater(:[[e]], 0), :[[c]].:[[g]]) --> 
+:[[a]] = :[[c]].:[[b]](:[[c]].sequence_mask(sequence_length_2D(:[[e]]) + 1, :[[e]].shape[1]), dtype=:[[c]].:[[g]])
+
+EXAMPLE 11:
+:[[a]] = :[[c]].:[[b]]() --> 
+with :[[c]].snapshot() as snapshot:
+    :[[a]] = snapshot.:[[b]]()
+
+EXAMPLE 14:
+for (:[[a]], :[[b]], :[[c]], :[[d]]) in :[[e]](:[[f]], :[[g]], :[[h]], :[[i]]):
+    :[[j]](:[k]) --> 
+for (:[[a]], :[[b]], :[[c]], :[[d]]) in :[[e]](np.broadcast_arrays(:[[f]], :[[g]], :[[h]], :[[i]])):
+    :[[j]](:[k])
+
+EXAMPLE 15:
+if 'title' in :[[b]]:
+    :[[a]] = :[[b]]['title'].:[[c]]()
+else:
+    :[[a]] = :[d] --> 
+:[[a]] = :[[b]].get('title', :[d]).:[[c]]()
+
+EXAMPLE 16:
+:[[a]] = []
+for :[[b]] in :[[c]]:
+    :[[a]].append(:[[b]].:[[e]]()(:[[b]])) --> 
+:[[a]] = [:[[b]].:[[e]]()(:[[b]]) for :[[b]] in :[[c]]]

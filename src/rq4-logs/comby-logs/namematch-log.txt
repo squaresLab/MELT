@@ -1,0 +1,90 @@
+[0;31m------ [0m[0;1m/Users/anon/temp/eval/pandas-repos/namematch/namematch/utils/utils.py[0m
+[0;32m++++++ [0m[0;1m/Users/anon/temp/eval/pandas-repos/namematch/namematch/utils/utils.py[0m
+[0;100;30m@|[0m[0;1m-382,7 +382,7[0m ============================================================
+[0;100;30m |[0m    else:
+[0;100;30m |[0m        filters = None
+[0;100;30m |[0m
+[0;41;30m-|[0m[0m[0;2m    pf = pq.read_[0m[0;31mtable[0m[0;2m(df_file, columns=cols, filters=filters, use_threads=True[0m[0;2m)
+[0m[0m
+[0;42;30m+|[0m[0m    pf = pq.read_[0;32mcsv[0m(df_file, columns=cols, filters=filters, use_threads=True[0;32m, sep='\t'[0m)
+[0m
+[0;100;30m |[0m
+[0;100;30m |[0m    return pf.to_pandas()
+[0;100;30m |[0m
+[0;31m------ [0m[0;1m/Users/anon/temp/eval/pandas-repos/namematch/namematch/generate_data_rows.py[0m
+[0;32m++++++ [0m[0;1m/Users/anon/temp/eval/pandas-repos/namematch/namematch/generate_data_rows.py[0m
+[0;100;30m@|[0m[0;1m-62,7 +62,7[0m ============================================================
+[0;100;30m |[0m            os.mkdir(self.output_dir)
+[0;100;30m |[0m
+[0;100;30m |[0m        an_columns = ['blockstring'] + self.schema.variables.get_an_column_names()
+[0;41;30m-|[0m[0m[0;2m        table = pq.read_[0m[0;31mtable[0m[0;2m(self.all_names_file[0m[0;2m)[0m[0m
+[0;42;30m+|[0m[0m        table = pq.read_[0;32mcsv[0m(self.all_names_file[0;32m, sep='\t'[0m)[0m
+[0;100;30m |[0m        an = table.to_pandas()[an_columns]
+[0;100;30m |[0m
+[0;100;30m |[0m        an = an[an.drop_from_nm == 0]
+[0;100;30m@|[0m[0;1m-78,7 +78,7[0m ============================================================
+[0;100;30m |[0m        for dr_file in os.listdir(self.output_dir):
+[0;100;30m |[0m            os.remove(os.path.join(self.output_dir, dr_file))
+[0;100;30m |[0m
+[0;41;30m-|[0m[0m[0;2m        table = pq.read_[0m[0;31mtable[0m[0;2m(self.candidate_pairs_file[0m[0;2m)[0m[0m
+[0;42;30m+|[0m[0m        table = pq.read_[0;32mcsv[0m(self.candidate_pairs_file[0;32m, sep='\t'[0m)[0m
+[0;100;30m |[0m        cp_df = table.to_pandas()[['blockstring_1', 'blockstring_2', 'covered_pair']]
+[0;100;30m |[0m
+[0;100;30m |[0m        # get data rows
+[0;31m------ [0m[0;1m/Users/anon/temp/eval/pandas-repos/namematch/namematch/generate_output.py[0m
+[0;32m++++++ [0m[0;1m/Users/anon/temp/eval/pandas-repos/namematch/namematch/generate_output.py[0m
+[0;100;30m@|[0m[0;1m-105,7 +105,7[0m ============================================================
+[0;100;30m |[0m
+[0;100;30m |[0m        logger.info('Generating all_names file with cluster_id.')
+[0;100;30m |[0m
+[0;41;30m-|[0m[0m[0;2m        table = pq.read_[0m[0;31mtable[0m[0;2m(all_names_file[0m[0;2m)[0m[0m
+[0;42;30m+|[0m[0m        table = pq.read_[0;32mcsv[0m(all_names_file[0;32m, sep='\t'[0m)[0m
+[0;100;30m |[0m        all_names = table.to_pandas()
+[0;100;30m |[0m        all_names["cluster_id"] = all_names["record_id"].map(cluster_assignments)
+[0;100;30m |[0m        for cleaned_col in cleaned_col_names:
+[0;31m------ [0m[0;1m/Users/anon/temp/eval/pandas-repos/namematch/namematch/cluster.py[0m
+[0;32m++++++ [0m[0;1m/Users/anon/temp/eval/pandas-repos/namematch/namematch/cluster.py[0m
+[0;100;30m@|[0m[0;1m-581,7 +581,7[0m ============================================================
+[0;100;30m |[0m            else:
+[0;100;30m |[0m                column_dtypes[col] = 'object'
+[0;100;30m |[0m
+[0;41;30m-|[0m[0m[0;2m        table = pq.read_[0m[0;31mtable[0m[0;2m(all_names_file[0m[0;2m)[0m[0m
+[0;42;30m+|[0m[0m        table = pq.read_[0;32mcsv[0m(all_names_file[0;32m, sep='\t'[0m)[0m
+[0;100;30m |[0m        cluster_info =  table.to_pandas()
+[0;100;30m |[0m        cluster_info = cluster_info[list(column_dtypes.keys())]
+[0;100;30m |[0m        del column_dtypes['record_id']
+[0;31m------ [0m[0;1m/Users/anon/temp/eval/pandas-repos/namematch/namematch/fit_model.py[0m
+[0;32m++++++ [0m[0;1m/Users/anon/temp/eval/pandas-repos/namematch/namematch/fit_model.py[0m
+[0;100;30m@|[0m[0;1m-116,7 +116,7[0m ============================================================
+[0;100;30m |[0m        if not os.path.exists(self.output_dir):
+[0;100;30m |[0m            os.mkdir(self.output_dir)
+[0;100;30m |[0m
+[0;41;30m-|[0m[0m[0;2m        table = pq.read_[0m[0;31mtable[0m[0;2m(self.all_names_file[0m[0;2m)[0m[0m
+[0;42;30m+|[0m[0m        table = pq.read_[0;32mcsv[0m(self.all_names_file[0;32m, sep='\t'[0m)[0m
+[0;100;30m |[0m        an = table.to_pandas()
+[0;100;30m |[0m        an = an[an.drop_from_nm == 0]
+[0;100;30m |[0m        an = an.drop_duplicates(['record_id'])
+[0;31m------ [0m[0;1m/Users/anon/temp/eval/pandas-repos/namematch/namematch/generate_must_links.py[0m
+[0;32m++++++ [0m[0;1m/Users/anon/temp/eval/pandas-repos/namematch/namematch/generate_must_links.py[0m
+[0;100;30m@|[0m[0;1m-100,7 +100,7[0m ============================================================
+[0;100;30m |[0m        cols = ['record_id', 'blockstring', 'drop_from_nm',
+[0;100;30m |[0m                'file_type'] + uid_vars_list + eid_vars_list
+[0;100;30m |[0m
+[0;41;30m-|[0m[0m[0;2m        table = pq.read_[0m[0;31mtable[0m[0;2m(all_names_file[0m[0;2m)
+[0m[0m
+[0;42;30m+|[0m[0m        table = pq.read_[0;32mcsv[0m(all_names_file[0;32m, sep='\t'[0m)
+[0m
+[0;100;30m |[0m        an = table.to_pandas()[cols]
+[0;100;30m |[0m
+[0;100;30m |[0m        an['has_ml_var'] = 0
+[0;31m------ [0m[0;1m/Users/anon/temp/eval/pandas-repos/namematch/namematch/block.py[0m
+[0;32m++++++ [0m[0;1m/Users/anon/temp/eval/pandas-repos/namematch/namematch/block.py[0m
+[0;100;30m@|[0m[0;1m-1267,7 +1267,7[0m ============================================================
+[0;100;30m |[0m        cols_to_read = nn_cols + [ed_col, absval_col, \
+[0;100;30m |[0m                'blockstring', 'file_type', 'drop_from_nm', 'record_id']
+[0;100;30m |[0m
+[0;41;30m-|[0m[0m[0;2m    table = pq.read_[0m[0;31mtable[0m[0;2m(an_file[0m[0;2m)[0m[0m
+[0;42;30m+|[0m[0m    table = pq.read_[0;32mcsv[0m(an_file[0;32m, sep='\t'[0m)[0m
+[0;100;30m |[0m    an =  table.to_pandas()
+[0;100;30m |[0m    if absval_col is not None and absval_col not in an.columns.tolist():
+[0;100;30m |[0m        logger.error(f'The {absval_col} variable was not found, and is needed for the chosen blocking scheme.')

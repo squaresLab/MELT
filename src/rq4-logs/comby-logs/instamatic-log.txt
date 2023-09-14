@@ -1,0 +1,28 @@
+[0;31m------ [0m[0;1m/Users/anon/temp/eval/scipy-repos/instamatic/instamatic/tools.py[0m
+[0;32m++++++ [0m[0;1m/Users/anon/temp/eval/scipy-repos/instamatic/instamatic/tools.py[0m
+[0;100;30m@|[0m[0;1m-143,7 +143,7[0m ============================================================
+[0;100;30m |[0m    if method == 'gauss':
+[0;100;30m |[0m        if not z:
+[0;100;30m |[0m            z = 50
+[0;43;30m!|[0m        blurred = ndimage.[0;31mfilters.[0mgaussian_filter(img, z)
+[0;100;30m |[0m        cx, cy = np.unravel_index(blurred.argmax(), blurred.shape)
+[0;100;30m |[0m
+[0;100;30m |[0m    elif method == 'thresh':
+[0;31m------ [0m[0;1m/Users/anon/temp/eval/scipy-repos/instamatic/instamatic/experiments/autocred/experiment.py[0m
+[0;32m++++++ [0m[0;1m/Users/anon/temp/eval/scipy-repos/instamatic/instamatic/experiments/autocred/experiment.py[0m
+[0;100;30m@|[0m[0;1m-424,7 +424,7[0m ============================================================
+[0;100;30m |[0m        mx = np.max(img_c)
+[0;100;30m |[0m
+[0;100;30m |[0m        sel = (img_c > l + 0.1 * (mx - mn)) & (img_c < mx - 0.4 * (h - mn))
+[0;43;30m!|[0m        blurred = ndimage.[0;31mfilters.[0mgaussian_filter(sel.astype(float), gauss_window)
+[0;100;30m |[0m        x, y = np.unravel_index(np.argmax(blurred, axis=None), blurred.shape)
+[0;100;30m |[0m        return (y, x)
+[0;100;30m |[0m
+[0;100;30m@|[0m[0;1m-432,7 +432,7[0m ============================================================
+[0;100;30m |[0m        h, b = np.histogram(img, bins)
+[0;100;30m |[0m        sel = (img > b[1]) & (img < b[8])
+[0;100;30m |[0m
+[0;43;30m!|[0m        blurred = ndimage.[0;31mfilters.[0mgaussian_filter(sel.astype(float), gauss_window)
+[0;100;30m |[0m        x, y = np.unravel_index(np.argmax(blurred, axis=None), blurred.shape)
+[0;100;30m |[0m        if plot:
+[0;100;30m |[0m            plt.imshow(sel)

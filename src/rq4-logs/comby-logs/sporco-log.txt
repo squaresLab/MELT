@@ -1,0 +1,22 @@
+[0;31m------ [0m[0;1m/Users/anon/temp/eval/scipy-repos/sporco/sporco/metric.py[0m
+[0;32m++++++ [0m[0;1m/Users/anon/temp/eval/scipy-repos/sporco/sporco/metric.py[0m
+[0;100;30m@|[0m[0;1m-231,7 +231,7[0m ============================================================
+[0;100;30m |[0m    if rescale:
+[0;100;30m |[0m        emap *= (255.0 / vref.max())
+[0;100;30m |[0m    sigma = 0.8
+[0;43;30m!|[0m    herr = ndimage.[0;31mfilters.[0mgaussian_filter(emap, sigma)
+[0;100;30m |[0m    score = np.mean(herr**2)
+[0;100;30m |[0m    return score
+[0;100;30m |[0m
+[0;31m------ [0m[0;1m/Users/anon/temp/eval/scipy-repos/sporco/tests/test_prox.py[0m
+[0;32m++++++ [0m[0;1m/Users/anon/temp/eval/scipy-repos/sporco/tests/test_prox.py[0m
+[0;100;30m@|[0m[0;1m-41,8 +41,7[0m ============================================================
+[0;100;30m |[0m    fnc = lambda x: 0.5*np.sum((x.reshape(v.shape) - v)**2)
+[0;100;30m |[0m    cns = ({'type': 'ineq', 'fun': lambda x: gamma - f(x.reshape(v.shape),
+[0;100;30m |[0m                                                       axis=axis)})
+[0;41;30m-|[0m[0m[0;2m    fmn = optim.minimize(fnc, v0.ravel(), method='SLSQP', constraints=cns,[0m[0m
+[0;41;30m-|[0m[0m[0;7;31m                         [0m[0;2moptions={[0m[0;31m'maxiter'[0m[0;2m: 3000, 'ftol': 1e-12})[0m[0m
+[0;42;30m+|[0m[0m    fmn = optim.minimize(fnc, v0.ravel(), method='SLSQP', constraints=cns,[0;7;32m [0moptions={[0;32m'maxfun'[0m: 3000, 'ftol': 1e-12})[0m
+[0;100;30m |[0m    return fmn.x.reshape(v.shape), fmn.fun
+[0;100;30m |[0m
+[0;100;30m |[0m

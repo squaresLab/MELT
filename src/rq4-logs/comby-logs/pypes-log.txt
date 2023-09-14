@@ -1,0 +1,11 @@
+[0;31m------ [0m[0;1m/Users/anon/temp/eval/pandas-repos/pypes/neuro_pypes/cli/utils.py[0m
+[0;32m++++++ [0m[0;1m/Users/anon/temp/eval/pandas-repos/pypes/neuro_pypes/cli/utils.py[0m
+[0;100;30m@|[0m[0;1m-69,7 +69,7[0m ============================================================
+[0;100;30m |[0m            if filepath.suffix in ('.xls', '.xlsx'):
+[0;100;30m |[0m                sheet = pd.read_excel(filepath)
+[0;100;30m |[0m            else:
+[0;41;30m-|[0m[0m[0;2m                sheet = pd.read_[0m[0;31mtable[0m[0;2m(filepath[0m[0;2m)[0m[0m
+[0;42;30m+|[0m[0m                sheet = pd.read_[0;32mcsv[0m(filepath[0;32m, sep='\t'[0m)[0m
+[0;100;30m |[0m        except ValueError:
+[0;100;30m |[0m            self.fail('"{}" is not a valid spreadsheet.'.format(value))
+[0;100;30m |[0m        else:

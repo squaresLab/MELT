@@ -1,0 +1,11 @@
+[0;31m------ [0m[0;1m/Users/anon/temp/eval/pandas-repos/urbanaccess/urbanaccess/gtfsfeeds.py[0m
+[0;32m++++++ [0m[0;1m/Users/anon/temp/eval/pandas-repos/urbanaccess/urbanaccess/gtfsfeeds.py[0m
+[0;100;30m@|[0m[0;1m-305,7 +305,7[0m ============================================================
+[0;100;30m |[0m            'of Summer 2016. '
+[0;100;30m |[0m            'Data accessed here may be out of date.', level=lg.WARNING)
+[0;100;30m |[0m
+[0;41;30m-|[0m[0m[0;2m        feed_table = pd.read_[0m[0;31mtable[0m[0;2m(config.settings.gtfs_api[api], sep=','[0m[0;2m)[0m[0m
+[0;42;30m+|[0m[0m        feed_table = pd.read_[0;32mcsv[0m(config.settings.gtfs_api[api], sep=','[0;32m, sep='\t'[0m)[0m
+[0;100;30m |[0m        feed_table['date_added'] = pd.to_datetime(feed_table['date_added'],
+[0;100;30m |[0m                                                  unit='s')
+[0;100;30m |[0m        feed_table['date_last_updated'] = pd.to_datetime(

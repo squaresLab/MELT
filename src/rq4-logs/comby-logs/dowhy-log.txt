@@ -1,0 +1,10 @@
+[0;31m------ [0m[0;1m/Users/anon/temp/eval/scikit-repos/dowhy/dowhy/causal_refuters/overrule/BCS/load_process_data_BCS.py[0m
+[0;32m++++++ [0m[0;1m/Users/anon/temp/eval/scikit-repos/dowhy/dowhy/causal_refuters/overrule/BCS/load_process_data_BCS.py[0m
+[0;100;30m@|[0m[0;1m-99,7 +99,7[0m ============================================================
+[0;100;30m |[0m            # Categorical column
+[0;100;30m |[0m            elif (c in self.colCateg) or (data[c].dtype == "object"):
+[0;100;30m |[0m                # OneHotEncoder object
+[0;43;30m!|[0m                enc[c] = OneHotEncoder(sparse[0;32m_output[0m=False, dtype=int, handle_unknown="ignore")
+[0;100;30m |[0m                # Fit to observed categories
+[0;100;30m |[0m                enc[c].fit(data[[c]])
+[0;100;30m |[0m

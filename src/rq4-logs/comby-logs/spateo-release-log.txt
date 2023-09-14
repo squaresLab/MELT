@@ -1,0 +1,11 @@
+[0;31m------ [0m[0;1m/Users/anon/temp/eval/pandas-repos/spateo-release/spateo/io/seqscope.py[0m
+[0;32m++++++ [0m[0;1m/Users/anon/temp/eval/pandas-repos/spateo-release/spateo/io/seqscope.py[0m
+[0;100;30m@|[0m[0;1m-54,7 +54,7[0m ============================================================
+[0;100;30m |[0m        "y": np.uint32,
+[0;100;30m |[0m    }
+[0;100;30m |[0m
+[0;41;30m-|[0m[0m[0;2m    df = pd.read_[0m[0;31mtable[0m[0;2m(path, names=["barcode", "lane", "tile", "x", "y"], sep="\s+", dtype=dtype[0m[0;2m)[0m[0m
+[0;42;30m+|[0m[0m    df = pd.read_[0;32mcsv[0m(path, names=["barcode", "lane", "tile", "x", "y"], sep="\s+", dtype=dtype[0;32m, sep='\t'[0m)[0m
+[0;100;30m |[0m    return df
+[0;100;30m |[0m
+[0;100;30m |[0m

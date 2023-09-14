@@ -1,0 +1,11 @@
+[0;31m------ [0m[0;1m/Users/anon/temp/eval/pandas-repos/indra/indra/sources/trrust/api.py[0m
+[0;32m++++++ [0m[0;1m/Users/anon/temp/eval/pandas-repos/indra/indra/sources/trrust/api.py[0m
+[0;100;30m@|[0m[0;1m-27,7 +27,7[0m ============================================================
+[0;100;30m |[0m    logger.info('Downloading table from %s' % trrust_human_url)
+[0;100;30m |[0m    res = requests.get(trrust_human_url)
+[0;100;30m |[0m    res.raise_for_status()
+[0;41;30m-|[0m[0m[0;2m    df = pandas.read_[0m[0;31mtable[0m[0;2m(io.StringIO(res.text)[0m[0;2m)[0m[0m
+[0;42;30m+|[0m[0m    df = pandas.read_[0;32mcsv[0m(io.StringIO(res.text)[0;32m, sep='\t'[0m)[0m
+[0;100;30m |[0m    tp = TrrustProcessor(df)
+[0;100;30m |[0m    tp.extract_statements()
+[0;100;30m |[0m    return tp

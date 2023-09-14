@@ -1,0 +1,10 @@
+[0;31m------ [0m[0;1m/Users/anon/temp/eval/scikit-repos/auto-flow/autoflow/feature_engineer/generate/autofeat/autofeat.py[0m
+[0;32m++++++ [0m[0;1m/Users/anon/temp/eval/scikit-repos/auto-flow/autoflow/feature_engineer/generate/autofeat/autofeat.py[0m
+[0;100;30m@|[0m[0;1m-186,7 +186,7[0m ============================================================
+[0;100;30m |[0m        """
+[0;100;30m |[0m        self.categorical_cols_map_ = {}
+[0;100;30m |[0m        if self.categorical_cols:
+[0;43;30m!|[0m            e = OneHotEncoder(sparse[0;32m_output[0m=False, categories="auto")
+[0;100;30m |[0m            for c in self.categorical_cols:
+[0;100;30m |[0m                if c not in df.columns:
+[0;100;30m |[0m                    raise ValueError("[AutoFeat] categorical_col %r not in df.columns" % c)

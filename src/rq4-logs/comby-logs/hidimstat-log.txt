@@ -1,0 +1,10 @@
+[0;31m------ [0m[0;1m/Users/anon/temp/eval/scipy-repos/hidimstat/hidimstat/scenario.py[0m
+[0;32m++++++ [0m[0;1m/Users/anon/temp/eval/scipy-repos/hidimstat/hidimstat/scenario.py[0m
+[0;100;30m@|[0m[0;1m-190,7 +190,7[0m ============================================================
+[0;100;30m |[0m    X = []
+[0;100;30m |[0m
+[0;100;30m |[0m    for i in np.arange(n_samples):
+[0;43;30m!|[0m        Xi = ndimage.[0;31mfilters.[0mgaussian_filter(X_[i], smooth_X)
+[0;100;30m |[0m        X.append(Xi.ravel())
+[0;100;30m |[0m
+[0;100;30m |[0m    X = np.asarray(X)

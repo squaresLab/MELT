@@ -1,0 +1,40 @@
+[0;31m------ [0m[0;1m/Users/anon/temp/eval/scipy-repos/ristretto/ristretto/cur.py[0m
+[0;32m++++++ [0m[0;1m/Users/anon/temp/eval/scipy-repos/ristretto/ristretto/cur.py[0m
+[0;100;30m@|[0m[0;1m-68,7 +68,7[0m ============================================================
+[0;100;30m |[0m    R = A[I, :]
+[0;100;30m |[0m
+[0;100;30m |[0m    # compute U
+[0;41;30m-|[0m[0m[0;2m    U = V.dot(linalg.[0m[0;31mpinv2[0m[0;2m(R))[0m[0m
+[0;42;30m+|[0m[0m    U = V.dot(linalg.[0;32mpinv[0m(R))[0m
+[0;100;30m |[0m
+[0;100;30m |[0m    # return ID
+[0;100;30m |[0m    if index_set:
+[0;100;30m@|[0m[0;1m-154,7 +154,7[0m ============================================================
+[0;100;30m |[0m    R = A[I, :]
+[0;100;30m |[0m
+[0;100;30m |[0m    # Compute U
+[0;41;30m-|[0m[0m[0;2m    U = V.dot(linalg.[0m[0;31mpinv2[0m[0;2m(R))[0m[0m
+[0;42;30m+|[0m[0m    U = V.dot(linalg.[0;32mpinv[0m(R))[0m
+[0;100;30m |[0m
+[0;100;30m |[0m    # Return ID
+[0;100;30m |[0m    if index_set:
+[0;31m------ [0m[0;1m/Users/anon/temp/eval/scipy-repos/ristretto/ristretto/eigen.py[0m
+[0;32m++++++ [0m[0;1m/Users/anon/temp/eval/scipy-repos/ristretto/ristretto/eigen.py[0m
+[0;100;30m@|[0m[0;1m-81,7 +81,7[0m ============================================================
+[0;100;30m |[0m
+[0;100;30m |[0m    # Eigendecomposition
+[0;100;30m |[0m    w, v = linalg.eigh(B, eigvals_only=False, overwrite_a=True,
+[0;41;30m-|[0m[0m[0;2m                       turbo=True, [0m[0;31meigvals[0m[0;2m=None, type=1, check_finite=False)[0m[0m
+[0;42;30m+|[0m[0m                       turbo=True, [0;32msubset_by_index[0m=None, type=1, check_finite=False)[0m
+[0;100;30m |[0m
+[0;100;30m |[0m    v[:, :A.shape[1]] = v[:, A.shape[1] - 1::-1]
+[0;100;30m |[0m    w = w[::-1]
+[0;100;30m@|[0m[0;1m-155,7 +155,7[0m ============================================================
+[0;100;30m |[0m                      "positive definite. Using SVD instead.")
+[0;100;30m |[0m        # Eigendecompositoin
+[0;100;30m |[0m        w, v = linalg.eigh(B2, eigvals_only=False, overwrite_a=True,
+[0;41;30m-|[0m[0m[0;2m                           turbo=True, [0m[0;31meigvals[0m[0;2m=None, type=1, check_finite=False)[0m[0m
+[0;42;30m+|[0m[0m                           turbo=True, [0;32msubset_by_index[0m=None, type=1, check_finite=False)[0m
+[0;100;30m |[0m
+[0;100;30m |[0m
+[0;100;30m |[0m        v[:, :A.shape[1]] = v[:, A.shape[1]-1::-1]

@@ -1,0 +1,10 @@
+[0;31m------ [0m[0;1m/Users/anon/temp/eval/scipy-repos/pyret/pyret/filtertools.py[0m
+[0;32m++++++ [0m[0;1m/Users/anon/temp/eval/scipy-repos/pyret/pyret/filtertools.py[0m
+[0;100;30m@|[0m[0;1m-368,7 +368,7[0m ============================================================
+[0;100;30m |[0m        The smoothed filter, with the same shape as the input.
+[0;100;30m |[0m
+[0;100;30m |[0m    """
+[0;43;30m!|[0m    return scipy.ndimage.[0;31mfilters.[0mgaussian_filter(f,
+[0;100;30m |[0m                                                 (timesig, spacesig, spacesig),
+[0;100;30m |[0m                                                 order=0)
+[0;100;30m |[0m

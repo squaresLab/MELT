@@ -1,0 +1,10 @@
+[0;31m------ [0m[0;1m/Users/anon/temp/eval/scipy-repos/Awesome-Python-Projects/sketch.py[0m
+[0;32m++++++ [0m[0;1m/Users/anon/temp/eval/scipy-repos/Awesome-Python-Projects/sketch.py[0m
+[0;100;30m@|[0m[0;1m-19,7 +19,7[0m ============================================================
+[0;100;30m |[0m
+[0;100;30m |[0mi = 255-gray
+[0;100;30m |[0m
+[0;43;30m!|[0mblur = scipy.ndimage.[0;31mfilters.[0mgaussian_filter(i,sigma =15)
+[0;100;30m |[0mr = dodge(blur,gray)
+[0;100;30m |[0m
+[0;100;30m |[0mcv2.imwrite('MS_DHONI_SKETCH.png',r)

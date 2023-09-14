@@ -1,0 +1,38 @@
+[0;31m------ [0m[0;1m/Users/anon/temp/eval/pandas-repos/pangres/pangres/tests/test_core.py[0m
+[0;32m++++++ [0m[0;1m/Users/anon/temp/eval/pandas-repos/pangres/pangres/tests/test_core.py[0m
+[0;100;30m@|[0m[0;1m-71,11 +71,11[0m ============================================================
+[0;100;30m |[0m
+[0;100;30m |[0m    # 1. create table
+[0;100;30m |[0m    upsert(con=engine, schema=schema, df=df, create_table=True, **common_kwargs_upsert)
+[0;41;30m-|[0m[0m[0;2m    pd.testing.assert_frame_equal(df, read_[0m[0;31mtable[0m[0;2m([0m[0;2m))[0m[0m
+[0;42;30m+|[0m[0m    pd.testing.assert_frame_equal(df, read_[0;32mcsv[0m([0;32m, sep='\t'[0m))[0m
+[0;100;30m |[0m
+[0;100;30m |[0m    # 2. insert update/ignore
+[0;100;30m |[0m    upsert(con=engine, schema=schema, df=df2, create_table=create_table, **common_kwargs_upsert)
+[0;41;30m-|[0m[0m[0;2m    pd.testing.assert_frame_equal(df_expected, read_[0m[0;31mtable[0m[0;2m([0m[0;2m))[0m[0m
+[0;42;30m+|[0m[0m    pd.testing.assert_frame_equal(df_expected, read_[0;32mcsv[0m([0;32m, sep='\t'[0m))[0m
+[0;100;30m |[0m
+[0;100;30m |[0m
+[0;100;30m |[0m@adrop_table_between_tests(table_name=TableNames.END_TO_END)
+[0;100;30m@|[0m[0;1m-84,18 +84,18[0m ============================================================
+[0;100;30m |[0m    table_name = TableNames.END_TO_END
+[0;100;30m |[0m    common_kwargs_upsert = dict(if_row_exists=if_row_exists, table_name=table_name)
+[0;100;30m |[0m
+[0;41;30m-|[0m[0m[0;2m    async def read_[0m[0;31mtable[0m[0;2m([0m[0;2m):[0m[0m
+[0;42;30m+|[0m[0m    async def read_[0;32mcsv[0m([0;32m, sep='\t'[0m):[0m
+[0;100;30m |[0m        temp_df = await _TestsExampleTable.aread_from_db(engine=engine, schema=schema, table_name=table_name)
+[0;100;30m |[0m        return temp_df.sort_index()
+[0;100;30m |[0m
+[0;100;30m |[0m    # 1. create table
+[0;100;30m |[0m    await aupsert(con=engine, schema=schema, df=df, create_table=True, **common_kwargs_upsert)
+[0;41;30m-|[0m[0m[0;2m    df_db = await read_[0m[0;31mtable[0m[0;2m([0m[0;2m)[0m[0m
+[0;42;30m+|[0m[0m    df_db = await read_[0;32mcsv[0m([0;32m, sep='\t'[0m)[0m
+[0;100;30m |[0m    pd.testing.assert_frame_equal(df, df_db)
+[0;100;30m |[0m
+[0;100;30m |[0m    # 2. insert update/ignore
+[0;100;30m |[0m    await aupsert(con=engine, schema=schema, df=df2, create_table=create_table, **common_kwargs_upsert)
+[0;41;30m-|[0m[0m[0;2m    df_db = await read_[0m[0;31mtable[0m[0;2m([0m[0;2m)[0m[0m
+[0;42;30m+|[0m[0m    df_db = await read_[0;32mcsv[0m([0;32m, sep='\t'[0m)[0m
+[0;100;30m |[0m    pd.testing.assert_frame_equal(df_expected, df_db)
+[0;100;30m |[0m
+[0;100;30m |[0m

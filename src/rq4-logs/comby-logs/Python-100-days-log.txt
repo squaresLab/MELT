@@ -1,0 +1,30 @@
+[0;31m------ [0m[0;1m/Users/anon/temp/eval/scikit-repos/Python-100-days/Time Series/03.Seasonality.py[0m
+[0;32m++++++ [0m[0;1m/Users/anon/temp/eval/scikit-repos/Python-100-days/Time Series/03.Seasonality.py[0m
+[0;100;30m@|[0m[0;1m-111,7 +111,7[0m ============================================================
+[0;100;30m |[0m# Scikit-learn solution
+[0;100;30m |[0mfrom sklearn.preprocessing import OneHotEncoder
+[0;100;30m |[0m
+[0;43;30m!|[0mohe = OneHotEncoder(sparse[0;32m_output[0m=False)
+[0;100;30m |[0m
+[0;100;30m |[0mX_holidays = pd.DataFrame(
+[0;100;30m |[0m    ohe.fit_transform(holidays),
+[0;31m------ [0m[0;1m/Users/anon/temp/eval/scikit-repos/Python-100-days/Intro_to_Deep_Learning/03. Stochastic Gradient Descent.py[0m
+[0;32m++++++ [0m[0;1m/Users/anon/temp/eval/scikit-repos/Python-100-days/Intro_to_Deep_Learning/03. Stochastic Gradient Descent.py[0m
+[0;100;30m@|[0m[0;1m-28,7 +28,7[0m ============================================================
+[0;100;30m |[0mpreprocessor = make_column_transformer(
+[0;100;30m |[0m    (StandardScaler(),
+[0;100;30m |[0m     make_column_selector(dtype_include=np.number)),
+[0;43;30m!|[0m    (OneHotEncoder(sparse[0;32m_output[0m=False),
+[0;100;30m |[0m     make_column_selector(dtype_include=object)),
+[0;100;30m |[0m)
+[0;100;30m |[0m
+[0;31m------ [0m[0;1m/Users/anon/temp/eval/scikit-repos/Python-100-days/Intermediate Machine Learning/03.Categorical_Variables.py[0m
+[0;32m++++++ [0m[0;1m/Users/anon/temp/eval/scikit-repos/Python-100-days/Intermediate Machine Learning/03.Categorical_Variables.py[0m
+[0;100;30m@|[0m[0;1m-197,7 +197,7[0m ============================================================
+[0;100;30m |[0m# столбцы следует исключить из набора данных.
+[0;100;30m |[0mfrom sklearn.preprocessing import OneHotEncoder
+[0;100;30m |[0m# Apply one-hot encoder to each column with categorical data
+[0;43;30m!|[0mOH_encoder = OneHotEncoder(handle_unknown='ignore', sparse[0;32m_output[0m=False)
+[0;100;30m |[0mOH_cols_train = pd.DataFrame(OH_encoder.fit_transform(X_train[low_cardinality_cols]))
+[0;100;30m |[0mOH_cols_valid = pd.DataFrame(OH_encoder.transform(X_valid[low_cardinality_cols]))
+[0;100;30m |[0m

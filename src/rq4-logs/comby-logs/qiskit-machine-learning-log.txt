@@ -1,0 +1,20 @@
+[0;31m------ [0m[0;1m/Users/anon/temp/eval/scikit-repos/qiskit-machine-learning/qiskit_machine_learning/algorithms/classifiers/neural_network_classifier.py[0m
+[0;32m++++++ [0m[0;1m/Users/anon/temp/eval/scikit-repos/qiskit-machine-learning/qiskit_machine_learning/algorithms/classifiers/neural_network_classifier.py[0m
+[0;100;30m@|[0m[0;1m-92,7 +92,7[0m ============================================================
+[0;100;30m |[0m        super().__init__(neural_network, loss, optimizer, warm_start, initial_point, callback)
+[0;100;30m |[0m        self._one_hot = one_hot
+[0;100;30m |[0m        # encodes the target data if categorical
+[0;43;30m!|[0m        self._target_encoder = OneHotEncoder(sparse[0;32m_output[0m=False) if one_hot else LabelEncoder()
+[0;100;30m |[0m
+[0;100;30m |[0m        # For ensuring the number of classes matches those of the previous
+[0;100;30m |[0m        # batch when training from a warm start.
+[0;31m------ [0m[0;1m/Users/anon/temp/eval/scikit-repos/qiskit-machine-learning/test/algorithms/classifiers/test_vqc.py[0m
+[0;32m++++++ [0m[0;1m/Users/anon/temp/eval/scikit-repos/qiskit-machine-learning/test/algorithms/classifiers/test_vqc.py[0m
+[0;100;30m@|[0m[0;1m-64,7 +64,7[0m ============================================================
+[0;100;30m |[0m    )
+[0;100;30m |[0m    x = MinMaxScaler().fit_transform(x)
+[0;100;30m |[0m    if one_hot:
+[0;43;30m!|[0m        y = OneHotEncoder(sparse[0;32m_output[0m=False).fit_transform(y.reshape(-1, 1))
+[0;100;30m |[0m    return _Dataset(x, y)
+[0;100;30m |[0m
+[0;100;30m |[0m

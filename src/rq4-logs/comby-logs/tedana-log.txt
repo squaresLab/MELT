@@ -1,0 +1,51 @@
+[0;31m------ [0m[0;1m/Users/anon/temp/eval/pandas-repos/tedana/tedana/tests/test_integration.py[0m
+[0;32m++++++ [0m[0;1m/Users/anon/temp/eval/pandas-repos/tedana/tedana/tests/test_integration.py[0m
+[0;100;30m@|[0m[0;1m-105,7 +105,7[0m ============================================================
+[0;100;30m |[0m
+[0;100;30m |[0m    # Just a check on the component table pending a unit test of load_comptable
+[0;100;30m |[0m    comptable = os.path.join(out_dir, "desc-tedana_metrics.tsv")
+[0;41;30m-|[0m[0m[0;2m    df = pd.read_[0m[0;31mtable[0m[0;2m(comptable[0m[0;2m)[0m[0m
+[0;42;30m+|[0m[0m    df = pd.read_[0;32mcsv[0m(comptable[0;32m, sep='\t'[0m)[0m
+[0;100;30m |[0m    assert isinstance(df, pd.DataFrame)
+[0;100;30m |[0m
+[0;100;30m |[0m    # Test re-running, but use the CLI
+[0;100;30m@|[0m[0;1m-176,7 +176,7[0m ============================================================
+[0;100;30m |[0m    mixing_matrix = os.path.join(out_dir, "desc-ICA_mixing.tsv")
+[0;100;30m |[0m    comptable = os.path.join(out_dir, "desc-tedana_metrics.tsv")
+[0;100;30m |[0m    temporary_comptable = os.path.join(out_dir, "temporary_metrics.tsv")
+[0;41;30m-|[0m[0m[0;2m    comptable_df = pd.read_[0m[0;31mtable[0m[0;2m(comptable[0m[0;2m)[0m[0m
+[0;42;30m+|[0m[0m    comptable_df = pd.read_[0;32mcsv[0m(comptable[0;32m, sep='\t'[0m)[0m
+[0;100;30m |[0m    comptable_df.loc[comptable_df["classification"] == "ignored", "classification"] = "accepted"
+[0;100;30m |[0m    comptable_df.to_csv(temporary_comptable, sep="\t", index=False)
+[0;100;30m |[0m    tedana_cli.tedana_workflow(
+[0;31m------ [0m[0;1m/Users/anon/temp/eval/pandas-repos/tedana/tedana/reporting/dynamic_figures.py[0m
+[0;32m++++++ [0m[0;1m/Users/anon/temp/eval/pandas-repos/tedana/tedana/reporting/dynamic_figures.py[0m
+[0;100;30m@|[0m[0;1m-80,7 +80,7[0m ============================================================
+[0;100;30m |[0m        "d_table_score_scrub",
+[0;100;30m |[0m    ]
+[0;100;30m |[0m
+[0;41;30m-|[0m[0m[0;2m    df = pd.read_[0m[0;31mtable[0m[0;2m(comptable_path[0m[0;2m)[0m[0m
+[0;42;30m+|[0m[0m    df = pd.read_[0;32mcsv[0m(comptable_path[0;32m, sep='\t'[0m)[0m
+[0;100;30m |[0m    n_comps = df.shape[0]
+[0;100;30m |[0m
+[0;100;30m |[0m    # remove space from column name
+[0;31m------ [0m[0;1m/Users/anon/temp/eval/pandas-repos/tedana/tedana/workflows/tedana.py[0m
+[0;32m++++++ [0m[0;1m/Users/anon/temp/eval/pandas-repos/tedana/tedana/workflows/tedana.py[0m
+[0;100;30m@|[0m[0;1m-696,7 +696,7[0m ============================================================
+[0;100;30m |[0m    else:
+[0;100;30m |[0m        LGR.info("Using supplied mixing matrix from ICA")
+[0;100;30m |[0m        mixing_file = io_generator.get_name("ICA mixing tsv")
+[0;41;30m-|[0m[0m[0;2m        mmix = pd.read_[0m[0;31mtable[0m[0;2m(mixing_file[0m[0;2m).values[0m[0m
+[0;42;30m+|[0m[0m        mmix = pd.read_[0;32mcsv[0m(mixing_file[0;32m, sep='\t'[0m).values[0m
+[0;100;30m |[0m
+[0;100;30m |[0m        if ctab is None:
+[0;100;30m |[0m            required_metrics = [
+[0;100;30m@|[0m[0;1m-725,7 +725,7[0m ============================================================
+[0;100;30m |[0m            comptable, metric_metadata = selection.kundu_selection_v2(comptable, n_echos, n_vols)
+[0;100;30m |[0m        else:
+[0;100;30m |[0m            LGR.info("Using supplied component table for classification")
+[0;41;30m-|[0m[0m[0;2m            comptable = pd.read_[0m[0;31mtable[0m[0;2m(ctab[0m[0;2m)[0m[0m
+[0;42;30m+|[0m[0m            comptable = pd.read_[0;32mcsv[0m(ctab[0;32m, sep='\t'[0m)[0m
+[0;100;30m |[0m            # Change rationale value of rows with NaN to empty strings
+[0;100;30m |[0m            comptable.loc[comptable.rationale.isna(), "rationale"] = ""
+[0;100;30m |[0m

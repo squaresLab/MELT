@@ -1,0 +1,12 @@
+[0;31m------ [0m[0;1m/Users/anon/temp/eval/scikit-repos/mlfinlab/mlfinlab/ensemble/sb_bagging.py[0m
+[0;32m++++++ [0m[0;1m/Users/anon/temp/eval/scikit-repos/mlfinlab/mlfinlab/ensemble/sb_bagging.py[0m
+[0;100;30m@|[0m[0;1m-72,8 +72,7[0m ============================================================
+[0;100;30m |[0m    max_features = ensemble._max_features
+[0;100;30m |[0m    max_samples = ensemble._max_samples
+[0;100;30m |[0m    bootstrap_features = ensemble.bootstrap_features
+[0;41;30m-|[0m[0m[0;2m    support_sample_weight = has_fit_parameter(ensemble.[0m[0;31mbase_[0m[0;2mestimator_,[0m[0m
+[0;41;30m-|[0m[0m[0;7;31m                                              [0m[0;2m"sample_weight")[0m[0m
+[0;42;30m+|[0m[0m    support_sample_weight = has_fit_parameter(ensemble.estimator_,[0;7;32m [0m"sample_weight")[0m
+[0;100;30m |[0m
+[0;100;30m |[0m    if not support_sample_weight and sample_weight is not None:
+[0;100;30m |[0m        raise ValueError("The base estimator doesn't support sample weight")

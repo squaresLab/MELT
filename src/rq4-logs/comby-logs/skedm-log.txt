@@ -1,0 +1,10 @@
+[0;31m------ [0m[0;1m/Users/anon/temp/eval/scipy-repos/skedm/skedm/data.py[0m
+[0;32m++++++ [0m[0;1m/Users/anon/temp/eval/scipy-repos/skedm/skedm/data.py[0m
+[0;100;30m@|[0m[0;1m-445,7 +445,7[0m ============================================================
+[0;100;30m |[0m    array[mask] = 1
+[0;100;30m |[0m
+[0;100;30m |[0m    if gauss==True:
+[0;43;30m!|[0m        array = scipy.ndimage.[0;31mfilters.[0mgaussian_filter(array,sigma)
+[0;100;30m |[0m
+[0;100;30m |[0m    return array
+[0;100;30m |[0m

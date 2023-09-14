@@ -1,0 +1,10 @@
+[0;31m------ [0m[0;1m/Users/anon/temp/eval/scipy-repos/astrolibpy/plotting/idlplot.py[0m
+[0;32m++++++ [0m[0;1m/Users/anon/temp/eval/scipy-repos/astrolibpy/plotting/idlplot.py[0m
+[0;100;30m@|[0m[0;1m-81,7 +81,7[0m ============================================================
+[0;100;30m |[0m            if hasattr(smooth, '__iter__'):
+[0;100;30m |[0m                smooth = smooth[::-1]
+[0;100;30m |[0m                # because gaussian_filter convention is second dimension is x
+[0;43;30m!|[0m            arr = scipy.ndimage.[0;31mfilters.[0mgaussian_filter(arr * 1., smooth)
+[0;100;30m |[0m        elif kernel == 'epa':
+[0;100;30m |[0m            arr = filter_epa(arr * 1., smooth)
+[0;100;30m |[0m        else:

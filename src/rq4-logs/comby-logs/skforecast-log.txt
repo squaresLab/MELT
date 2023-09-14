@@ -1,0 +1,10 @@
+[0;31m------ [0m[0;1m/Users/anon/temp/eval/scikit-repos/skforecast/skforecast/utils/tests/test_transform_series.py[0m
+[0;32m++++++ [0m[0;1m/Users/anon/temp/eval/scikit-repos/skforecast/skforecast/utils/tests/test_transform_series.py[0m
+[0;100;30m@|[0m[0;1m-89,7 +89,7[0m ============================================================
+[0;100;30m |[0m    Test the output of transform_series when transformer is OneHotEncoder.
+[0;100;30m |[0m    """
+[0;100;30m |[0m    input_series = pd.Series(["A"] * 5 + ["B"] * 5, name='exog')
+[0;43;30m!|[0m    transformer = OneHotEncoder(sparse[0;32m_output[0m=False)
+[0;100;30m |[0m    transformer.fit(input_series.to_frame())
+[0;100;30m |[0m    results = transform_series(
+[0;100;30m |[0m                series = input_series,

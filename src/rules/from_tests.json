@@ -1,0 +1,3605 @@
+{
+  "pandas": [
+    {
+      "before": ":[[aai]].where(:[gen_args_0], errors='raise')",
+      "after": ":[[aai]].where(:[gen_args_0])",
+      "template_variable_constraints": {
+        "aai": "[<Name full_name='pandas.core.series.Series', description='instance Series'>]"
+      },
+      "version": "1.5",
+      "pr_number": 47728,
+      "provenance": "unittest_3.py/test_assert_where",
+      "keywords": [
+        "where",
+        "errors"
+      ],
+      "is_valid": true,
+      "answers": {
+        "correct": "y",
+        "has_examples": "n",
+        "comments": ""
+      },
+      "is_duplicate": true
+    },
+    {
+      "before": ":[[aad]].offset",
+      "after": ":[[aad]].freq",
+      "template_variable_constraints": {
+        "aad": "[<Name full_name='pandas.core.indexes.datetimes.DatetimeIndex', description='instance DatetimeIndex'>]"
+      },
+      "version": "1.5",
+      "pr_number": 20730,
+      "provenance": "unittest_2.py/test_assert1",
+      "keywords": [
+        "offset"
+      ],
+      "is_valid": true,
+      "answers": {
+        "correct": "y",
+        "has_examples": "y",
+        "comments": "n"
+      },
+      "is_duplicate": false
+    },
+    {
+      "before": ":[[aai]].set_axis(:[aae], :[aaf], inplace=:[aag])",
+      "after": ":[[aai]].set_axis(:[aaf], axis=:[aae], inplace=:[aag])",
+      "template_variable_constraints": {
+        "aae": "[<Name full_name='builtins.int', description='instance int'>]",
+        "aaf": "[<Name full_name='builtins.str', description='instance str'>]",
+        "aai": "[<Name full_name='pandas.core.frame.DataFrame', description='instance DataFrame'>]"
+      },
+      "version": "1.5",
+      "pr_number": 30089,
+      "provenance": "unittest_1.py/test_assert2",
+      "keywords": [
+        "set",
+        "axis"
+      ],
+      "is_valid": true,
+      "answers": {
+        "correct": "y",
+        "has_examples": "n",
+        "comments": "n"
+      },
+      "is_duplicate": false
+    },
+    {
+      "before": ":[[aag]].max(numeric_only=:[aae])",
+      "after": ":[[aag]].max(skipna=:[aae])",
+      "template_variable_constraints": {
+        "aag": "[<Name full_name='pandas.core.arrays.categorical.Categorical', description='instance Categorical'>]"
+      },
+      "version": "1.5",
+      "pr_number": 27929,
+      "provenance": "unittest_3.py/test_assert_max",
+      "keywords": [
+        "max",
+        "numeric"
+      ],
+      "is_valid": true,
+      "answers": {
+        "correct": "n",
+        "has_examples": "n",
+        "comments": "very subtle difference"
+      },
+      "is_duplicate": false
+    },
+    {
+      "before": ":[[aag]].compress(:[[aae]])",
+      "after": ":[[aag]][:[[aae]]]",
+      "template_variable_constraints": {
+        "aae": "[<Name full_name='builtins.list', description='instance list'>]",
+        "aag": "[<Name full_name='pandas.core.series.Series', description='instance Series'>]"
+      },
+      "version": "1.5",
+      "pr_number": 30514,
+      "provenance": "unittest_2.py/test_assert1",
+      "keywords": [
+        "compress"
+      ],
+      "is_valid": true,
+      "answers": {
+        "correct": "y",
+        "has_examples": "n",
+        "comments": ""
+      },
+      "is_duplicate": false
+    },
+    {
+      "before": ":[[aah]].compress(:[[aae]], :[[aaf]])",
+      "after": ":[[aah]].asarray(:[[aaf]]).compress(:[[aae]])",
+      "template_variable_constraints": {
+        "aae": "[<Name full_name='builtins.list', description='instance list'>]",
+        "aaf": "[<Name full_name='pandas.core.series.Series', description='instance Series'>]",
+        "aah": "[<Name full_name='numpy', description='module numpy'>]"
+      },
+      "version": "1.5",
+      "pr_number": 30514,
+      "provenance": "unittest_1.py/test_assert2",
+      "keywords": [
+        "compress"
+      ],
+      "is_valid": true,
+      "answers": {
+        "correct": "y",
+        "has_examples": "n",
+        "comments": ""
+      },
+      "is_duplicate": false
+    },
+    {
+      "before": ":[[aai]].mask(:[gen_args_0], errors='raise')",
+      "after": ":[[aai]].mask(:[gen_args_0])",
+      "template_variable_constraints": {
+        "aai": "[<Name full_name='pandas.core.frame.DataFrame', description='instance DataFrame'>]",
+        "mask": "[<Name full_name='builtins.bool', description='instance bool'>]"
+      },
+      "version": "1.5",
+      "pr_number": 47728,
+      "provenance": "unittest_4.py/test_assert2",
+      "is_valid": true,
+
+      "answers": {
+          "correct": "y",
+          "has_examples": "y",
+          "comments": ""
+      },
+      "is_duplicate": true
+    },
+    {
+      "before": ":[[aai]].apply(:[gen_args_0], reduce=True)",
+      "after": ":[[aai]].apply(:[gen_args_0], result_type='reduce')",
+      "template_variable_constraints": {
+        "aai": "[<Name full_name='pandas.core.frame.DataFrame', description='instance DataFrame'>]"
+      },
+      "version": "1.5",
+      "pr_number": 29017,
+      "provenance": "unittest_0.py/test_assert2",
+      "keywords": [
+        "apply",
+        "rduce",
+        "True"
+      ],
+      "is_valid": true,
+      "answers": {
+        "correct": "y",
+        "has_examples": "n",
+        "comments": "n"
+      },
+      "is_duplicate": false
+    },
+    {
+      "before": ":[[aae]] & :[[aaf]]",
+      "after": ":[[aae]] & pd.Series(:[[aaf]])",
+      "template_variable_constraints": {
+        "aae": "[<Name full_name='pandas.core.series.Series', description='instance Series'>]",
+        "aaf": "[<Name full_name='builtins.list', description='instance list'>]"
+      },
+      "version": "1.5",
+      "pr_number": 52264,
+      "provenance": "unittest_1.py/test_assert1",
+      "keywords": [
+        ""
+      ],
+      "is_valid": true,
+      "answers": {
+        "correct": "y",
+        "has_examples": "n",
+        "comments": ""
+      },
+      "is_duplicate": false
+    },
+    {
+      "before": ":[[aai]].apply(:[gen_args_0], broadcast=True)",
+      "after": ":[[aai]].apply(:[gen_args_0], result_type='broadcast')",
+      "template_variable_constraints": {
+        "aai": "[<Name full_name='pandas.core.frame.DataFrame', description='instance DataFrame'>]"
+      },
+      "version": "1.5",
+      "pr_number": 29017,
+      "provenance": "unittest_3.py/test_assert1",
+      "keywords": [
+        "apply",
+        "broadcast"
+      ],
+      "is_valid": true,
+      "answers": {
+        "correct": "y",
+        "has_examples": "n",
+        "comments": ""
+      },
+      "is_duplicate": true
+    },
+    {
+      "before": ":[[aag]].apply(:[[aae]])",
+      "after": ":[[aag]] + :[[aae]]",
+      "template_variable_constraints": {
+        "aae": "[<Name full_name='pandas._libs.tslibs.timestamps.Timestamp', description='instance Timestamp'>]",
+        "aag": "[<Name full_name='pandas._libs.tslibs.offsets.DateOffset', description='instance DateOffset'>]"
+      },
+      "version": "1.5",
+      "pr_number": 44522,
+      "provenance": "unittest_1.py/test_assert2",
+      "keywords": [
+        "apply"
+      ],
+      "is_valid": true,
+      "answers": {
+        "correct": "y",
+        "has_examples": "y",
+        "comments": "n"
+      },
+      "is_duplicate": true
+    },
+    {
+      "before": ":[[aag]].apply(:[[aae]])",
+      "after": ":[[aae]] + :[[aag]]",
+      "template_variable_constraints": {
+        "aae": "[<Name full_name='pandas._libs.tslibs.timestamps.Timestamp', description='instance Timestamp'>]",
+        "aag": "[<Name full_name='builtins.int', description='instance int'>]"
+      },
+      "version": "1.5",
+      "pr_number": 44522,
+      "provenance": "unittest_2.py/test_assert1",
+      "keywords": [
+        "apply"
+      ],
+      "is_valid": true,
+      "answers": {
+        "correct": "y",
+        "has_examples": "y",
+        "comments": "n"
+      },
+      "is_duplicate": false
+    },
+    {
+      "before": ":[[aag]].cat.name",
+      "after": ":[[aag]].name",
+      "template_variable_constraints": {
+        "aag": "[<Name full_name='pandas.core.series.Series', description='instance Series'>]"
+      },
+      "version": "1.5",
+      "pr_number": 29914,
+      "provenance": "unittest_3.py/test_assert2",
+      "keywords": [
+        "cat",
+        "name"
+      ],
+      "is_valid": true,
+      "answers": {
+        "correct": "y",
+        "has_examples": "n",
+        "comments": ""
+      },
+      "is_duplicate": false
+    },
+    {
+      "before": ":[[aag]].cat.index",
+      "after": ":[[aag]].index",
+      "template_variable_constraints": {
+        "aag": "[<Name full_name='pandas.core.series.Series', description='instance Series'>]"
+      },
+      "version": "1.5",
+      "pr_number": 29914,
+      "provenance": "unittest_3.py/test_assert3",
+      "keywords": [
+        "cat",
+        "index"
+      ],
+      "is_valid": true,
+      "answers": {
+        "correct": "y",
+        "has_examples": "n",
+        "comments": ""
+      },
+      "is_duplicate": false
+    },
+    {
+      "before": ":[[aag]].Float64Index(:[[aae]])",
+      "after": ":[[aag]].Index(:[[aae]], dtype=float)",
+      "template_variable_constraints": {
+        "aae": "[<Name full_name='builtins.list', description='instance list'>, <Name full_name='numpy.ndarray', description='instance ndarray'>, <Name full_name='numpy._typing._generic_alias._GenericAlias.__origin__', description='def __origin__'>]",
+        "aag": "[<Name full_name='pandas', description='module pandas'>]"
+      },
+      "version": "1.5",
+      "pr_number": 50775,
+      "provenance": "unittest_0.py/test_assert1",
+      "keywords": [
+        "Float64Index"
+      ],
+      "is_valid": true,
+      "answers": {
+        "correct": "y",
+        "has_examples": "y",
+        "comments": ""
+      },
+      "is_duplicate": false
+    },
+    {
+      "before": ":[[aad]].delta",
+      "after": ":[[aad]].value",
+      "template_variable_constraints": {
+        "aad": "[<Name full_name='pandas._libs.tslibs.timedeltas.Timedelta', description='instance Timedelta'>]"
+      },
+      "version": "1.5",
+      "pr_number": 46476,
+      "provenance": "unittest_0.py/test_assert1",
+      "keywords": [
+        "delta"
+      ],
+      "is_valid": true,
+      "answers": {
+        "correct": "y",
+        "has_examples": "n",
+        "comments": ""
+      },
+      "is_duplicate": false
+    },
+    {
+      "before": ":[[aad]]",
+      "after": ":[[aad]].astype('float64')",
+      "template_variable_constraints": {
+        "aad": "[<Name full_name='pandas.core.indexes.base.Index', description='class Index'>]"
+      },
+      "version": "1.5",
+      "pr_number": 49458,
+      "provenance": "unittest_4.py/test_assert1",
+      "keywords": [
+        ""
+      ],
+      "is_valid": true,
+      "answers": {
+        "correct": "n",
+        "has_examples": "n",
+        "comments": "n"
+      },
+      "is_duplicate": false
+    },
+    {
+      "before": ":[[aah]].update(:[[aae]], raise_conflict=False)",
+      "after": ":[[aah]].update(:[[aae]], errors='ignore')",
+      "template_variable_constraints": {
+        "aae": "[<Name full_name='pandas.core.frame.DataFrame', description='instance DataFrame'>]",
+        "aah": "[<Name full_name='pandas.core.frame.DataFrame', description='instance DataFrame'>]"
+      },
+      "version": "1.5",
+      "pr_number": 23657,
+      "provenance": "unittest_3.py/test_assert2",
+      "keywords": [
+        "update",
+        "raise",
+        "conflict"
+      ],
+      "is_valid": true,
+      "answers": {
+        "correct": "y",
+        "has_examples": "y",
+        "comments": ""
+      },
+      "is_duplicate": false
+    },
+    {
+      "before": ":[[aag]].describe(datetime_is_numeric=False)",
+      "after": ":[[aag]].describe()",
+      "template_variable_constraints": {
+        "aag": "[<Name full_name='pandas.core.frame.DataFrame', description='instance DataFrame'>]"
+      },
+      "version": "1.5",
+      "pr_number": 49368,
+      "provenance": "unittest_2.py/test_assert1",
+      "keywords": [
+        "describe",
+        "datetime",
+        "is",
+        "numeric"
+      ],
+      "is_valid": true,
+      "answers": {
+        "correct": "y",
+        "has_examples": "y",
+        "comments": ""
+      },
+      "is_duplicate": false
+    },
+    {
+      "before": ":[[aai]].pivot(:[[aae]], :[[aaf]], :[[aag]])",
+      "after": ":[[aai]].pivot(index=:[[aae]], columns=:[[aaf]], values=:[[aag]])",
+      "template_variable_constraints": {
+        "aai": "[<Name full_name='pandas.core.frame.DataFrame', description='instance DataFrame'>]"
+      },
+      "version": "1.5",
+      "pr_number": 48326,
+      "provenance": "unittest_1.py/test_assert1",
+      "keywords": [
+        "pivot"
+      ],
+      "is_valid": true,
+      "answers": {
+        "correct": "y",
+        "has_examples": "y",
+        "comments": ""
+      },
+      "is_duplicate": false
+    },
+    {
+      "before": ":[[aai]].mask(:[gen_args_0], errors='ignore')",
+      "after": ":[[aai]].mask(:[gen_args_0])",
+      "template_variable_constraints": {
+        "aai": "[<Name full_name='pandas.core.frame.DataFrame', description='instance DataFrame'>]"
+      },
+      "version": "1.5",
+      "pr_number": 49415,
+      "provenance": "unittest_2.py/test_assert3",
+      "keywords": [
+        "mask",
+        "errors"
+      ],
+      "is_valid": true,
+      "answers": {
+        "correct": "y",
+        "has_examples": "n",
+        "comments": ""
+      },
+      "is_duplicate": true
+    },
+    {
+      "before": ":[[aag]].min(numeric_only=:[aae])",
+      "after": ":[[aag]].min(skipna=:[aae])",
+      "template_variable_constraints": {
+        "aag": "[<Name full_name='pandas.core.arrays.categorical.Categorical', description='instance Categorical'>]"
+      },
+      "version": "1.5",
+      "pr_number": 27929,
+      "provenance": "unittest_2.py/test_assert_min",
+      "keywords": [
+        "min",
+        "numeric"
+      ],
+      "is_valid": true,
+      "answers": {
+        "correct": "y",
+        "has_examples": "n",
+        "comments": ""
+      },
+      "is_duplicate": false
+    },
+    {
+      "before": ":[[aai]].where(:[gen_args_0], errors='ignore')",
+      "after": ":[[aai]].where(:[gen_args_0])",
+      "template_variable_constraints": {
+        "aai": "[<Name full_name='pandas.core.series.Series', description='instance Series'>]"
+      },
+      "version": "1.5",
+      "pr_number": 49415,
+      "provenance": "unittest_2.py/test_assert2",
+      "keywords": [
+        "where",
+        "errors"
+      ],
+      "is_valid": true,
+      "answers": {
+        "correct": "y",
+        "has_examples": "n",
+        "comments": ""
+      },
+      "is_duplicate": true
+    },
+    {
+      "before": ":[[aaj]].pivot(:[[aae]], :[[aaf]], :[[aag]], :[[aah]])",
+      "after": ":[[aaj]].pivot(:[[aae]], index=:[[aaf]], columns=:[[aag]], values=:[[aah]])",
+      "template_variable_constraints": {
+        "aae": "[<Name full_name='pandas.core.frame.DataFrame', description='instance DataFrame'>]",
+        "aaj": "[<Name full_name='pandas', description='module pandas'>]"
+      },
+      "version": "1.5",
+      "pr_number": 48326,
+      "provenance": "unittest_2.py/test_assert2",
+      "keywords": [
+        "pivot"
+      ],
+      "is_valid": true,
+      "answers": {
+        "correct": "y",
+        "has_examples": "y",
+        "comments": "y"
+      },
+      "is_duplicate": false
+    },
+    {
+      "before": ":[[aah]].where(:[[aae]], errors='raise')",
+      "after": ":[[aah]].where(:[[aae]])",
+      "template_variable_constraints": {
+        "aae": "[<Name full_name='builtins.bool', description='instance bool'>]",
+        "aah": "[<Name full_name='pandas.core.frame.DataFrame', description='instance DataFrame'>]"
+      },
+      "version": "1.5",
+      "pr_number": 49415,
+      "provenance": "unittest_1.py/test_assert1",
+      "keywords": [
+        "where",
+        "errors"
+      ],
+      "is_valid": true,
+      "answers": {
+        "correct": "y",
+        "has_examples": "n",
+        "comments": ""
+      },
+      "is_duplicate": false
+    },
+    {
+      "before": ":[[aah]].shift(:[aae], fill_value=:[[aaf]])",
+      "after": ":[[aah]].shift(:[aae], fill_value=pd.Timestamp(:[[aaf]]))",
+      "template_variable_constraints": {
+        "aae": "[<Name full_name='builtins.int', description='instance int'>]",
+        "aaf": "[<Name full_name='builtins.int', description='instance int'>]",
+        "aah": "[<Name full_name='pandas.core.frame.DataFrame', description='instance DataFrame'>]"
+      },
+      "version": "1.5",
+      "pr_number": 49362,
+      "provenance": "unittest_4.py/test_assert2",
+      "keywords": [
+        "shift",
+        "fill"
+      ],
+      "is_valid": true,
+      "answers": {
+        "correct": "n",
+        "has_examples": "n",
+        "comments": "The probem is that type infromation does not suffice to mine a rule."
+      },
+      "is_duplicate": true
+    },
+    {
+      "before": ":[[aag]].rank(numeric_only=None)",
+      "after": ":[[aag]].rank(numeric_only=False)",
+      "template_variable_constraints": {
+        "aag": "[<Name full_name='pandas.core.frame.DataFrame', description='instance DataFrame'>]"
+      },
+      "version": "1.5",
+      "pr_number": 49622,
+      "provenance": "unittest_1.py/test_assert1",
+      "keywords": [
+        "rank",
+        "None"
+      ],
+      "is_valid": true,
+      "answers": {
+        "correct": "n",
+        "has_examples": "n",
+        "comments": ""
+      },
+      "is_duplicate": false
+    },
+    {
+      "before": ":[[aah]].rsplit(:[[aae]], :[aaf])",
+      "after": ":[[aah]].rsplit(:[[aae]], n=:[aaf])",
+      "template_variable_constraints": {
+        "aae": "[<Name full_name='builtins.str', description='instance str'>]",
+        "aaf": "[<Name full_name='builtins.int', description='instance int'>]",
+        "aah": "[<Name full_name='pandas.core.series.Series', description='instance Series'>]"
+      },
+      "version": "1.5",
+      "pr_number": 49415,
+      "provenance": "unittest_3.py/test_assert4",
+      "keywords": [
+        "rsplit"
+      ],
+      "is_valid": true,
+      "answers": {
+        "correct": "y",
+        "has_examples": "n",
+        "comments": ""
+      },
+      "is_duplicate": false
+    },
+    {
+      "before": ":[[aae]][[:[aah]]]",
+      "after": ":[[aae]][:[aah]]",
+      "template_variable_constraints": {
+        "aae": "[<Name full_name='pandas.core.series.Series', description='instance Series'>]",
+        "aah": "[<Name full_name='builtins.slice', description='class slice'>]"
+      },
+      "version": "1.5",
+      "pr_number": 49343,
+      "provenance": "unittest_1.py/test_assert2",
+      "keywords": [
+        ""
+      ],
+      "is_valid": true,
+      "answers": {
+        "correct": "y",
+        "has_examples": "n",
+        "comments": ""
+      },
+      "is_duplicate": false
+    },
+    {
+      "before": "Series(:[[aae]], dtype=dtype)",
+      "after": "pd.Series(:[[aae]].view('int64'), dtype=dtype)",
+      "template_variable_constraints": {
+        "aae": "[<Name full_name='pandas.core.indexes.datetimes.DatetimeIndex', description='instance DatetimeIndex'>]",
+        "Series": "[<Name full_name='pandas.core.series.Series', description='class Series'>]",
+        "dtype": "[<Name full_name='pandas.core.indexes.base.Index.dtype', description='def dtype'>]"
+      },
+      "version": "1.5",
+      "pr_number": 41662,
+      "provenance": "unittest_2.py/test_assert2",
+      "is_valid": true,
+      "keywords": [
+        "Series",
+        "dtype"
+      ],
+      "answers": {
+        "correct": "n",
+        "has_examples": "n",
+        "comments": "n"
+      },
+      "is_duplicate": false
+    },
+    {
+      "before": ":[[aag]].Float64Index(:[[aae]])",
+      "after": ":[[aag]].Index(:[[aae]], dtype=np.float64)",
+      "template_variable_constraints": {
+        "aae": "[<Name full_name='builtins.list', description='instance list'>, <Name full_name='numpy.ndarray', description='instance ndarray'>, <Name full_name='numpy._typing._generic_alias._GenericAlias.__origin__', description='def __origin__'>]",
+        "aag": "[<Name full_name='pandas', description='module pandas'>]"
+      },
+      "version": "1.5",
+      "pr_number": 50775,
+      "provenance": "unittest_2.py/test_assert3",
+      "keywords": [
+        "Float64Index"
+      ],
+      "is_valid": true,
+      "answers": {
+        "correct": "y",
+        "has_examples": "y",
+        "comments": "n"
+      },
+      "is_duplicate": false
+    },
+    {
+      "before": ":[[aag]].UInt64Index(:[[aae]])",
+      "after": ":[[aag]].Index(:[[aae]], dtype=np.uint64)",
+      "template_variable_constraints": {
+        "aae": "[<Name full_name='builtins.list', description='instance list'>, <Name full_name='numpy.ndarray', description='instance ndarray'>, <Name full_name='numpy._typing._generic_alias._GenericAlias.__origin__', description='def __origin__'>]",
+        "aag": "[<Name full_name='pandas', description='module pandas'>]"
+      },
+      "version": "1.5",
+      "pr_number": 50775,
+      "provenance": "unittest_2.py/test_assert2",
+      "keywords": [
+        "UInt64Index"
+      ],
+      "is_valid": true,
+      "answers": {
+        "correct": "y",
+        "has_examples": "y",
+        "comments": ""
+      },
+      "is_duplicate": false
+    },
+    {
+      "before": ":[[aah]].shift(:[gen_args_0], fill_value=:[aaf])",
+      "after": ":[[aah]].shift(:[gen_args_0], fill_value=pd.Timestamp(:[aaf]))",
+      "template_variable_constraints": {
+        "aaf": "[<Name full_name='builtins.int', description='instance int'>]",
+        "aah": "[<Name full_name='pandas.core.frame.DataFrame', description='instance DataFrame'>]"
+      },
+      "version": "1.5",
+      "pr_number": 49362,
+      "provenance": "unittest_1.py/test_assert2",
+      "keywords": [
+        "shift"
+      ],
+      "is_valid": true,
+      "answers": {
+        "correct": "n",
+        "has_examples": "n",
+        "comments": ""
+      },
+      "is_duplicate": false
+    },
+    {
+      "before": ":[[aah]].where(:[[aae]], errors='ignore')",
+      "after": ":[[aah]].where(:[[aae]])",
+      "template_variable_constraints": {
+        "aae": "[<Name full_name='builtins.bool', description='instance bool'>]",
+        "aah": "[<Name full_name='pandas.core.frame.DataFrame', description='instance DataFrame'>]"
+      },
+      "version": "1.5",
+      "pr_number": 49415,
+      "provenance": "unittest_0.py/test_assert1",
+      "keywords": [
+        "where",
+        "errors"
+      ],
+      "is_valid": true,
+      "answers": {
+        "correct": "y",
+        "has_examples": "n",
+        "comments": ""
+      },
+      "is_duplicate": false
+    },
+    {
+      "before": ":[[aah]].split(:[[aae]], :[aaf])",
+      "after": ":[[aah]].split(:[[aae]], n=:[aaf])",
+      "template_variable_constraints": {
+        "aae": "[<Name full_name='builtins.str', description='instance str'>]",
+        "aaf": "[<Name full_name='builtins.int', description='instance int'>]",
+        "aah": "[<Name full_name='pandas.core.series.Series', description='instance Series'>]"
+      },
+      "version": "1.5",
+      "pr_number": 49415,
+      "provenance": "unittest_3.py/test_assert3",
+      "keywords": [
+        "split"
+      ],
+      "is_valid": true,
+      "answers": {
+        "correct": "y",
+        "has_examples": "n",
+        "comments": ""
+      },
+      "is_duplicate": false
+    },
+    {
+      "before": ":[[aah]].mask(:[[aae]], errors='ignore')",
+      "after": ":[[aah]].mask(:[[aae]])",
+      "template_variable_constraints": {
+        "aae": "[<Name full_name='builtins.bool', description='instance bool'>]",
+        "aah": "[<Name full_name='pandas.core.frame.DataFrame', description='instance DataFrame'>]"
+      },
+      "version": "1.5",
+      "pr_number": 49415,
+      "provenance": "unittest_3.py/test_assert2",
+      "keywords": [
+        "mask",
+        "errors"
+      ],
+      "is_valid": true,
+      "answers": {
+        "correct": "y",
+        "has_examples": "n",
+        "comments": ""
+      },
+      "is_duplicate": false
+    },
+    {
+      "before": "read_feather(:[[aae]], nthreads=2)",
+      "after": "read_feather(:[[aae]], use_threads=True)",
+      "template_variable_constraints": {
+        "aae": "[<Name full_name='builtins.str', description='instance str'>]",
+        "read_feather": "[<Name full_name='pandas.io.feather_format.read_feather', description='def read_feather'>]"
+      },
+      "version": "1.5",
+      "pr_number": 29728,
+      "provenance": "unittest_0.py/test_assert1",
+      "keywords": [
+        "read",
+        "feather"
+      ],
+      "is_valid": true,
+      "answers": {
+        "correct": "y",
+        "has_examples": "n",
+        "comments": ""
+      },
+      "is_duplicate": false
+    },
+    {
+      "before": ":[[aaf]].vol()",
+      "after": ":[[aaf]].std()",
+      "template_variable_constraints": {
+        "aaf": "[<Name full_name='pandas.core.series.Series', description='instance Series'>]"
+      },
+      "version": "1.5",
+      "pr_number": 39220,
+      "provenance": "unittest_2.py/test_assert1",
+      "is_valid": true,
+      "keywords": [
+        "vol"
+      ],
+      "answers": {
+        "correct": "y",
+        "has_examples": "n",
+        "comments": ""
+      },
+      "is_duplicate": false
+    },
+    {
+      "before": ":[[aah]].where(:[[aah]] > :[aan], errors='raise')",
+      "after": ":[[aah]].where(:[[aah]] > :[aan])",
+      "template_variable_constraints": {
+        "aah": "[<Name full_name='pandas.core.frame.DataFrame', description='instance DataFrame'>]",
+        "aan": "[<Name full_name='builtins.int', description='instance int'>]"
+      },
+      "version": "1.5",
+      "pr_number": 44294,
+      "provenance": "unittest_3.py/test_assert1",
+      "keywords": [
+        "where",
+        "errors"
+      ],
+      "is_valid": true,
+      "answers": {
+        "correct": "y",
+        "has_examples": "y",
+        "comments": "n"
+      },
+      "is_duplicate": false
+    },
+    {
+      "before": ":[[aah]].apply(:[[aae]], broadcast=True)",
+      "after": ":[[aah]].apply(:[[aae]], result_type='broadcast')",
+      "template_variable_constraints": {
+        "aae": "[<Name full_name='numpy', description='module numpy'>]",
+        "aah": "[<Name full_name='pandas.core.frame.DataFrame', description='instance DataFrame'>]"
+      },
+      "version": "1.5",
+      "pr_number": 29017,
+      "provenance": "unittest_2.py/test_assert1",
+      "keywords": [
+        "apply",
+        "broadcast"
+      ],
+      "is_valid": true,
+      "answers": {
+        "correct": "y",
+        "has_examples": "n",
+        "comments": ""
+      },
+      "is_duplicate": false
+    },
+    {
+      "before": ":[[aah]].Series(:[[aae]], dtype='int64')",
+      "after": ":[[aah]].Series(:[[aae]])",
+      "template_variable_constraints": {
+        "aae": "[<Name full_name='builtins.list', description='instance list'>, <Name full_name='numpy.ndarray', description='instance ndarray'>, <Name full_name='numpy._typing._generic_alias._GenericAlias.__origin__', description='def __origin__'>]",
+        "aah": "[<Name full_name='pandas', description='module pandas'>]"
+      },
+      "version": "1.5",
+      "pr_number": 49605,
+      "provenance": "unittest_3.py/test_assert2",
+      "keywords": [
+        "Series",
+        "int64"
+      ],
+      "is_valid": true,
+      "answers": {
+        "correct": "n",
+        "has_examples": "n",
+        "comments": "cannot capture with rule"
+      },
+      "is_duplicate": false
+    },
+    {
+      "before": ":[[aah]].rsplit(:[[aae]], :[aaf])",
+      "after": ":[[aah]].rsplit(:[[aae]], n=:[aaf])",
+      "template_variable_constraints": {
+        "aae": "[<Name full_name='builtins.str', description='instance str'>]",
+        "aaf": "[<Name full_name='builtins.int', description='instance int'>]",
+        "aah": "[<Name full_name='pandas.core.series.Series', description='instance Series'>]"
+      },
+      "version": "1.5",
+      "pr_number": 49415,
+      "provenance": "unittest_4.py/test_assert4",
+      "keywords": [
+        "rsplit"
+      ],
+      "is_valid": true,
+      "answers": {
+        "correct": "y",
+        "has_examples": "n",
+        "comments": ""
+      },
+      "is_duplicate": false
+    },
+    {
+      "before": ":[[aah]].split(:[[aae]], :[aaf])",
+      "after": ":[[aah]].split(pat=:[[aae]], n=:[aaf])",
+      "template_variable_constraints": {
+        "aae": "[<Name full_name='builtins.str', description='instance str'>]",
+        "aaf": "[<Name full_name='builtins.int', description='instance int'>]",
+        "aah": "[<Name full_name='pandas.core.series.Series', description='instance Series'>]"
+      },
+      "version": "1.5",
+      "pr_number": 49415,
+      "provenance": "unittest_1.py/test_assert3",
+      "keywords": [
+        "split"
+      ],
+      "is_valid": true,
+      "answers": {
+        "correct": "y",
+        "has_examples": "n",
+        "comments": ""
+      },
+      "is_duplicate": false
+    },
+    {
+      "before": ":[[aah]].mask(:[[aae]], errors='raise')",
+      "after": ":[[aah]].mask(:[[aae]])",
+      "template_variable_constraints": {
+        "aae": "[<Name full_name='builtins.bool', description='instance bool'>]",
+        "aah": "[<Name full_name='pandas.core.frame.DataFrame', description='instance DataFrame'>]"
+      },
+      "version": "1.5",
+      "pr_number": 49415,
+      "provenance": "unittest_1.py/test_assert2",
+      "keywords": [
+        "mask",
+        "errors"
+      ],
+      "is_valid": true,
+      "answers": {
+        "correct": "y",
+        "has_examples": "n",
+        "comments": ""
+      },
+      "is_duplicate": false
+    },
+    {
+      "before": ":[[aag]].UInt64Index(:[[aae]])",
+      "after": ":[[aag]].Index(:[[aae]], dtype='uint64')",
+      "template_variable_constraints": {
+        "aae": "[<Name full_name='builtins.list', description='instance list'>, <Name full_name='numpy.ndarray', description='instance ndarray'>, <Name full_name='numpy._typing._generic_alias._GenericAlias.__origin__', description='def __origin__'>]",
+        "aag": "[<Name full_name='pandas', description='module pandas'>]"
+      },
+      "version": "1.5",
+      "pr_number": 50775,
+      "provenance": "unittest_0.py/test_assert3",
+      "keywords": [
+        "UInt64Index"
+      ],
+      "is_valid": true,
+      "answers": {
+        "correct": "y",
+        "has_examples": "y",
+        "comments": "n"
+      },
+      "is_duplicate": false
+    },
+    {
+      "before": ":[[aag]].Int64Index(:[[aae]])",
+      "after": ":[[aag]].Index(:[[aae]], dtype=int)",
+      "template_variable_constraints": {
+        "aae": "[<Name full_name='builtins.list', description='instance list'>, <Name full_name='numpy.ndarray', description='instance ndarray'>, <Name full_name='numpy._typing._generic_alias._GenericAlias.__origin__', description='def __origin__'>]",
+        "aag": "[<Name full_name='pandas', description='module pandas'>]"
+      },
+      "version": "1.5",
+      "pr_number": 50775,
+      "provenance": "unittest_0.py/test_assert2",
+      "keywords": [
+        "Int64Index"
+      ],
+      "is_valid": true,
+      "answers": {
+        "correct": "y",
+        "has_examples": "y",
+        "comments": ""
+      },
+      "is_duplicate": false
+    },
+    {
+      "before": ":[[aah]].DatetimeIndex(:[[aae]], tz=:[aaf])",
+      "after": ":[[aah]].DatetimeIndex(:[[aae]].astype(np.int64), tz=:[aaf])",
+      "template_variable_constraints": {
+        "aae": "[<Name full_name='builtins.list', description='instance list'>, <Name full_name='numpy.ndarray', description='instance ndarray'>, <Name full_name='numpy._typing._generic_alias._GenericAlias.__origin__', description='def __origin__'>]",
+        "aah": "[<Name full_name='pandas', description='module pandas'>]"
+      },
+      "version": "1.5",
+      "pr_number": 49361,
+      "provenance": "unittest_0.py/test_assert1",
+      "keywords": [
+        "DatetimeIndex"
+      ],
+      "is_valid": true,
+      "answers": {
+        "correct": "n",
+        "has_examples": "n",
+        "comments": ""
+      },
+      "is_duplicate": false
+    },
+    {
+      "before": ":[[aah]].mask(:[[aah]] > :[aan], errors='raise')",
+      "after": ":[[aah]].mask(:[[aah]] > :[aan])",
+      "template_variable_constraints": {
+        "aah": "[<Name full_name='pandas.core.series.Series', description='instance Series'>]",
+        "aan": "[<Name full_name='builtins.int', description='instance int'>]"
+      },
+      "version": "1.5",
+      "pr_number": 44294,
+      "provenance": "unittest_3.py/test_assert2",
+      "keywords": [
+        "mask",
+        "errors"
+      ],
+      "is_valid": true,
+      "answers": {
+        "correct": "y",
+        "has_examples": "y",
+        "comments": "n"
+      },
+      "is_duplicate": false
+    },
+    {
+      "before": "return :[[acc]].DatetimeIndex(data, tz=tz)",
+      "after": "int_data = data.astype(np.int64)\nreturn :[[acc]].DatetimeIndex(int_data, tz=tz)",
+      "template_variable_constraints": {
+        "acc": "[<Name full_name='pandas', description='module pandas'>]",
+        "tz": "[<Name full_name='builtins.str', description='instance str'>]"
+      },
+      "version": "1.5",
+      "pr_number": 49361,
+      "provenance": "unittest_1.py/test_assert1",
+      "is_valid": true,
+      "keywords": [
+        "DatetimeIndex"
+      ],
+      "answers": {
+        "correct": "n",
+        "has_examples": "n",
+        "comments": ""
+      },
+      "is_duplicate": false
+    },
+    {
+      "before": ":[[aae]] & :[aaf]",
+      "after": ":[[aae]] & pd.Series(:[aaf])",
+      "template_variable_constraints": {
+        "aae": "[<Name full_name='pandas.core.series.Series', description='instance Series'>]"
+      },
+      "version": "1.5",
+      "pr_number": 52264,
+      "provenance": "unittest_3.py/test_assert1",
+      "keywords": [
+        ""
+      ],
+      "is_valid": true,
+      "answers": {
+        "correct": "y",
+        "has_examples": "n",
+        "comments": ""
+      },
+      "is_duplicate": true
+    },
+    {
+      "before": ":[[aah]].rsplit(:[[aae]], :[aaf])",
+      "after": ":[[aah]].rsplit(pat=:[[aae]], n=:[aaf])",
+      "template_variable_constraints": {
+        "aae": "[<Name full_name='builtins.str', description='instance str'>]",
+        "aaf": "[<Name full_name='builtins.int', description='instance int'>]",
+        "aah": "[<Name full_name='pandas.core.series.Series', description='instance Series'>]"
+      },
+      "version": "1.5",
+      "pr_number": 49415,
+      "provenance": "unittest_1.py/test_assert4",
+      "keywords": [
+        "rsplit"
+      ],
+      "is_valid": true,
+      "answers": {
+        "correct": "y",
+        "has_examples": "n",
+        "comments": ""
+      },
+      "is_duplicate": false
+    },
+    {
+      "before": ":[[aag]].Index(:[[aae]])",
+      "after": ":[[aag]].Index(:[[aae]], dtype=object)",
+      "template_variable_constraints": {
+        "aae": "[<Name full_name='builtins.float', description='instance float'>, <Name full_name='numpy.ndarray', description='instance ndarray'>, <Name full_name='numpy._typing._generic_alias._GenericAlias.__origin__', description='def __origin__'>]",
+        "aag": "[<Name full_name='pandas', description='module pandas'>]"
+      },
+      "version": "1.5",
+      "pr_number": 49458,
+      "provenance": "unittest_2.py/test_assert1",
+      "keywords": [
+        "Index"
+      ],
+      "is_valid": true,
+      "answers": {
+        "correct": "n",
+        "has_examples": "n",
+        "comments": "can capture with a rule"
+      },
+      "is_duplicate": false
+    },
+    {
+      "before": ":[[aag]].Int64Index(:[[aae]])",
+      "after": ":[[aag]].Index(:[[aae]], dtype=np.int64)",
+      "template_variable_constraints": {
+        "aae": "[<Name full_name='builtins.list', description='instance list'>, <Name full_name='numpy.ndarray', description='instance ndarray'>, <Name full_name='numpy._typing._generic_alias._GenericAlias.__origin__', description='def __origin__'>]",
+        "aag": "[<Name full_name='pandas', description='module pandas'>]"
+      },
+      "version": "1.5",
+      "pr_number": 50775,
+      "provenance": "unittest_2.py/test_assert1",
+      "keywords": [
+        "Int64Index"
+      ],
+      "is_valid": true,
+      "answers": {
+        "correct": "y",
+        "has_examples": "n",
+        "comments": ""
+      },
+      "is_duplicate": false
+    }
+  ],
+  "scikit-learn": [
+    {
+      "before": "DictionaryLearning(alpha=:[aap], transform_alpha=None)",
+      "after": "DictionaryLearning(alpha=:[aap], transform_alpha=:[aap])",
+      "template_variable_constraints": {
+        "aap": "[<Name full_name='builtins.float', description='instance float'>]",
+        "DictionaryLearning": "[<Name full_name='sklearn.decomposition._dict_learning.DictionaryLearning', description='class DictionaryLearning'>]"
+      },
+      "version": "1.5",
+      "pr_number": 19159,
+      "provenance": "unittest_2.py/test_assert1",
+      "keywords": [
+        "DictionaryLearning",
+        "None"
+      ],
+      "is_valid": true,
+      "answers": {
+        "correct": "n",
+        "has_examples": "n",
+        "comments": ""
+      },
+      "is_duplicate": false
+    },
+    {
+      "before": ":[[aau]].set_params(rf=None)",
+      "after": ":[[aau]].set_params(rf='drop')",
+      "template_variable_constraints": {
+        "aau": "[<Name full_name='sklearn.ensemble._voting.VotingClassifier', description='instance VotingClassifier'>]"
+      },
+      "version": "1.5",
+      "pr_number": 13780,
+      "provenance": "unittest_3.py/test_assert1",
+      "keywords": [
+        "set_params",
+        "None"
+      ],
+      "is_valid": true,
+      "answers": {
+        "correct": "y",
+        "has_examples": "y",
+        "comments": ""
+      },
+      "is_duplicate": false
+    },
+    {
+      "before": "AffinityPropagation()",
+      "after": "AffinityPropagation(random_state=0)",
+      "template_variable_constraints": {
+        "AffinityPropagation": "[<Name full_name='sklearn.cluster._affinity_propagation.AffinityPropagation', description='class AffinityPropagation'>]"
+      },
+      "version": "1.5",
+      "pr_number": 16801,
+      "provenance": "unittest_0.py/test_assert1",
+      "keywords": [
+        "AffinityPropagation"
+      ],
+      "is_valid": true,
+      "answers": {
+        "correct": "y",
+        "has_examples": "y",
+        "comments": ""
+      },
+      "is_duplicate": false
+    },
+    {
+      "before": "make_sparse_coded_signal(:[gen_args_0])",
+      "after": "make_sparse_coded_signal(:[gen_args_0], data_transposed=True)",
+      "template_variable_constraints": {
+        "make_sparse_coded_signal": "[<Name full_name='sklearn.datasets._samples_generator.make_sparse_coded_signal', description='def make_sparse_coded_signal'>]"
+      },
+      "version": "1.5",
+      "pr_number": 21425,
+      "provenance": "unittest_4.py/test_assert",
+      "keywords": [
+        "make_sparse_coded_signal"
+      ],
+      "is_valid": true,
+      "answers": {
+        "correct": "y",
+        "has_examples": "n",
+        "comments": ""
+      },
+      "is_duplicate": false
+    },
+    {
+      "before": "DecisionTreeRegressor(max_features='auto')",
+      "after": "DecisionTreeRegressor(max_features=1.0)",
+      "template_variable_constraints": {
+        "DecisionTreeRegressor": "[<Name full_name='sklearn.tree._classes.DecisionTreeRegressor', description='class DecisionTreeRegressor'>]"
+      },
+      "version": "1.5",
+      "pr_number": 22476,
+      "provenance": "unittest_0.py/test_assert2",
+      "keywords": [
+        "DecisionTreeRegressor",
+        "auto"
+      ],
+      "is_valid": true,
+      "answers": {
+        "correct": "y",
+        "has_examples": "n",
+        "comments": ""
+      },
+      "is_duplicate": false
+    },
+    {
+      "before": ":[[aci]] = BayesianRidge(normalize=True)\n:[[ako]].fit(X, :[[akm]])\nreturn :[[ary]].predict(:[[arw]])",
+      "after": "scaler = StandardScaler()\nX_scaled = scaler.fit_transform(X)\n:[[aci]] = BayesianRidge(normalize=False)\n:[[ako]].fit(X_scaled, :[[akm]])\nreturn :[[ary]].predict(scaler.transform(:[[arw]]))",
+      "template_variable_constraints": {
+        "aci": "[<Name full_name='sklearn.linear_model._bayes.BayesianRidge', description='instance BayesianRidge'>]",
+        "akm": "[<Name full_name='builtins.float', description='instance float'>, <Name full_name='numpy.ndarray', description='instance ndarray'>]",
+        "ako": "[<Name full_name='sklearn.linear_model._bayes.BayesianRidge', description='instance BayesianRidge'>]",
+        "arw": "[<Name full_name='builtins.float', description='instance float'>, <Name full_name='numpy.ndarray', description='instance ndarray'>]",
+        "ary": "[<Name full_name='sklearn.linear_model._bayes.BayesianRidge', description='instance BayesianRidge'>]",
+        "BayesianRidge": "[<Name full_name='sklearn.linear_model._bayes.BayesianRidge', description='class BayesianRidge'>]"
+      },
+      "version": "1.5",
+      "pr_number": 17746,
+      "provenance": "unittest_1.py/test_assert_bayesian_ridge",
+      "keywords": [
+        "StandardScaler",
+        "normalize",
+        "False"
+      ],
+      "is_valid": true,
+      "answers": {
+        "correct": "n",
+        "has_examples": "n",
+        "comments": ""
+      },
+      "is_duplicate": false
+    },
+    {
+      "before": "DecisionTreeClassifier(max_features='auto')",
+      "after": "DecisionTreeClassifier(max_features='sqrt')",
+      "template_variable_constraints": {
+        "DecisionTreeClassifier": "[<Name full_name='sklearn.tree._classes.DecisionTreeClassifier', description='class DecisionTreeClassifier'>]"
+      },
+      "version": "1.5",
+      "pr_number": 22476,
+      "provenance": "unittest_3.py/test_assert1",
+      "keywords": [
+        "DecisionTreeClassifier",
+        "auto"
+      ],
+      "is_valid": true,
+      "answers": {
+        "correct": "y",
+        "has_examples": "n",
+        "comments": ""
+      },
+      "is_duplicate": false
+    },
+    {
+      "before": ":[[aae]].n_features_",
+      "after": ":[[aae]].n_features_in_",
+      "template_variable_constraints": {
+        "aae": "[<Name full_name='sklearn.tree._classes.DecisionTreeClassifier', description='instance DecisionTreeClassifier'>]"
+      },
+      "version": "1.5",
+      "pr_number": 20272,
+      "provenance": "unittest_3.py/test_assert1",
+      "keywords": [
+        ""
+      ],
+      "is_valid": true,
+      "answers": {
+        "correct": "y",
+        "has_examples": "n",
+        "comments": ""
+      },
+      "is_duplicate": false
+    },
+    {
+      "before": "GradientBoostingClassifier(presort=True)",
+      "after": "HistGradientBoostingClassifier()",
+      "template_variable_constraints": {},
+      "version": "1.5",
+      "pr_number": 14907,
+      "provenance": "unittest_4.py/test_assert3",
+      "keywords": [
+        "GradientBoostingClassifier",
+        "presort",
+        "True"
+      ],
+      "is_valid": true,
+      "answers": {
+        "correct": "y",
+        "has_examples": "n",
+        "comments": ""
+      },
+      "is_duplicate": false
+    },
+    {
+      "before": "DecisionTreeRegressor(presort=True)",
+      "after": "DecisionTreeRegressor()",
+      "template_variable_constraints": {
+        "DecisionTreeRegressor": "[<Name full_name='sklearn.tree._classes.DecisionTreeRegressor', description='class DecisionTreeRegressor'>]"
+      },
+      "version": "1.5",
+      "pr_number": 14907,
+      "provenance": "unittest_4.py/test_assert2",
+      "keywords": [
+        "DecisionTreeRegressor"
+      ],
+      "is_valid": true,
+      "answers": {
+        "correct": "y",
+        "has_examples": "n",
+        "comments": ""
+      },
+      "is_duplicate": false
+    },
+    {
+      "before": "mean_absolute_percentage_error(:[gen_args_0], :[[aag]], :[[aah]])",
+      "after": "mean_absolute_percentage_error(:[gen_args_0], sample_weight=:[[aag]], multioutput=:[[aah]])",
+      "template_variable_constraints": {
+        "aag": "[<Name full_name='builtins.list', description='instance list'>, <Name full_name='numpy.ndarray', description='instance ndarray'>, <Name full_name='numpy._typing._generic_alias._GenericAlias.__origin__', description='def __origin__'>]",
+        "aah": "[<Name full_name='builtins.str', description='instance str'>]",
+        "mean_absolute_percentage_error": "[<Name full_name='sklearn.metrics._regression.mean_absolute_percentage_error', description='def mean_absolute_percentage_error'>]"
+      },
+      "version": "1.5",
+      "pr_number": 21576,
+      "provenance": "unittest_3.py/test_assert1",
+      "keywords": [
+        "mean_absolute_percentage_error"
+      ],
+      "is_valid": true,
+      "answers": {
+        "correct": "y",
+        "has_examples": "n",
+        "comments": ""
+      },
+      "is_duplicate": false
+    },
+    {
+      "before": "KMeans(n_clusters=n_clusters, precompute_distances=False)",
+      "after": "KMeans(n_clusters=n_clusters)",
+      "template_variable_constraints": {
+        "KMeans": "[<Name full_name='sklearn.cluster._kmeans.KMeans', description='class KMeans'>]",
+        "n_clusters": "[<Name full_name='builtins.int', description='instance int'>]"
+      },
+      "version": "1.5",
+      "pr_number": 11950,
+      "provenance": "unittest_4.py/test_assert2",
+      "is_valid": true,
+      "keywords": [
+        ""
+      ],
+      "answers": {
+        "correct": "y",
+        "has_examples": "n",
+        "comments": ""
+      },
+      "is_duplicate": false
+    },
+    {
+      "before": ":[[aci]] = BayesianRidge(normalize=True)\n:[[akf]].fit(X, :[[akd]])\nreturn :[[aqz]].predict(X)",
+      "after": "scaler = StandardScaler()\nX_scaled = scaler.fit_transform(X)\n:[[aci]] = BayesianRidge(normalize=False)\n:[[akf]].fit(X_scaled, :[[akd]])\nreturn :[[aqz]].predict(X_scaled)",
+      "template_variable_constraints": {
+        "aci": "[<Name full_name='sklearn.linear_model._bayes.BayesianRidge', description='instance BayesianRidge'>]",
+        "akd": "[<Name full_name='builtins.float', description='instance float'>, <Name full_name='builtins.list', description='instance list'>]",
+        "akf": "[<Name full_name='sklearn.linear_model._bayes.BayesianRidge', description='instance BayesianRidge'>]",
+        "aqz": "[<Name full_name='sklearn.linear_model._bayes.BayesianRidge', description='instance BayesianRidge'>]",
+        "BayesianRidge": "[<Name full_name='sklearn.linear_model._bayes.BayesianRidge', description='class BayesianRidge'>]"
+      },
+      "version": "1.5",
+      "pr_number": 17746,
+      "provenance": "unittest_0.py/test_bayesian_ridge",
+      "keywords": [
+        "BayesianRidge",
+        "nroamlzie"
+      ],
+      "is_valid": true,
+      "answers": {
+        "correct": "n",
+        "has_examples": "n",
+        "comments": ""
+      },
+      "is_duplicate": false
+    },
+    {
+      "before": ":[[aci]] = ARDRegression(normalize=True)\n:[[akb]].fit(X, :[[ajz]])\nreturn :[[aqv]].predict(X)",
+      "after": "scaler = StandardScaler()\nX_scaled = scaler.fit_transform(X)\n:[[aci]] = ARDRegression(normalize=False)\n:[[akb]].fit(X_scaled, :[[ajz]])\nreturn :[[aqv]].predict(X_scaled)",
+      "template_variable_constraints": {
+        "aci": "[<Name full_name='sklearn.linear_model._bayes.ARDRegression', description='instance ARDRegression'>]",
+        "ajz": "[<Name full_name='builtins.float', description='instance float'>, <Name full_name='builtins.list', description='instance list'>]",
+        "akb": "[<Name full_name='sklearn.linear_model._bayes.ARDRegression', description='instance ARDRegression'>]",
+        "aqv": "[<Name full_name='sklearn.linear_model._bayes.ARDRegression', description='instance ARDRegression'>]",
+        "ARDRegression": "[<Name full_name='sklearn.linear_model._bayes.ARDRegression', description='class ARDRegression'>]"
+      },
+      "version": "1.5",
+      "pr_number": 17746,
+      "provenance": "unittest_2.py/test_assert2",
+      "keywords": [
+        "ARDRegression",
+        "normalize"
+      ],
+      "is_valid": true,
+      "answers": {
+        "correct": "n",
+        "has_examples": "n",
+        "comments": ""
+      },
+      "is_duplicate": false
+    },
+    {
+      "before": "DecisionTreeClassifier(presort=True)",
+      "after": "DecisionTreeClassifier()",
+      "template_variable_constraints": {
+        "DecisionTreeClassifier": "[<Name full_name='sklearn.tree._classes.DecisionTreeClassifier', description='class DecisionTreeClassifier'>]"
+      },
+      "version": "1.5",
+      "pr_number": 14907,
+      "provenance": "unittest_3.py/test_assert1",
+      "keywords": [
+        "DecisionTreeClassifier",
+        "presort"
+      ],
+      "is_valid": true,
+      "answers": {
+        "correct": "y",
+        "has_examples": "n",
+        "comments": ""
+      },
+      "is_duplicate": false
+    },
+    {
+      "before": "return calibration_curve(:[[adr]], y_pred, n_bins=:[adt], normalize=True)",
+      "after": "y_pred_normalized = (y_pred - y_pred.min()) / (y_pred.max() - y_pred.min())\nreturn calibration_curve(:[[adr]], y_pred_normalized, n_bins=:[adt])",
+      "template_variable_constraints": {
+        "adr": "[<Name full_name='builtins.list', description='instance list'>, <Name full_name='numpy.ndarray', description='instance ndarray'>, <Name full_name='numpy._typing._generic_alias._GenericAlias.__origin__', description='def __origin__'>]",
+        "adt": "[<Name full_name='builtins.int', description='instance int'>]",
+        "calibration_curve": "[<Name full_name='sklearn.calibration.calibration_curve', description='def calibration_curve'>]"
+      },
+      "version": "1.5",
+      "pr_number": 23095,
+      "provenance": "unittest_2.py/test_assert1",
+      "keywords": [
+        "calibration_curve",
+        "normalize"
+      ],
+      "is_valid": true,
+      "answers": {
+        "correct": "n",
+        "has_examples": "n",
+        "comments": ""
+      },
+      "is_duplicate": false
+    },
+    {
+      "before": "return calibration_curve(:[gen_args_0], normalize=True)",
+      "after": "y_pred = (y_pred - y_pred.min()) / (y_pred.max() - y_pred.min())\nreturn calibration_curve(:[gen_args_0])",
+      "template_variable_constraints": {
+        "calibration_curve": "[<Name full_name='sklearn.calibration.calibration_curve', description='def calibration_curve'>]"
+      },
+      "version": "1.5",
+      "pr_number": 23095,
+      "provenance": "unittest_0.py/test_assert",
+      "keywords": [
+        "calibration_curve"
+      ],
+      "is_valid": true,
+      "answers": {
+        "correct": "n",
+        "has_examples": "n",
+        "comments": "can capture with rule"
+      },
+      "is_duplicate": false
+    },
+    {
+      "before": ":[[aad]].n_input_features_",
+      "after": ":[[aad]].n_features_in_",
+      "template_variable_constraints": {
+        "aad": "[<Name full_name='sklearn.preprocessing._polynomial.PolynomialFeatures', description='instance PolynomialFeatures'>]"
+      },
+      "version": "1.5",
+      "pr_number": 20240,
+      "provenance": "unittest_2.py/test_assert1",
+      "keywords": [
+        ""
+      ],
+      "is_valid": true,
+      "answers": {
+        "correct": "y",
+        "has_examples": "N",
+        "comments": ""
+      },
+      "is_duplicate": false
+    },
+    {
+      "before": ":[[aci]] = ARDRegression(normalize=True)\n:[[akk]].fit(X, :[[aki]])\nreturn :[[aru]].predict(:[[ars]])",
+      "after": "scaler = StandardScaler()\nX_scaled = scaler.fit_transform(X)\n:[[aci]] = ARDRegression(normalize=False)\n:[[akk]].fit(X_scaled, :[[aki]])\nreturn :[[aru]].predict(scaler.transform(:[[ars]]))",
+      "template_variable_constraints": {
+        "aci": "[<Name full_name='sklearn.linear_model._bayes.ARDRegression', description='instance ARDRegression'>]",
+        "aki": "[<Name full_name='builtins.float', description='instance float'>, <Name full_name='numpy.ndarray', description='instance ndarray'>]",
+        "akk": "[<Name full_name='sklearn.linear_model._bayes.ARDRegression', description='instance ARDRegression'>]",
+        "ars": "[<Name full_name='builtins.float', description='instance float'>, <Name full_name='numpy.ndarray', description='instance ndarray'>]",
+        "aru": "[<Name full_name='sklearn.linear_model._bayes.ARDRegression', description='instance ARDRegression'>]",
+        "ARDRegression": "[<Name full_name='sklearn.linear_model._bayes.ARDRegression', description='class ARDRegression'>]"
+      },
+      "version": "1.5",
+      "pr_number": 17746,
+      "provenance": "unittest_1.py/test_assert_ard_regression",
+      "keywords": [
+        "ARDRegression",
+        "normalize"
+      ],
+      "is_valid": true,
+      "answers": {
+        "correct": "n",
+        "has_examples": "n",
+        "comments": ""
+      },
+      "is_duplicate": false
+    },
+    {
+      "before": "LogisticRegression(penalty='none', random_state=:[aar])",
+      "after": "LogisticRegression(penalty=None, random_state=:[aar])",
+      "template_variable_constraints": {
+        "aar": "[<Name full_name='builtins.int', description='instance int'>]",
+        "LogisticRegression": "[<Name full_name='sklearn.linear_model._logistic.LogisticRegression', description='class LogisticRegression'>]"
+      },
+      "version": "1.5",
+      "pr_number": 23877,
+      "provenance": "unittest_1.py/test_assert1",
+      "keywords": [
+        "LogisticRegression",
+        "none"
+      ],
+      "is_valid": true,
+      "answers": {
+        "correct": "y",
+        "has_examples": "y",
+        "comments": ""
+      },
+      "is_duplicate": false
+    },
+    {
+      "before": "OneHotEncoder(sparse=:[aao])",
+      "after": "OneHotEncoder(sparse_output=:[aao])",
+      "template_variable_constraints": {
+        "OneHotEncoder": "[<Name full_name='sklearn.preprocessing._encoders.OneHotEncoder', description='class OneHotEncoder'>]"
+      },
+      "version": "1.5",
+      "pr_number": 24412,
+      "provenance": "unittest_1.py/test_assert1",
+      "keywords": [
+        "OneHotEncoder",
+        "sparse"
+      ],
+      "is_valid": true,
+      "answers": {
+        "correct": "y",
+        "has_examples": "y",
+        "comments": ""
+      },
+      "is_duplicate": false
+    },
+    {
+      "before": "KMeans(n_clusters=:[aaq], algorithm='auto')",
+      "after": "KMeans(n_clusters=:[aaq], algorithm='lloyd')",
+      "template_variable_constraints": {
+        "aaq": "[<Name full_name='builtins.int', description='instance int'>]",
+        "KMeans": "[<Name full_name='sklearn.cluster._kmeans.KMeans', description='class KMeans'>]"
+      },
+      "version": "1.5",
+      "pr_number": 21735,
+      "provenance": "unittest_0.py/test_assert1",
+      "keywords": [
+        "KMeans",
+        "auto"
+      ],
+      "is_valid": true,
+      "answers": {
+        "correct": "y",
+        "has_examples": "n",
+        "comments": ""
+      },
+      "is_duplicate": false
+    },
+    {
+      "before": "DistanceMetric.get_metric('wminkowski', :[gen_args_0])",
+      "after": "DistanceMetric.get_metric('minkowski', :[gen_args_0])",
+      "template_variable_constraints": {
+        "DistanceMetric.get_metric": "[<Name full_name='sklearn.metrics._dist_metrics.DistanceMetric', description='class DistanceMetric'>]"
+      },
+      "version": "1.5",
+      "pr_number": 21873,
+      "provenance": "unittest_4.py/test_assert1",
+      "keywords": [
+        ""
+      ],
+      "is_valid": true,
+      "answers": {
+        "correct": "n",
+        "has_examples": "n",
+        "comments": "cannot be captured as a rule"
+      },
+      "is_duplicate": false
+    },
+    {
+      "before": "LogisticRegression(penalty='none')",
+      "after": "LogisticRegression(penalty=None)",
+      "template_variable_constraints": {
+        "LogisticRegression": "[<Name full_name='sklearn.linear_model._logistic.LogisticRegression', description='class LogisticRegression'>]"
+      },
+      "version": "1.5",
+      "pr_number": 23877,
+      "provenance": "unittest_0.py/test_assert1",
+      "keywords": [
+        "LogisticRegression",
+        "none"
+      ],
+      "is_valid": true,
+      "answers": {
+        "correct": "y",
+        "has_examples": "y",
+        "comments": ""
+      },
+      "is_duplicate": false
+    },
+    {
+      "before": "safe_indexing(:[gen_args_0])",
+      "after": "safe_indexing(:[gen_args_0], axis=0)",
+      "template_variable_constraints": {},
+      "version": "1.5",
+      "pr_number": 14475,
+      "provenance": "unittest_2.py/test_assert1",
+      "keywords": [
+        "safe_indexing"
+      ],
+      "is_valid": true,
+      "answers": {
+        "correct": "y",
+        "has_examples": "n",
+        "comments": ""
+      },
+      "is_duplicate": false
+    },
+    {
+      "before": ":[aej] = calibration_curve(:[[ahc]], y_pred, n_bins=:[ahe], normalize=True)",
+      "after": "y_pred_normalized = (y_pred - y_pred.min()) / (y_pred.max() - y_pred.min())\n:[aej] = calibration_curve(:[[ahc]], y_pred_normalized, n_bins=:[ahe])",
+      "template_variable_constraints": {
+        "aej": "[<Name full_name='numpy.ndarray', description='instance ndarray'>, <Name full_name='numpy._typing._generic_alias._GenericAlias.__origin__', description='def __origin__'>]",
+        "ahc": "[<Name full_name='builtins.list', description='instance list'>, <Name full_name='numpy.ndarray', description='instance ndarray'>, <Name full_name='numpy._typing._generic_alias._GenericAlias.__origin__', description='def __origin__'>]",
+        "ahe": "[<Name full_name='builtins.int', description='instance int'>]",
+        "calibration_curve": "[<Name full_name='sklearn.calibration.calibration_curve', description='def calibration_curve'>]"
+      },
+      "version": "1.5",
+      "pr_number": 23095,
+      "provenance": "unittest_3.py/test_assert1",
+      "keywords": [
+        "calibration_curve"
+      ],
+      "is_valid": true,
+      "answers": {
+        "correct": "n",
+        "has_examples": "n",
+        "comments": ""
+      },
+      "is_duplicate": false
+    },
+    {
+      "before": "KMeans(:[gen_args_0], precompute_distances=True)",
+      "after": "KMeans(:[gen_args_0], precompute_distances=False)",
+      "template_variable_constraints": {
+        "KMeans": "[<Name full_name='sklearn.cluster._kmeans.KMeans', description='class KMeans'>]"
+      },
+      "version": "1.5",
+      "pr_number": 11950,
+      "provenance": "unittest_2.py/test_assert1",
+      "keywords": [
+        "KMeans",
+        "precompute_distances"
+      ],
+      "is_valid": true,
+      "answers": {
+        "correct": "n",
+        "has_examples": "n",
+        "comments": ""
+      },
+      "is_duplicate": false
+    },
+    {
+      "before": "(:[[aam]].cv_results_['mean_score'], :[[adg]].cv_results_['std_score'], :[[aga]].cv_results_['split0_score'])",
+      "after": "(:[[aam]].cv_results_['mean_test_score'], :[[adg]].cv_results_['std_test_score'], :[[aga]].cv_results_['split0_test_score'])",
+      "template_variable_constraints": {
+        "aam": "[<Name full_name='sklearn.covariance._graph_lasso.GraphicalLassoCV', description='instance GraphicalLassoCV'>]",
+        "adg": "[<Name full_name='sklearn.covariance._graph_lasso.GraphicalLassoCV', description='instance GraphicalLassoCV'>]",
+        "aga": "[<Name full_name='sklearn.covariance._graph_lasso.GraphicalLassoCV', description='instance GraphicalLassoCV'>]"
+      },
+      "version": "1.5",
+      "pr_number": 20583,
+      "provenance": "unittest_2.py/test_assert1",
+      "is_valid": true,
+      "keywords": [
+        ""
+      ],
+      "answers": {
+        "correct": "n",
+        "has_examples": "n",
+        "comments": "can be captured"
+      },
+      "is_duplicate": false
+    },
+    {
+      "before": "KMeans(n_clusters=:[aaq], algorithm='full')",
+      "after": "KMeans(n_clusters=:[aaq], algorithm='lloyd')",
+      "template_variable_constraints": {
+        "aaq": "[<Name full_name='builtins.int', description='instance int'>]",
+        "KMeans": "[<Name full_name='sklearn.cluster._kmeans.KMeans', description='class KMeans'>]"
+      },
+      "version": "1.5",
+      "pr_number": 21735,
+      "provenance": "unittest_1.py/test_assert2",
+      "keywords": [
+        "KMeans",
+        "full"
+      ],
+      "is_valid": true,
+      "answers": {
+        "correct": "y",
+        "has_examples": "y",
+        "comments": ""
+      },
+      "is_duplicate": false
+    },
+    {
+      "before": "KMeans(n_clusters=n_clusters, precompute_distances=True)",
+      "after": "KMeans(n_clusters=n_clusters)",
+      "template_variable_constraints": {
+        "KMeans": "[<Name full_name='sklearn.cluster._kmeans.KMeans', description='class KMeans'>]",
+        "n_clusters": "[<Name full_name='builtins.int', description='instance int'>]"
+      },
+      "version": "1.5",
+      "pr_number": 11950,
+      "provenance": "unittest_4.py/test_assert1",
+      "is_valid": true,
+      "keywords": [
+        "KMeans",
+        "precompute",
+        "distances"
+      ],
+      "answers": {
+        "correct": "y",
+        "has_examples": "y",
+        "comments": ""
+      },
+      "is_duplicate": false
+    },
+    {
+      "before": "ExtraTreeClassifier(max_features='auto')",
+      "after": "ExtraTreeClassifier(max_features='sqrt')",
+      "template_variable_constraints": {
+        "ExtraTreeClassifier": "[<Name full_name='sklearn.tree._classes.ExtraTreeClassifier', description='class ExtraTreeClassifier'>]"
+      },
+      "version": "1.5",
+      "pr_number": 22476,
+      "provenance": "unittest_3.py/test_assert3",
+      "keywords": [
+        "ExtraTreeClassifier",
+        "auto"
+      ],
+      "is_valid": true,
+      "answers": {
+        "correct": "y",
+        "has_examples": "n",
+        "comments": ""
+      },
+      "is_duplicate": false
+    },
+    {
+      "before": "KMeans(:[gen_args_0], precompute_distances=True)",
+      "after": "KMeans(:[gen_args_0])",
+      "template_variable_constraints": {
+        "KMeans": "[<Name full_name='sklearn.cluster._kmeans.KMeans', description='class KMeans'>]"
+      },
+      "version": "1.5",
+      "pr_number": 11950,
+      "provenance": "unittest_1.py/test_assert1",
+      "keywords": [
+        "KMeans"
+      ],
+      "is_valid": true,
+      "answers": {
+        "correct": "y",
+        "has_examples": "n",
+        "comments": ""
+      },
+      "is_duplicate": false
+    },
+    {
+      "before": ":[[aad]] = PassiveAggressiveClassifier(C=-1)",
+      "after": ":[[aad]] = PassiveAggressiveClassifier()\nclf.set_params(C=-1)",
+      "template_variable_constraints": {
+        "aad": "[<Name full_name='sklearn.linear_model._passive_aggressive.PassiveAggressiveClassifier', description='instance PassiveAggressiveClassifier'>]",
+        "PassiveAggressiveClassifier": "[<Name full_name='sklearn.linear_model._passive_aggressive.PassiveAggressiveClassifier', description='class PassiveAggressiveClassifier'>]"
+      },
+      "version": "1.5",
+      "pr_number": 20683,
+      "provenance": "unittest_2.py/test_assert2",
+      "keywords": [
+        "PassiveAggressiveClassifier"
+      ],
+      "is_valid": true,
+      "answers": {
+        "correct": "n",
+        "has_examples": "n",
+        "comments": ""
+      },
+      "is_duplicate": false
+    },
+    {
+      "before": "ExtraTreeRegressor(max_features='auto')",
+      "after": "ExtraTreeRegressor(max_features=1.0)",
+      "template_variable_constraints": {
+        "ExtraTreeRegressor": "[<Name full_name='sklearn.tree._classes.ExtraTreeRegressor', description='class ExtraTreeRegressor'>]"
+      },
+      "version": "1.5",
+      "pr_number": 22476,
+      "provenance": "unittest_3.py/test_assert4",
+      "keywords": [
+        "ExtraTreeRegressor",
+        "auto"
+      ],
+      "is_valid": true,
+      "answers": {
+        "correct": "y",
+        "has_examples": "n",
+        "comments": ""
+      },
+      "is_duplicate": false
+    },
+    {
+      "before": ":[[acg]] = LassoLars(normalize=True)\n:[[ahz]].fit(X, :[[ahx]])",
+      "after": "scaler = StandardScaler()\nX_scaled = scaler.fit_transform(X)\n:[[acg]] = LassoLars()\n:[[ahz]].fit(X_scaled, :[[ahx]])",
+      "template_variable_constraints": {
+        "acg": "[<Name full_name='sklearn.linear_model._least_angle.LassoLars', description='instance LassoLars'>]",
+        "ahx": "[<Name full_name='builtins.list', description='instance list'>, <Name full_name='numpy.ndarray', description='instance ndarray'>, <Name full_name='numpy._typing._generic_alias._GenericAlias.__origin__', description='def __origin__'>]",
+        "ahz": "[<Name full_name='sklearn.linear_model._least_angle.LassoLars', description='instance LassoLars'>]",
+        "LassoLars": "[<Name full_name='sklearn.linear_model._least_angle.LassoLars', description='class LassoLars'>]"
+      },
+      "version": "1.5",
+      "pr_number": 17769,
+      "provenance": "unittest_2.py/test_assert2",
+      "keywords": [
+        "LassoLars",
+        "normalize"
+      ],
+      "is_valid": true,
+      "answers": {
+        "correct": "n",
+        "has_examples": "n",
+        "comments": ""
+      },
+      "is_duplicate": false
+    }
+  ],
+  "scipy": [
+    {
+      "before": ":[[aah]].matching(:[gen_args_0])",
+      "after": ":[[aah]].hamming(:[gen_args_0])",
+      "template_variable_constraints": {
+        "aah": "[<Name full_name='scipy.spatial.distance', description='module distance'>]"
+      },
+      "version": "1.5",
+      "pr_number": 15880,
+      "provenance": "unittest_0.py/test_assert1",
+      "keywords": [
+        "matching"
+      ],
+      "is_valid": true,
+      "answers": {
+        "correct": "y",
+        "has_examples": "n",
+        "comments": "good example"
+      },
+      "is_duplicate": false
+    },
+    {
+      "before": "minimize(:[gen_args_0], options={'maxiter': :[afp]})",
+      "after": "minimize(:[gen_args_0], options={'maxfun': :[afp]})",
+      "template_variable_constraints": {
+        "afp": "[<Name full_name='builtins.int', description='instance int'>]",
+        "minimize": "[<Name full_name='scipy.optimize._minimize.minimize', description='def minimize'>]"
+      },
+      "version": "1.5",
+      "pr_number": 16261,
+      "provenance": "unittest_3.py/test_assert1",
+      "is_valid": true,
+      "keywords": [
+        ""
+      ],
+      "answers": {
+        "correct": "y",
+        "has_examples": "n",
+        "comments": ""
+      },
+      "is_duplicate": true
+    },
+    {
+      "before": ":[[aag]].matvec(:[[aae]])",
+      "after": ":[[aag]] * :[[aae]]",
+      "template_variable_constraints": {
+        "aae": "[<Name full_name='builtins.list', description='instance list'>, <Name full_name='numpy.ndarray', description='instance ndarray'>, <Name full_name='numpy._typing._generic_alias._GenericAlias.__origin__', description='def __origin__'>]",
+        "aag": "[<Name full_name='scipy.sparse._bsr.bsr_matrix', description='instance bsr_matrix'>]"
+      },
+      "version": "1.5",
+      "pr_number": 15879,
+      "provenance": "unittest_2.py/test_assert1",
+      "keywords": [
+        "matvec"
+      ],
+      "is_valid": true,
+      "answers": {
+        "correct": "y",
+        "has_examples": "n",
+        "comments": "n"
+      },
+      "is_duplicate": false
+    },
+    {
+      "before": ":[[aag]].matmat(:[[aae]])",
+      "after": ":[[aag]] * :[[aae]]",
+      "template_variable_constraints": {
+        "aae": "[<Name full_name='scipy.sparse._bsr.bsr_matrix', description='instance bsr_matrix'>]",
+        "aag": "[<Name full_name='scipy.sparse._bsr.bsr_matrix', description='instance bsr_matrix'>]"
+      },
+      "version": "1.5",
+      "pr_number": 15879,
+      "provenance": "unittest_1.py/test_assert2",
+      "keywords": [
+        "matmat"
+      ],
+      "is_valid": true,
+      "answers": {
+        "correct": "y",
+        "has_examples": "n",
+        "comments": ""
+      },
+      "is_duplicate": false
+    },
+    {
+      "before": "SphericalVoronoi(:[[aae]], radius=None)",
+      "after": "SphericalVoronoi(:[[aae]], radius=1)",
+      "template_variable_constraints": {
+        "aae": "[<Name full_name='builtins.list', description='instance list'>, <Name full_name='numpy.ndarray', description='instance ndarray'>, <Name full_name='numpy._typing._generic_alias._GenericAlias.__origin__', description='def __origin__'>]",
+        "SphericalVoronoi": "[<Name full_name='scipy.spatial._spherical_voronoi.SphericalVoronoi', description='class SphericalVoronoi'>]"
+      },
+      "version": "1.5",
+      "pr_number": 15882,
+      "provenance": "unittest_3.py/test_assert1",
+      "keywords": [
+        "SphericalVoronoi",
+        "None"
+      ],
+      "is_valid": true,
+      "answers": {
+        "correct": "y",
+        "has_examples": "n",
+        "comments": ""
+      },
+      "is_duplicate": false
+    },
+    {
+      "before": ":[[aak]].spline.qspline2d(:[[aae]])",
+      "after": ":[[aak]].qspline2d(:[[aae]])",
+      "template_variable_constraints": {
+        "aae": "[<Name full_name='builtins.float', description='instance float'>, <Name full_name='numpy.ndarray', description='instance ndarray'>]",
+        "aak": "[<Name full_name='scipy.signal', description='module signal'>]"
+      },
+      "version": "1.5",
+      "pr_number": 14419,
+      "provenance": "unittest_4.py/test_assert2",
+      "keywords": [
+        "spline",
+        "qspline2d"
+      ],
+      "is_valid": true,
+      "answers": {
+        "correct": "y",
+        "has_examples": "n",
+        "comments": ""
+      },
+      "is_duplicate": false
+    },
+    {
+      "before": "frechet_l.pdf(:[gen_args_0])",
+      "after": "weibull_max.pdf(:[gen_args_0])",
+      "template_variable_constraints": {},
+      "version": "1.5",
+      "pr_number": 12573,
+      "provenance": "unittest_2.py/test_assert1",
+      "keywords": [
+        "frechet_l"
+      ],
+      "is_valid": true,
+      "answers": {
+        "correct": "y",
+        "has_examples": "n",
+        "comments": ""
+      },
+      "is_duplicate": false
+    },
+    {
+      "before": "hanning(:[gen_args_0])",
+      "after": "hann(:[gen_args_0])",
+      "template_variable_constraints": {},
+      "version": "1.5",
+      "pr_number": 8148,
+      "provenance": "unittest_1.py/test_assert1",
+      "keywords": [
+        "hanning"
+      ],
+      "is_valid": true,
+      "answers": {
+        "correct": "y",
+        "has_examples": "n",
+        "comments": ""
+      },
+      "is_duplicate": false
+    },
+    {
+      "before": "solve(:[gen_args_0], sym_pos=True)",
+      "after": "solve(:[gen_args_0], assume_a='pos')",
+      "template_variable_constraints": {
+        "solve": "[<Name full_name='scipy.linalg._basic.solve', description='def solve'>]"
+      },
+      "version": "1.5",
+      "pr_number": 15821,
+      "provenance": "unittest_2.py/test_assert1",
+      "keywords": [
+        "solve",
+        "sym",
+        "pos"
+      ],
+      "is_valid": true,
+      "answers": {
+        "correct": "y",
+        "has_examples": "y",
+        "comments": "n"
+      },
+      "is_duplicate": false
+    },
+    {
+      "before": "rv_continuous(name=:[aae], extradoc='Extra documentation')",
+      "after": "MyContinuous(name=:[aae])",
+      "template_variable_constraints": {},
+      "version": "1.5",
+      "pr_number": 15877,
+      "provenance": "unittest_1.py/test_assert1",
+      "keywords": [
+        ""
+      ],
+      "is_valid": true,
+      "answers": {
+        "correct": "n",
+        "has_examples": "n",
+        "comments": ""
+      },
+      "is_duplicate": false
+    },
+    {
+      "before": ":[[aah]].hanning(:[gen_args_0])",
+      "after": ":[[aah]].hann(:[gen_args_0])",
+      "template_variable_constraints": {
+        "aah": "[<Name full_name='scipy.signal.windows', description='module windows'>]"
+      },
+      "version": "1.5",
+      "pr_number": 15881,
+      "provenance": "unittest_3.py/test_assert1",
+      "keywords": [
+        "hanning"
+      ],
+      "is_valid": true,
+      "answers": {
+        "correct": "y",
+        "has_examples": "n",
+        "comments": ""
+      },
+      "is_duplicate": false
+    },
+    {
+      "before": "solve_triangular(:[gen_args_0], debug=True)",
+      "after": "solve_triangular(:[gen_args_0])",
+      "template_variable_constraints": {
+        "solve_triangular": "[<Name full_name='scipy.linalg._basic.solve_triangular', description='def solve_triangular'>]"
+      },
+      "version": "1.5",
+      "pr_number": 15853,
+      "provenance": "unittest_2.py/test_assert2",
+      "keywords": [
+        "solve_triangular",
+        "debug"
+      ],
+      "is_valid": true,
+      "answers": {
+        "correct": "y",
+        "has_examples": "n",
+        "comments": ""
+      },
+      "is_duplicate": false
+    },
+    {
+      "before": "solve(:[gen_args_0], debug=True)",
+      "after": "solve(:[gen_args_0])",
+      "template_variable_constraints": {
+        "solve": "[<Name full_name='scipy.linalg._basic.solve', description='def solve'>]"
+      },
+      "version": "1.5",
+      "pr_number": 15853,
+      "provenance": "unittest_1.py/test_assert1",
+      "keywords": [
+        "solve",
+        "True"
+      ],
+      "is_valid": true,
+      "answers": {
+        "correct": "y",
+        "has_examples": "n",
+        "comments": ""
+      },
+      "is_duplicate": false
+    },
+    {
+      "before": "old_qspline2d(:[[aae]])",
+      "after": "qspline2d(:[[aae]])",
+      "template_variable_constraints": {
+        "aae": "[<Name full_name='builtins.float', description='instance float'>, <Name full_name='numpy.ndarray', description='instance ndarray'>]"
+      },
+      "version": "1.5",
+      "pr_number": 14419,
+      "provenance": "unittest_1.py/test_assert2",
+      "keywords": [
+        "old_qspline2d"
+      ],
+      "is_valid": true,
+      "answers": {
+        "correct": "n",
+        "has_examples": "n",
+        "comments": ""
+      },
+      "is_duplicate": false
+    },
+    {
+      "before": "old_cspline2d(:[gen_args_0])",
+      "after": "new_cspline2d(:[gen_args_0])",
+      "template_variable_constraints": {},
+      "version": "1.5",
+      "pr_number": 14419,
+      "provenance": "unittest_2.py/test_assert1",
+      "keywords": [
+        "old_cspline2d"
+      ],
+      "is_valid": true,
+      "answers": {
+        "correct": "n",
+        "has_examples": "n",
+        "comments": "nonsense"
+      },
+      "is_duplicate": false
+    },
+    {
+      "before": "CustomDiscrete(name=:[aae], extradoc='Extra documentation')",
+      "after": "CustomDiscrete(name=:[aae])",
+      "template_variable_constraints": {
+        "CustomDiscrete": "[<Name full_name='__main__.CustomDiscrete', description='class CustomDiscrete'>]"
+      },
+      "version": "1.5",
+      "pr_number": 15877,
+      "provenance": "unittest_2.py/test_assert_discrete",
+      "keywords": [
+        ""
+      ],
+      "is_valid": true,
+      "answers": {
+        "correct": "n",
+        "has_examples": "n",
+        "comments": ""
+      },
+      "is_duplicate": false
+    },
+    {
+      "before": "solve(:[gen_args_0], debug=False)",
+      "after": "solve(:[gen_args_0])",
+      "template_variable_constraints": {
+        "solve": "[<Name full_name='scipy.linalg._basic.solve', description='def solve'>]"
+      },
+      "version": "1.5",
+      "pr_number": 15853,
+      "provenance": "unittest_0.py/test_assert1",
+      "keywords": [
+        "solve",
+        "debug"
+      ],
+      "is_valid": true,
+      "answers": {
+        "correct": "y",
+        "has_examples": "n",
+        "comments": "n"
+      },
+      "is_duplicate": false
+    },
+    {
+      "before": "solve_banded(:[gen_args_0], debug=True)",
+      "after": "solve_banded(:[gen_args_0])",
+      "template_variable_constraints": {
+        "solve_banded": "[<Name full_name='scipy.linalg._basic.solve_banded', description='def solve_banded'>]"
+      },
+      "version": "1.5",
+      "pr_number": 15853,
+      "provenance": "unittest_3.py/test_assert3",
+      "keywords": [
+        "solve_banded"
+      ],
+      "is_valid": true,
+      "answers": {
+        "correct": "y",
+        "has_examples": "n",
+        "comments": ""
+      },
+      "is_duplicate": false
+    },
+    {
+      "before": "minimize(:[gen_args_0], options={'maxiter': :[aap]})",
+      "after": "minimize(:[gen_args_0], options={'maxfun': :[aap]})",
+      "template_variable_constraints": {
+        "aap": "[<Name full_name='builtins.int', description='instance int'>]",
+        "minimize": "[<Name full_name='scipy.optimize._minimize.minimize', description='def minimize'>]"
+      },
+      "version": "1.5",
+      "pr_number": 16261,
+      "provenance": "unittest_2.py/test_assert1",
+      "keywords": [
+        ""
+      ],
+      "is_valid": true,
+      "answers": {
+        "correct": "y",
+        "has_examples": "y",
+        "comments": ""
+      },
+      "is_duplicate": true
+    },
+    {
+      "before": "matching(:[gen_args_0])",
+      "after": "hamming(:[gen_args_0])",
+      "template_variable_constraints": {},
+      "version": "1.5",
+      "pr_number": 15880,
+      "provenance": "unittest_1.py/test_assert1",
+      "keywords": [
+        "matching"
+      ],
+      "is_valid": true,
+      "answers": {
+        "correct": "y",
+        "has_examples": "n",
+        "comments": ""
+      },
+      "is_duplicate": false
+    },
+    {
+      "before": "minimize(:[[aae]], :[[aaf]])",
+      "after": "minimize(:[[aae]], np.squeeze(:[[aaf]]))",
+      "template_variable_constraints": {
+        "aae": "[<Name full_name='__main__.rosen', description='def rosen'>]",
+        "aaf": "[<Name full_name='numpy.ndarray', description='instance ndarray'>]",
+        "minimize": "[<Name full_name='scipy.optimize._minimize.minimize', description='def minimize'>]"
+      },
+      "version": "1.5",
+      "pr_number": 15804,
+      "provenance": "unittest_0.py/test_assert1",
+      "keywords": [
+        "minimize"
+      ],
+      "is_valid": true,
+      "answers": {
+        "correct": "y",
+        "has_examples": "n",
+        "comments": ""
+      },
+      "is_duplicate": false
+    },
+    {
+      "before": "rv_discrete(name=:[aae], extradoc='Extra documentation')",
+      "after": "MyDiscrete(name=:[aae])",
+      "template_variable_constraints": {},
+      "version": "1.5",
+      "pr_number": 15877,
+      "provenance": "unittest_1.py/test_assert2",
+      "keywords": [
+        ""
+      ],
+      "is_valid": true,
+      "answers": {
+        "correct": "n",
+        "has_examples": "n",
+        "comments": ""
+      },
+      "is_duplicate": false
+    },
+    {
+      "before": ":[[aam]].spline.cspline2d(:[gen_args_0])",
+      "after": ":[[aam]].cspline2d(:[gen_args_0])",
+      "template_variable_constraints": {
+        "aam": "[<Name full_name='scipy.signal', description='module signal'>]"
+      },
+      "version": "1.5",
+      "pr_number": 14419,
+      "provenance": "unittest_4.py/test_assert1",
+      "keywords": [
+        "spline",
+        "cspline2d"
+      ],
+      "is_valid": true,
+      "answers": {
+        "correct": "y",
+        "has_examples": "n",
+        "comments": ""
+      },
+      "is_duplicate": false
+    },
+    {
+      "before": "frechet_r.pdf(:[gen_args_0])",
+      "after": "weibull_min.pdf(:[gen_args_0])",
+      "template_variable_constraints": {},
+      "version": "1.5",
+      "pr_number": 12573,
+      "provenance": "unittest_2.py/test_assert2",
+      "keywords": [
+        "frechet_r"
+      ],
+      "is_valid": true,
+      "answers": {
+        "correct": "y",
+        "has_examples": "n",
+        "comments": ""
+      },
+      "is_duplicate": false
+    },
+    {
+      "before": ":[[aai]].query(:[gen_args_0], n_jobs=:[aag])",
+      "after": ":[[aai]].query(:[gen_args_0], workers=:[aag])",
+      "template_variable_constraints": {
+        "aag": "[<Name full_name='builtins.int', description='instance int'>]",
+        "aai": "[<Name full_name='scipy.spatial._ckdtree.cKDTree', description='instance cKDTree'>]"
+      },
+      "version": "1.5",
+      "pr_number": 15795,
+      "provenance": "unittest_2.py/test_assert2",
+      "keywords": [
+        "query"
+      ],
+      "is_valid": true,
+      "answers": {
+        "correct": "y",
+        "has_examples": "y",
+        "comments": ""
+      },
+      "is_duplicate": false
+    },
+    {
+      "before": ":[[aah]].py_vq2(:[gen_args_0])",
+      "after": ":[[aah]].py_vq(:[gen_args_0])",
+      "template_variable_constraints": {
+        "aah": "[<Name full_name='scipy.cluster.vq', description='module vq'>]"
+      },
+      "version": "1.5",
+      "pr_number": 15874,
+      "provenance": "unittest_2.py/test_assert1",
+      "keywords": [
+        "py_vq2"
+      ],
+      "is_valid": true,
+      "answers": {
+        "correct": "y",
+        "has_examples": "n",
+        "comments": "good example"
+      },
+      "is_duplicate": false
+    },
+    {
+      "before": "CustomContinuous(name=:[aae], extradoc='Extra documentation')",
+      "after": "CustomContinuous(name=:[aae])",
+      "template_variable_constraints": {
+        "CustomContinuous": "[<Name full_name='__main__.CustomContinuous', description='class CustomContinuous'>]"
+      },
+      "version": "1.5",
+      "pr_number": 15877,
+      "provenance": "unittest_2.py/test_assert_continuous",
+      "keywords": [
+        ""
+      ],
+      "is_valid": true,
+      "answers": {
+        "correct": "n",
+        "has_examples": "n",
+        "comments": "cannot capture with a rule"
+      },
+      "is_duplicate": false
+    },
+    {
+      "before": "minimize(:[gen_args_0], options={'maxiter': :[aeh]})",
+      "after": "minimize(:[gen_args_0], options={'maxfun': :[aeh]})",
+      "template_variable_constraints": {
+        "aeh": "[<Name full_name='builtins.int', description='instance int'>]",
+        "minimize": "[<Name full_name='scipy.optimize._minimize.minimize', description='def minimize'>]"
+      },
+      "version": "1.5",
+      "pr_number": 16261,
+      "provenance": "unittest_0.py/test_assert1",
+      "keywords": [
+        "minimize"
+      ],
+      "is_valid": true,
+      "answers": {
+        "correct": "y",
+        "has_examples": "n",
+        "comments": ""
+      },
+      "is_duplicate": false
+    },
+    {
+      "before": "solve_triangular(:[gen_args_0], debug=False)",
+      "after": "solve_triangular(:[gen_args_0])",
+      "template_variable_constraints": {
+        "solve_triangular": "[<Name full_name='scipy.linalg._basic.solve_triangular', description='def solve_triangular'>]"
+      },
+      "version": "1.5",
+      "pr_number": 15853,
+      "provenance": "unittest_0.py/test_assert2",
+      "keywords": [
+        "solve_triangular",
+        "debug",
+        "False"
+      ],
+      "is_valid": true,
+      "answers": {
+        "correct": "y",
+        "has_examples": "n",
+        "comments": ""
+      },
+      "is_duplicate": false
+    },
+    {
+      "before": "solve_banded(:[gen_args_0], debug=False)",
+      "after": "solve_banded(:[gen_args_0])",
+      "template_variable_constraints": {
+        "solve_banded": "[<Name full_name='scipy.linalg._basic.solve_banded', description='def solve_banded'>]"
+      },
+      "version": "1.5",
+      "pr_number": 15853,
+      "provenance": "unittest_0.py/test_assert3",
+      "keywords": [
+        "solve_banded",
+        "debug",
+        "False"
+      ],
+      "is_valid": true,
+      "answers": {
+        "correct": "y",
+        "has_examples": "n",
+        "comments": ""
+      },
+      "is_duplicate": false
+    },
+    {
+      "before": "old_cspline2d(:[gen_args_0])",
+      "after": "cspline2d(:[gen_args_0])",
+      "template_variable_constraints": {},
+      "version": "1.5",
+      "pr_number": 14419,
+      "provenance": "unittest_1.py/test_assert1",
+      "keywords": [
+        "old_cspline2d"
+      ],
+      "is_valid": true,
+      "answers": {
+        "correct": "n",
+        "has_examples": "n",
+        "comments": ""
+      },
+      "is_duplicate": false
+    },
+    {
+      "before": "old_qspline2d(:[[aae]])",
+      "after": "new_qspline2d(:[[aae]])",
+      "template_variable_constraints": {
+        "aae": "[<Name full_name='builtins.float', description='instance float'>, <Name full_name='numpy.ndarray', description='instance ndarray'>]"
+      },
+      "version": "1.5",
+      "pr_number": 14419,
+      "provenance": "unittest_2.py/test_assert2",
+      "keywords": [
+        "old_qspline2d"
+      ],
+      "is_valid": true,
+      "answers": {
+        "correct": "n",
+        "has_examples": "n",
+        "comments": ""
+      },
+      "is_duplicate": false
+    }
+  ],
+  "numpy": [
+    {
+      "before": ":[[aag]].dtype('O8')",
+      "after": ":[[aag]].dtype('O')",
+      "template_variable_constraints": {
+        "aag": "[<Name full_name='numpy', description='module numpy'>]"
+      },
+      "version": "1.5",
+      "pr_number": 15822,
+      "provenance": "unittest_1.py/test_assert2",
+      "keywords": [
+        "dtype"
+      ],
+      "is_valid": true,
+      "answers": {
+        "correct": "y",
+        "has_examples": "",
+        "comments": ""
+      },
+      "is_duplicate": false
+    },
+    {
+      "before": ":[[aag]].alltrue(:[[aae]])",
+      "after": ":[[aag]].all(:[[aae]])",
+      "template_variable_constraints": {
+        "aae": "[<Name full_name='builtins.list', description='instance list'>, <Name full_name='numpy.ndarray', description='instance ndarray'>, <Name full_name='numpy._typing._generic_alias._GenericAlias.__origin__', description='def __origin__'>]",
+        "aag": "[<Name full_name='numpy', description='module numpy'>]"
+      },
+      "version": "1.5",
+      "pr_number": 23314,
+      "provenance": "unittest_0.py/test_assert4",
+      "keywords": [
+        "alltrue"
+      ],
+      "is_valid": true,
+      "answers": {
+        "correct": "y",
+        "has_examples": "y",
+        "comments": ""
+      },
+      "is_duplicate": false
+    },
+    {
+      "before": ":[[aag]].dtype('Complex64')",
+      "after": ":[[aag]].dtype('complex128')",
+      "template_variable_constraints": {
+        "aag": "[<Name full_name='numpy', description='module numpy'>]"
+      },
+      "version": "1.5",
+      "pr_number": 16554,
+      "provenance": "unittest_4.py/test_assert1",
+      "keywords": [
+        "dtype"
+      ],
+      "is_valid": true,
+      "answers": {
+        "correct": "y",
+        "has_examples": "n",
+        "comments": ""
+      },
+      "is_duplicate": false
+    },
+    {
+      "before": ":[[aag]].dtype('O4')",
+      "after": ":[[aag]].dtype('O')",
+      "template_variable_constraints": {
+        "aag": "[<Name full_name='numpy', description='module numpy'>]"
+      },
+      "version": "1.5",
+      "pr_number": 15822,
+      "provenance": "unittest_2.py/test_assert1",
+      "keywords": [
+        "dtype 04"
+      ],
+      "is_valid": true,
+      "answers": {
+        "correct": "y",
+        "has_examples": "n",
+        "comments": ""
+      },
+      "is_duplicate": false
+    },
+    {
+      "before": ":[[aag]].product(:[[aae]])",
+      "after": ":[[aag]].prod(:[[aae]])",
+      "template_variable_constraints": {
+        "aae": "[<Name full_name='builtins.list', description='instance list'>, <Name full_name='numpy.ndarray', description='instance ndarray'>, <Name full_name='numpy._typing._generic_alias._GenericAlias.__origin__', description='def __origin__'>]",
+        "aag": "[<Name full_name='numpy', description='module numpy'>]"
+      },
+      "version": "1.5",
+      "pr_number": 23314,
+      "provenance": "unittest_2.py/test_assert1",
+      "keywords": [
+        "product"
+      ],
+      "is_valid": true,
+      "answers": {
+        "correct": "y",
+        "has_examples": "y",
+        "comments": ""
+      },
+      "is_duplicate": false
+    },
+    {
+      "before": ":[[aai]].rollaxis(:[gen_args_0])",
+      "after": ":[[aai]].moveaxis(:[gen_args_0])",
+      "template_variable_constraints": {
+        "aai": "[<Name full_name='numpy', description='module numpy'>]"
+      },
+      "version": "1.5",
+      "pr_number": 9475,
+      "provenance": "unittest_1.py/test_assert2",
+      "keywords": [
+        "rollaxis"
+      ],
+      "is_valid": true,
+      "answers": {
+        "correct": "n",
+        "has_examples": "y",
+        "comments": ""
+      },
+      "is_duplicate": false
+    },
+    {
+      "before": ":[[aag]].sometrue(:[[aae]])",
+      "after": ":[[aag]].any(:[[aae]])",
+      "template_variable_constraints": {
+        "aae": "[<Name full_name='builtins.list', description='instance list'>, <Name full_name='numpy.ndarray', description='instance ndarray'>, <Name full_name='numpy._typing._generic_alias._GenericAlias.__origin__', description='def __origin__'>]",
+        "aag": "[<Name full_name='numpy', description='module numpy'>]"
+      },
+      "version": "1.5",
+      "pr_number": 23314,
+      "provenance": "unittest_1.py/test_assert3",
+      "keywords": [
+        "sometrue"
+      ],
+      "is_valid": true,
+      "answers": {
+        "correct": "y",
+        "has_examples": "y",
+        "comments": ""
+      },
+      "is_duplicate": false
+    },
+    {
+      "before": ":[[aag]].cumproduct(:[[aae]])",
+      "after": ":[[aag]].cumprod(:[[aae]])",
+      "template_variable_constraints": {
+        "aae": "[<Name full_name='builtins.list', description='instance list'>, <Name full_name='numpy.ndarray', description='instance ndarray'>, <Name full_name='numpy._typing._generic_alias._GenericAlias.__origin__', description='def __origin__'>]",
+        "aag": "[<Name full_name='numpy', description='module numpy'>]"
+      },
+      "version": "1.5",
+      "pr_number": 23314,
+      "provenance": "unittest_1.py/test_assert2",
+      "keywords": [
+        "cumproduct"
+      ],
+      "is_valid": true,
+      "answers": {
+        "correct": "y",
+        "has_examples": "n",
+        "comments": ""
+      },
+      "is_duplicate": false
+    },
+    {
+      "before": ":[[aag]].dtype('UInt32')",
+      "after": ":[[aag]].dtype('uint32')",
+      "template_variable_constraints": {
+        "aag": "[<Name full_name='numpy', description='module numpy'>]"
+      },
+      "version": "1.5",
+      "pr_number": 16554,
+      "provenance": "unittest_3.py/test_assert2",
+      "keywords": [
+        "dtype"
+      ],
+      "is_valid": true,
+      "answers": {
+        "correct": "y",
+        "has_examples": "n",
+        "comments": ""
+      },
+      "is_duplicate": false
+    },
+    {
+      "before": ":[[aah]].array(:[aae], order='FORTRAN')",
+      "after": ":[[aah]].array(:[aae], order='F')",
+      "template_variable_constraints": {
+        "aae": "[<Name full_name='builtins.int', description='instance int'>]",
+        "aah": "[<Name full_name='numpy', description='module numpy'>]"
+      },
+      "version": "1.5",
+      "pr_number": 14596,
+      "provenance": "unittest_0.py/test_assert1",
+      "keywords": [
+        "array"
+      ],
+      "is_valid": true,
+      "answers": {
+        "correct": "y",
+        "has_examples": "n",
+        "comments": ""
+      },
+      "is_duplicate": false
+    },
+    {
+      "before": ":[[aaj]].savez_compressed(:[gen_args_0])\nreturn :[[agb]].load(:[[afz]])[:[afw]]",
+      "after": ":[[aaj]].savez_compressed(:[gen_args_0], allow_pickle=True)\nreturn :[[agb]].load(:[[afz]], allow_pickle=True)[:[afw]]",
+      "template_variable_constraints": {
+        "aaj": "[<Name full_name='numpy', description='module numpy'>]",
+        "afz": "[<Name full_name='io.BytesIO', description='instance BytesIO'>]",
+        "agb": "[<Name full_name='numpy', description='module numpy'>]"
+      },
+      "version": "1.5",
+      "pr_number": 13352,
+      "provenance": "unittest_2.py/test_assert3",
+      "keywords": [
+        "savez_compressed",
+        "load"
+      ],
+      "is_valid": true,
+      "answers": {
+        "correct": "y",
+        "has_examples": "n",
+        "comments": ""
+      },
+      "is_duplicate": false
+    },
+    {
+      "before": ":[[aaj]].savez(:[gen_args_0])\nreturn :[[agb]].load(:[[afz]])[:[afw]]",
+      "after": ":[[aaj]].savez(:[gen_args_0], allow_pickle=True)\nreturn :[[agb]].load(:[[afz]], allow_pickle=True)[:[afw]]",
+      "template_variable_constraints": {
+        "aaj": "[<Name full_name='numpy', description='module numpy'>]",
+        "afz": "[<Name full_name='io.BytesIO', description='instance BytesIO'>]",
+        "agb": "[<Name full_name='numpy', description='module numpy'>]"
+      },
+      "version": "1.5",
+      "pr_number": 13352,
+      "provenance": "unittest_2.py/test_assert2",
+      "keywords": [
+        "savez"
+      ],
+      "is_valid": true,
+      "answers": {
+        "correct": "y",
+        "has_examples": "n",
+        "comments": ""
+      },
+      "is_duplicate": true
+    },
+    {
+      "before": ":[[aaj]].save(:[gen_args_0])\nreturn :[[afj]].load(:[[afh]])",
+      "after": ":[[aaj]].save(:[gen_args_0], allow_pickle=True)\nreturn :[[afj]].load(:[[afh]], allow_pickle=True)",
+      "template_variable_constraints": {
+        "aaj": "[<Name full_name='numpy', description='module numpy'>]",
+        "afh": "[<Name full_name='io.BytesIO', description='instance BytesIO'>]",
+        "afj": "[<Name full_name='numpy', description='module numpy'>]"
+      },
+      "version": "1.5",
+      "pr_number": 13352,
+      "provenance": "unittest_1.py/test_assert1",
+      "keywords": [
+        "save"
+      ],
+      "is_valid": true,
+      "answers": {
+        "correct": "y",
+        "has_examples": "n",
+        "comments": ""
+      },
+      "is_duplicate": true
+    },
+    {
+      "before": ":[[aad]].typeDict",
+      "after": ":[[aad]].sctypeDict",
+      "template_variable_constraints": {
+        "aad": "[<Name full_name='numpy', description='module numpy'>]"
+      },
+      "version": "1.5",
+      "pr_number": 17586,
+      "provenance": "unittest_0.py/test_assert1",
+      "keywords": [
+        ""
+      ],
+      "is_valid": true,
+      "answers": {
+        "correct": "y",
+        "has_examples": "y",
+        "comments": ""
+      },
+      "is_duplicate": false
+    },
+    {
+      "before": "mask_cols(:[[aae]], axis=None)",
+      "after": "mask_cols(:[[aae]])",
+      "template_variable_constraints": {
+        "mask_cols": "[<Name full_name='numpy.ma.extras.mask_cols', description='def mask_cols'>]"
+      },
+      "version": "1.5",
+      "pr_number": 14996,
+      "provenance": "unittest_4.py/test_assert2",
+      "keywords": [
+        "mask_cols",
+        "None"
+      ],
+      "is_valid": true,
+      "answers": {
+        "correct": "y",
+        "has_examples": "n",
+        "comments": ""
+      },
+      "is_duplicate": false
+    },
+    {
+      "before": ":[[aaj]].histogram(:[gen_args_0], normed=:[aah])",
+      "after": ":[[aaj]].histogram(:[gen_args_0], density=:[aah])",
+      "template_variable_constraints": {
+        "aaj": "[<Name full_name='numpy', description='module numpy'>]"
+      },
+      "version": "1.5",
+      "pr_number": 11352,
+      "provenance": "unittest_3.py/test_assert1",
+      "keywords": [
+        "histogram",
+        "normed"
+      ],
+      "is_valid": true,
+      "answers": {
+        "correct": "y",
+        "has_examples": "y",
+        "comments": ""
+      },
+      "is_duplicate": false
+    },
+    {
+      "before": "mask_rows(:[[aae]], axis=None)",
+      "after": "mask_rows(:[[aae]])",
+      "template_variable_constraints": {
+        "mask_rows": "[<Name full_name='numpy.ma.extras.mask_rows', description='def mask_rows'>]"
+      },
+      "version": "1.5",
+      "pr_number": 14996,
+      "provenance": "unittest_3.py/test_assert1",
+      "keywords": [
+        "mask_rows",
+        "None"
+      ],
+      "is_valid": true,
+      "answers": {
+        "correct": "y",
+        "has_examples": "n",
+        "comments": ""
+      },
+      "is_duplicate": false
+    },
+    {
+      "before": ":[[aaj]].clip(:[gen_args_0], casting=None)",
+      "after": ":[[aaj]].clip(:[gen_args_0], casting='unsafe')",
+      "template_variable_constraints": {
+        "aaj": "[<Name full_name='numpy', description='module numpy'>]"
+      },
+      "version": "1.5",
+      "pr_number": 23403,
+      "provenance": "unittest_0.py/test_assert1",
+      "keywords": [
+        "clip"
+      ],
+      "is_valid": true,
+      "answers": {
+        "correct": "y",
+        "has_examples": "n",
+        "comments": "not sure"
+      },
+      "is_duplicate": false
+    },
+    {
+      "before": ":[[aaj]].clip(:[gen_args_0], casting='unsafe')",
+      "after": ":[[aaj]].clip(:[gen_args_0])",
+      "template_variable_constraints": {
+        "aaj": "[<Name full_name='numpy', description='module numpy'>]"
+      },
+      "version": "1.5",
+      "pr_number": 23403,
+      "provenance": "unittest_3.py/test_assert2",
+      "keywords": [
+        "clip",
+        "unsafe",
+        "casting"
+      ],
+      "is_valid": true,
+      "answers": {
+        "correct": "n",
+        "has_examples": "n",
+        "comments": ""
+      },
+      "is_duplicate": false
+    },
+    {
+      "before": ":[[aak]].lib.function_base.unique(:[[aae]])",
+      "after": ":[[aak]].unique(:[[aae]])",
+      "template_variable_constraints": {
+        "aae": "[<Name full_name='builtins.list', description='instance list'>, <Name full_name='numpy.ndarray', description='instance ndarray'>, <Name full_name='numpy._typing._generic_alias._GenericAlias.__origin__', description='def __origin__'>]",
+        "aak": "[<Name full_name='numpy', description='module numpy'>]"
+      },
+      "version": "1.5",
+      "pr_number": 12391,
+      "provenance": "unittest_2.py/test_assert1",
+      "keywords": [
+        "lib",
+        "unique"
+      ],
+      "is_valid": true,
+      "answers": {
+        "correct": "y",
+        "has_examples": "n",
+        "comments": "n"
+      },
+      "is_duplicate": false
+    },
+    {
+      "before": "np.fastCopyAndTranspose(:[[aae]])",
+      "after": ":[[aae]].T.copy()",
+      "template_variable_constraints": {
+        "aae": "[<Name full_name='builtins.int', description='instance int'>, <Name full_name='builtins.list', description='instance list'>, <Name full_name='numpy.ndarray', description='instance ndarray'>, <Name full_name='numpy._typing._generic_alias._GenericAlias.__origin__', description='def __origin__'>]"
+      },
+      "version": "1.5",
+      "pr_number": 22313,
+      "provenance": "unittest_2.py/test_assert1",
+      "keywords": [
+        "fastCopyAndTranspose"
+      ],
+      "is_valid": true,
+      "answers": {
+        "correct": "y",
+        "has_examples": "n",
+        "comments": ""
+      },
+      "is_duplicate": false
+    },
+    {
+      "before": ":[[aai]].insert(:[[aae]], :[[aaf]], :[[aag]])",
+      "after": ":[[aai]].insert(:[[aae]], :[[aai]].array(:[[aaf]]).astype(int), :[[aag]])",
+      "template_variable_constraints": {
+        "aae": "[<Name full_name='builtins.list', description='instance list'>, <Name full_name='numpy.ndarray', description='instance ndarray'>, <Name full_name='numpy._typing._generic_alias._GenericAlias.__origin__', description='def __origin__'>]",
+        "aaf": "[<Name full_name='builtins.list', description='instance list'>, <Name full_name='numpy.ndarray', description='instance ndarray'>, <Name full_name='numpy._typing._generic_alias._GenericAlias.__origin__', description='def __origin__'>]",
+        "aag": "[<Name full_name='builtins.list', description='instance list'>, <Name full_name='numpy.ndarray', description='instance ndarray'>, <Name full_name='numpy._typing._generic_alias._GenericAlias.__origin__', description='def __origin__'>]",
+        "aai": "[<Name full_name='numpy', description='module numpy'>]"
+      },
+      "version": "1.5",
+      "pr_number": 15805,
+      "provenance": "unittest_2.py/test_assert_insert",
+      "keywords": [
+        "insert"
+      ],
+      "is_valid": true,
+      "answers": {
+        "correct": "y",
+        "has_examples": "n",
+        "comments": ""
+      },
+      "is_duplicate": false
+    },
+    {
+      "before": ":[[aae]] == :[[aaf]]",
+      "after": "np.equal(:[[aae]].astype(np.int64), :[[aaf]].astype(np.int64))",
+      "template_variable_constraints": {
+        "aae": "[<Name full_name='builtins.list', description='instance list'>, <Name full_name='numpy.ndarray', description='instance ndarray'>, <Name full_name='numpy._typing._generic_alias._GenericAlias.__origin__', description='def __origin__'>]",
+        "aaf": "[<Name full_name='builtins.list', description='instance list'>, <Name full_name='numpy.ndarray', description='instance ndarray'>, <Name full_name='numpy._typing._generic_alias._GenericAlias.__origin__', description='def __origin__'>]"
+      },
+      "version": "1.5",
+      "pr_number": 11948,
+      "provenance": "unittest_1.py/test_assert1",
+      "keywords": [
+        ""
+      ],
+      "is_valid": true,
+      "answers": {
+        "correct": "n",
+        "has_examples": "n",
+        "comments": "cannot be captured"
+      },
+      "is_duplicate": false
+    },
+    {
+      "before": "return :[[ack]].delete(:[[ach]], indices)",
+      "after": "int_indices = np.array(indices).astype(int)\nreturn :[[ack]].delete(:[[ach]], int_indices)",
+      "template_variable_constraints": {
+        "ach": "[<Name full_name='builtins.list', description='instance list'>, <Name full_name='numpy.ndarray', description='instance ndarray'>, <Name full_name='numpy._typing._generic_alias._GenericAlias.__origin__', description='def __origin__'>]",
+        "ack": "[<Name full_name='numpy', description='module numpy'>]"
+      },
+      "version": "1.5",
+      "pr_number": 15805,
+      "provenance": "unittest_3.py/test_delete",
+      "keywords": [
+        "delete"
+      ],
+      "is_valid": true,
+      "answers": {
+        "correct": "y",
+        "has_examples": "n",
+        "comments": ""
+      },
+      "is_duplicate": false
+    },
+    {
+      "before": "np.sum(:[aae])",
+      "after": "sum(:[aae])",
+      "template_variable_constraints": {
+        "aae": "[<Name full_name='builtins.int', description='instance int'>]"
+      },
+      "version": "1.5",
+      "pr_number": 10670,
+      "provenance": "unittest_3.py/test_assert2",
+      "keywords": [
+        ""
+      ],
+      "is_valid": true,
+      "answers": {
+        "correct": "n",
+        "has_examples": "n",
+        "comments": "can mine"
+      },
+      "is_duplicate": false
+    },
+    {
+      "before": "int64 = np.dtype('int64')\nint64_newbyteorder = int64.newbyteorder()\nreturn :[[adl]].add(:[adh], :[adi], dtype=int64_newbyteorder)",
+      "after": "return :[[adl]].add(:[adh], :[adi], dtype='int64')",
+      "template_variable_constraints": {
+        "adh": "[<Name full_name='builtins.int', description='instance int'>]",
+        "adi": "[<Name full_name='builtins.int', description='instance int'>]",
+        "adl": "[<Name full_name='numpy', description='module numpy'>]"
+      },
+      "version": "1.5",
+      "pr_number": 22540,
+      "provenance": "unittest_4.py/test_assert1",
+      "keywords": [
+        ""
+      ],
+      "is_valid": true,
+      "answers": {
+        "correct": "n",
+        "has_examples": "n",
+        "comments": ""
+      },
+      "is_duplicate": false
+    },
+    {
+      "before": ":[[aao]].linalg.qr(:[[aae]], mode='full')",
+      "after": ":[[aao]].linalg.qr(:[[aae]], mode='reduced')",
+      "template_variable_constraints": {
+        "aae": "[<Name full_name='builtins.float', description='instance float'>, <Name full_name='numpy.ndarray', description='instance ndarray'>]",
+        "aao": "[<Name full_name='numpy', description='module numpy'>]"
+      },
+      "version": "1.5",
+      "pr_number": 14072,
+      "provenance": "unittest_1.py/test_assert1",
+      "keywords": [
+        "linalg",
+        "qr"
+      ],
+      "is_valid": true,
+      "answers": {
+        "correct": "y",
+        "has_examples": "n",
+        "comments": ""
+      },
+      "is_duplicate": false
+    },
+    {
+      "before": ":[[aaj]].clip(:[gen_args_0], casting=None)",
+      "after": ":[[aaj]].clip(:[gen_args_0])",
+      "template_variable_constraints": {
+        "aaj": "[<Name full_name='numpy', description='module numpy'>]"
+      },
+      "version": "1.5",
+      "pr_number": 23403,
+      "provenance": "unittest_1.py/test_assert1",
+      "keywords": [
+        "clip",
+        "None"
+      ],
+      "is_valid": true,
+      "answers": {
+        "correct": "n",
+        "has_examples": "n",
+        "comments": "cannot mine a rule"
+      },
+      "is_duplicate": false
+    },
+    {
+      "before": ":[[aah]].delete(:[[aae]], :[[aaf]])",
+      "after": ":[[aah]].delete(:[[aae]], :[[aaf]].astype(:[[aah]].intp))",
+      "template_variable_constraints": {
+        "aae": "[<Name full_name='builtins.list', description='instance list'>, <Name full_name='numpy.ndarray', description='instance ndarray'>, <Name full_name='numpy._typing._generic_alias._GenericAlias.__origin__', description='def __origin__'>]",
+        "aaf": "[<Name full_name='builtins.list', description='instance list'>, <Name full_name='numpy.ndarray', description='instance ndarray'>, <Name full_name='numpy._typing._generic_alias._GenericAlias.__origin__', description='def __origin__'>]",
+        "aah": "[<Name full_name='numpy', description='module numpy'>]"
+      },
+      "version": "1.5",
+      "pr_number": 15805,
+      "provenance": "unittest_0.py/test_assert2",
+      "keywords": [
+        "delete"
+      ],
+      "is_valid": true,
+      "answers": {
+        "correct": "y",
+        "has_examples": "n",
+        "comments": ""
+      },
+      "is_duplicate": false
+    },
+    {
+      "before": "mask_cols(:[[aae]], axis=1)",
+      "after": "mask_cols(:[[aae]])",
+      "template_variable_constraints": {
+        "mask_cols": "[<Name full_name='numpy.ma.extras.mask_cols', description='def mask_cols'>]"
+      },
+      "version": "1.5",
+      "pr_number": 14996,
+      "provenance": "unittest_1.py/test_assert2",
+      "keywords": [
+        "mask_cols",
+        "axis"
+      ],
+      "is_valid": true,
+      "answers": {
+        "correct": "y",
+        "has_examples": "",
+        "comments": ""
+      },
+      "is_duplicate": false
+    },
+    {
+      "before": ":[[aah]].delete(:[[aae]], :[[aaf]])",
+      "after": ":[[aah]].delete(:[[aae]], :[[aaf]].astype(int))",
+      "template_variable_constraints": {
+        "aae": "[<Name full_name='builtins.list', description='instance list'>, <Name full_name='numpy.ndarray', description='instance ndarray'>, <Name full_name='numpy._typing._generic_alias._GenericAlias.__origin__', description='def __origin__'>]",
+        "aaf": "[<Name full_name='builtins.list', description='instance list'>, <Name full_name='numpy.ndarray', description='instance ndarray'>, <Name full_name='numpy._typing._generic_alias._GenericAlias.__origin__', description='def __origin__'>]",
+        "aah": "[<Name full_name='numpy', description='module numpy'>]"
+      },
+      "version": "1.5",
+      "pr_number": 15805,
+      "provenance": "unittest_4.py/test_assert2",
+      "keywords": [
+        "delete"
+      ],
+      "is_valid": true,
+      "answers": {
+        "correct": "y",
+        "has_examples": "n",
+        "comments": ""
+      },
+      "is_duplicate": false
+    },
+    {
+      "before": ":[[aae]] != :[[aaf]]",
+      "after": "np.not_equal(:[[aae]], :[[aaf]], where=~(np.isnat(:[[aae]]) & np.isnat(:[[aaf]])))",
+      "template_variable_constraints": {
+        "aae": "[<Name full_name='builtins.list', description='instance list'>, <Name full_name='numpy.ndarray', description='instance ndarray'>, <Name full_name='numpy._typing._generic_alias._GenericAlias.__origin__', description='def __origin__'>]",
+        "aaf": "[<Name full_name='builtins.list', description='instance list'>, <Name full_name='numpy.ndarray', description='instance ndarray'>, <Name full_name='numpy._typing._generic_alias._GenericAlias.__origin__', description='def __origin__'>]"
+      },
+      "version": "1.5",
+      "pr_number": 11948,
+      "provenance": "unittest_3.py/test_assert2",
+      "keywords": [
+        ""
+      ],
+      "is_valid": true,
+      "answers": {
+        "correct": "n",
+        "has_examples": "n",
+        "comments": "cannot be captured"
+      },
+      "is_duplicate": false
+    },
+    {
+      "before": "int64 = np.dtype('int64')\nint64_2 = pickle.loads(pickle.dumps(int64))\nreturn :[[afa]].add(:[[aew]], :[[aex]], dtype=int64_2)",
+      "after": "return :[[afa]].add(:[[aew]], :[[aex]], dtype='int64')",
+      "template_variable_constraints": {
+        "aew": "[<Name full_name='builtins.int', description='instance int'>]",
+        "aex": "[<Name full_name='builtins.int', description='instance int'>]",
+        "afa": "[<Name full_name='numpy', description='module numpy'>]"
+      },
+      "version": "1.5",
+      "pr_number": 22540,
+      "provenance": "unittest_1.py/test_assert1",
+      "keywords": [
+        ""
+      ],
+      "is_valid": true,
+      "answers": {
+        "correct": "n",
+        "has_examples": "n",
+        "comments": ""
+      },
+      "is_duplicate": false
+    },
+    {
+      "before": "int64 = np.dtype('int64')\nint64_2 = pickle.loads(pickle.dumps(int64))\nreturn :[[afl]].add(:[afh], :[afi], signature=(int64_2, int64_2, :[afu]))",
+      "after": "return :[[afl]].add(:[afh], :[afi], signature=('int64', 'int64', :[afu]))",
+      "template_variable_constraints": {
+        "afh": "[<Name full_name='builtins.int', description='instance int'>]",
+        "afi": "[<Name full_name='builtins.int', description='instance int'>]",
+        "afl": "[<Name full_name='numpy', description='module numpy'>]"
+      },
+      "version": "1.5",
+      "pr_number": 22540,
+      "provenance": "unittest_2.py/test_assert2",
+      "is_valid": true,
+      "keywords": [
+        ""
+      ],
+      "answers": {
+        "correct": "n",
+        "has_examples": "n",
+        "comments": ""
+      },
+      "is_duplicate": false
+    },
+    {
+      "before": ":[[aaj]].save(:[gen_args_0])\nreturn :[[aeq]].load(:[aeo])",
+      "after": ":[[aaj]].save(:[gen_args_0], allow_pickle=True)\nreturn :[[aeq]].load(:[aeo], allow_pickle=True)",
+      "template_variable_constraints": {
+        "aaj": "[<Name full_name='numpy', description='module numpy'>]",
+        "aeq": "[<Name full_name='numpy', description='module numpy'>]"
+      },
+      "version": "1.5",
+      "pr_number": 13352,
+      "provenance": "unittest_4.py/test_assert1",
+      "keywords": [
+        "save",
+        "load"
+      ],
+      "is_valid": true,
+      "answers": {
+        "correct": "y",
+        "has_examples": "n",
+        "comments": ""
+      },
+      "is_duplicate": false
+    },
+    {
+      "before": ":[[aag]].flatten(order='FORTRAN')",
+      "after": ":[[aag]].flatten(order='F')",
+      "template_variable_constraints": {
+        "aag": "[<Name full_name='numpy.ndarray', description='instance ndarray'>, <Name full_name='numpy._typing._generic_alias._GenericAlias.__origin__', description='def __origin__'>]"
+      },
+      "version": "1.5",
+      "pr_number": 14596,
+      "provenance": "unittest_2.py/test_assert2",
+      "keywords": [
+        "flatten",
+        "FORTRAN"
+      ],
+      "is_valid": true,
+      "answers": {
+        "correct": "y",
+        "has_examples": "n",
+        "comments": "cannot capture the entire change"
+      },
+      "is_duplicate": false
+    },
+    {
+      "before": ":[[aag]].array(:[[aae]])",
+      "after": ":[[aag]].array(:[[aae]], dtype=object)",
+      "template_variable_constraints": {
+        "aae": "[<Name full_name='builtins.list', description='instance list'>]",
+        "aag": "[<Name full_name='numpy', description='module numpy'>]"
+      },
+      "version": "1.5",
+      "pr_number": 18999,
+      "provenance": "unittest_1.py/test_assert1",
+      "keywords": [
+        "array"
+      ],
+      "is_valid": true,
+      "answers": {
+        "correct": "n",
+        "has_examples": "n",
+        "comments": "cannot be captured with a rule"
+      },
+      "is_duplicate": true
+    },
+    {
+      "before": ":[[aae]] != :[[aaf]]",
+      "after": "np.not_equal(:[[aae]].astype(np.int64), :[[aaf]].astype(np.int64))",
+      "template_variable_constraints": {
+        "aae": "[<Name full_name='builtins.list', description='instance list'>, <Name full_name='numpy.ndarray', description='instance ndarray'>, <Name full_name='numpy._typing._generic_alias._GenericAlias.__origin__', description='def __origin__'>]",
+        "aaf": "[<Name full_name='builtins.list', description='instance list'>, <Name full_name='numpy.ndarray', description='instance ndarray'>, <Name full_name='numpy._typing._generic_alias._GenericAlias.__origin__', description='def __origin__'>]"
+      },
+      "version": "1.5",
+      "pr_number": 11948,
+      "provenance": "unittest_1.py/test_assert2",
+      "keywords": [
+        ""
+      ],
+      "is_valid": true,
+      "answers": {
+        "correct": "n",
+        "has_examples": "n",
+        "comments": "cannot capture"
+      },
+      "is_duplicate": false
+    },
+    {
+      "before": ":[[abc]].dtype({:[acs]: [:[adq], '', :[ads]], :[act]: :[acv]})",
+      "after": ":[[abc]].dtype({:[acs]: [:[adq], 'c', :[ads]], :[act]: :[acv]})",
+      "template_variable_constraints": {
+        "abc": "[<Name full_name='numpy', description='module numpy'>]",
+        "acv": "[<Name full_name='builtins.list', description='instance list'>]"
+      },
+      "version": "1.5",
+      "pr_number": 12375,
+      "provenance": "unittest_0.py/test_assert1",
+      "is_valid": true,
+      "keywords": [
+        ""
+      ],
+      "answers": {
+        "correct": "n",
+        "has_examples": "n",
+        "comments": "cannot be captured by a rule"
+      },
+      "is_duplicate": false
+    },
+    {
+      "before": ":[[aag]].dtype('Complex32')",
+      "after": ":[[aag]].dtype('complex64')",
+      "template_variable_constraints": {
+        "aag": "[<Name full_name='numpy', description='module numpy'>]"
+      },
+      "version": "1.5",
+      "pr_number": 16554,
+      "provenance": "unittest_4.py/test_assert2",
+      "keywords": [
+        "dtype"
+      ],
+      "is_valid": true,
+      "answers": {
+        "correct": "y",
+        "has_examples": "n",
+        "comments": ""
+      },
+      "is_duplicate": false
+    },
+    {
+      "before": ":[[aaj]].savez(:[gen_args_0])\nreturn :[[afn]].load(:[afl])[:[afi]]",
+      "after": ":[[aaj]].savez(:[gen_args_0], allow_pickle=True)\nreturn :[[afn]].load(:[afl], allow_pickle=True)[:[afi]]",
+      "template_variable_constraints": {
+        "aaj": "[<Name full_name='numpy', description='module numpy'>]",
+        "afn": "[<Name full_name='numpy', description='module numpy'>]"
+      },
+      "version": "1.5",
+      "pr_number": 13352,
+      "provenance": "unittest_4.py/test_assert2",
+      "keywords": [
+        ""
+      ],
+      "is_valid": true,
+      "answers": {
+        "correct": "y",
+        "has_examples": "n",
+        "comments": ""
+      },
+      "is_duplicate": false
+    },
+    {
+      "before": ":[[aag]].array(:[aae])",
+      "after": ":[[aag]].array(:[aae], dtype=object)",
+      "template_variable_constraints": {
+        "aae": "[<Name full_name='builtins.int', description='instance int'>]",
+        "aag": "[<Name full_name='numpy', description='module numpy'>]"
+      },
+      "version": "1.5",
+      "pr_number": 18999,
+      "provenance": "unittest_4.py/test_assert1",
+      "keywords": [
+        ""
+      ],
+      "is_valid": true,
+      "answers": {
+        "correct": "n",
+        "has_examples": "n",
+        "comments": ""
+      },
+      "is_duplicate": false
+    },
+    {
+      "before": ":[[aai]].add(:[gen_args_0], dtype=:[[aai]].dtype(:[aam]).newbyteorder())",
+      "after": ":[[aai]].add(:[gen_args_0], dtype=:[aam])",
+      "template_variable_constraints": {
+        "aai": "[<Name full_name='numpy', description='module numpy'>]"
+      },
+      "version": "1.5",
+      "pr_number": 22540,
+      "provenance": "unittest_1.py/test_assert2",
+      "keywords": [
+        "add"
+      ],
+      "is_valid": true,
+      "answers": {
+        "correct": "n",
+        "has_examples": "n",
+        "comments": ""
+      },
+      "is_duplicate": false
+    },
+    {
+      "before": "int64 = np.dtype('int64')\nint64_2 = pickle.loads(pickle.dumps(int64))\nreturn :[[aeq]].add(:[aem], :[aen], dtype=int64_2)",
+      "after": "return :[[aeq]].add(:[aem], :[aen], dtype='int64')",
+      "template_variable_constraints": {
+        "aem": "[<Name full_name='builtins.int', description='instance int'>]",
+        "aen": "[<Name full_name='builtins.int', description='instance int'>]",
+        "aeq": "[<Name full_name='numpy', description='module numpy'>]"
+      },
+      "version": "1.5",
+      "pr_number": 22540,
+      "provenance": "unittest_2.py/test_assert1",
+      "keywords": [
+        ""
+      ],
+      "is_valid": true,
+      "answers": {
+        "correct": "n",
+        "has_examples": "n",
+        "comments": ""
+      },
+      "is_duplicate": true
+    },
+    {
+      "before": ":[[aai]].insert(:[[aae]], :[[aaf]], :[[aag]])",
+      "after": ":[[aai]].insert(:[[aae]], :[[aaf]].astype(:[[aai]].intp), :[[aag]])",
+      "template_variable_constraints": {
+        "aae": "[<Name full_name='builtins.list', description='instance list'>, <Name full_name='numpy.ndarray', description='instance ndarray'>, <Name full_name='numpy._typing._generic_alias._GenericAlias.__origin__', description='def __origin__'>]",
+        "aaf": "[<Name full_name='builtins.list', description='instance list'>, <Name full_name='numpy.ndarray', description='instance ndarray'>, <Name full_name='numpy._typing._generic_alias._GenericAlias.__origin__', description='def __origin__'>]",
+        "aag": "[<Name full_name='builtins.list', description='instance list'>, <Name full_name='numpy.ndarray', description='instance ndarray'>, <Name full_name='numpy._typing._generic_alias._GenericAlias.__origin__', description='def __origin__'>]",
+        "aai": "[<Name full_name='numpy', description='module numpy'>]"
+      },
+      "version": "1.5",
+      "pr_number": 15805,
+      "provenance": "unittest_0.py/test_assert1",
+      "keywords": [
+        "insert"
+      ],
+      "is_valid": true,
+      "answers": {
+        "correct": "y",
+        "has_examples": "n",
+        "comments": ""
+      },
+      "is_duplicate": false
+    },
+    {
+      "before": "mask_rows(:[[aae]], axis=0)",
+      "after": "mask_rows(:[[aae]])",
+      "template_variable_constraints": {
+        "mask_rows": "[<Name full_name='numpy.ma.extras.mask_rows', description='def mask_rows'>]"
+      },
+      "version": "1.5",
+      "pr_number": 14996,
+      "provenance": "unittest_1.py/test_assert1",
+      "keywords": [
+        "mask_rows",
+        "axis"
+      ],
+      "is_valid": true,
+      "answers": {
+        "correct": "y",
+        "has_examples": "n",
+        "comments": ""
+      },
+      "is_duplicate": false
+    },
+    {
+      "before": "return :[[acs]].insert(:[[aco]], indices, :[[acq]])",
+      "after": "int_indices = np.array(indices).astype(int)\nreturn :[[acs]].insert(:[[aco]], int_indices, :[[acq]])",
+      "template_variable_constraints": {
+        "aco": "[<Name full_name='builtins.list', description='instance list'>, <Name full_name='numpy.ndarray', description='instance ndarray'>, <Name full_name='numpy._typing._generic_alias._GenericAlias.__origin__', description='def __origin__'>]",
+        "acq": "[<Name full_name='builtins.list', description='instance list'>]",
+        "acs": "[<Name full_name='numpy', description='module numpy'>]"
+      },
+      "version": "1.5",
+      "pr_number": 15805,
+      "provenance": "unittest_3.py/test_insert",
+      "keywords": [
+        "insert"
+      ],
+      "is_valid": true,
+      "answers": {
+        "correct": "y",
+        "has_examples": "n",
+        "comments": ""
+      },
+      "is_duplicate": false
+    },
+    {
+      "before": ":[[aah]].delete(:[[aae]], :[[aaf]])",
+      "after": ":[[aah]].delete(:[[aae]], :[[aah]].array(:[[aaf]]).astype(int))",
+      "template_variable_constraints": {
+        "aae": "[<Name full_name='builtins.list', description='instance list'>, <Name full_name='numpy.ndarray', description='instance ndarray'>, <Name full_name='numpy._typing._generic_alias._GenericAlias.__origin__', description='def __origin__'>]",
+        "aaf": "[<Name full_name='builtins.list', description='instance list'>, <Name full_name='numpy.ndarray', description='instance ndarray'>, <Name full_name='numpy._typing._generic_alias._GenericAlias.__origin__', description='def __origin__'>]",
+        "aah": "[<Name full_name='numpy', description='module numpy'>]"
+      },
+      "version": "1.5",
+      "pr_number": 15805,
+      "provenance": "unittest_2.py/test_assert_delete",
+      "keywords": [
+        "delete"
+      ],
+      "is_valid": true,
+      "answers": {
+        "correct": "y",
+        "has_examples": "n",
+        "comments": ""
+      },
+      "is_duplicate": false
+    },
+    {
+      "before": ":[[aah]].zeros(:[aae], dtype=[(:[aap], :[[aah]].float32, 1)])",
+      "after": ":[[aah]].zeros(:[aae], dtype=[(:[aap], :[[aah]].float32)])",
+      "template_variable_constraints": {
+        "aae": "[<Name full_name='builtins.int', description='instance int'>]",
+        "aah": "[<Name full_name='numpy', description='module numpy'>]"
+      },
+      "version": "1.5",
+      "pr_number": 13326,
+      "provenance": "unittest_2.py/test_assert2",
+      "keywords": [
+        "zeros"
+      ],
+      "is_valid": true,
+      "answers": {
+        "correct": "y",
+        "has_examples": "n",
+        "comments": ""
+      },
+      "is_duplicate": false
+    },
+    {
+      "before": ":[[aai]].insert(:[[aae]], :[[aaf]], :[[aag]])",
+      "after": ":[[aai]].insert(:[[aae]], :[[aaf]].astype(int), :[[aag]])",
+      "template_variable_constraints": {
+        "aae": "[<Name full_name='builtins.list', description='instance list'>, <Name full_name='numpy.ndarray', description='instance ndarray'>, <Name full_name='numpy._typing._generic_alias._GenericAlias.__origin__', description='def __origin__'>]",
+        "aaf": "[<Name full_name='builtins.list', description='instance list'>, <Name full_name='numpy.ndarray', description='instance ndarray'>, <Name full_name='numpy._typing._generic_alias._GenericAlias.__origin__', description='def __origin__'>]",
+        "aag": "[<Name full_name='builtins.list', description='instance list'>, <Name full_name='numpy.ndarray', description='instance ndarray'>, <Name full_name='numpy._typing._generic_alias._GenericAlias.__origin__', description='def __origin__'>]",
+        "aai": "[<Name full_name='numpy', description='module numpy'>]"
+      },
+      "version": "1.5",
+      "pr_number": 15805,
+      "provenance": "unittest_4.py/test_assert1",
+      "keywords": [
+        "insert"
+      ],
+      "is_valid": true,
+      "answers": {
+        "correct": "y",
+        "has_examples": "n",
+        "comments": ""
+      },
+      "is_duplicate": false
+    }
+  ]
+}

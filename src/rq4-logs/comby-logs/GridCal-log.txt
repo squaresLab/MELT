@@ -1,0 +1,11 @@
+[0;31m------ [0m[0;1m/Users/anon/temp/eval/pandas-repos/GridCal/src/GridCal/ThirdParty/pulp/pulp.py[0m
+[0;32m++++++ [0m[0;1m/Users/anon/temp/eval/pandas-repos/GridCal/src/GridCal/ThirdParty/pulp/pulp.py[0m
+[0;100;30m@|[0m[0;1m-2320,7 +2320,7[0m ============================================================
+[0;100;30m |[0m    return tuple(output)
+[0;100;30m |[0m
+[0;100;30m |[0m
+[0;41;30m-|[0m[0m[0;2mdef read_[0m[0;31mtable[0m[0;2m(data, coerce_type, transpose=False[0m[0;2m):[0m[0m
+[0;42;30m+|[0m[0mdef read_[0;32mcsv[0m(data, coerce_type, transpose=False[0;32m, sep='\t'[0m):[0m
+[0;100;30m |[0m    '''
+[0;100;30m |[0m    Reads in data from a simple table and forces it to be a particular type
+[0;100;30m |[0m

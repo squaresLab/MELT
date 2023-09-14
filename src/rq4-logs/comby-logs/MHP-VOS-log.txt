@@ -1,0 +1,10 @@
+[0;31m------ [0m[0;1m/Users/anon/temp/eval/scipy-repos/MHP-VOS/mht/triplet/matting/poisson_matting.py[0m
+[0;32m++++++ [0m[0;1m/Users/anon/temp/eval/scipy-repos/MHP-VOS/mht/triplet/matting/poisson_matting.py[0m
+[0;100;30m@|[0m[0;1m-37,7 +37,7[0m ============================================================
+[0;100;30m |[0m
+[0;100;30m |[0m    # Smooth F - B image
+[0;100;30m |[0m    approx_diff = approx_fg - approx_bg
+[0;43;30m!|[0m    approx_diff = scipy.ndimage.[0;31mfilters.[0mgaussian_filter(approx_diff, 0.9)
+[0;100;30m |[0m
+[0;100;30m |[0m    dy, dx = np.gradient(gray_img)
+[0;100;30m |[0m    d2y, _ = np.gradient(dy/approx_diff)

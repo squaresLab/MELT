@@ -1,0 +1,9 @@
+[0;31m------ [0m[0;1m/Users/anon/temp/eval/scikit-repos/protlearn/protlearn/features/length.py[0m
+[0;32m++++++ [0m[0;1m/Users/anon/temp/eval/scikit-repos/protlearn/protlearn/features/length.py[0m
+[0;100;30m@|[0m[0;1m-60,6 +60,6[0m ============================================================
+[0;100;30m |[0m        else:
+[0;100;30m |[0m            return arr
+[0;100;30m |[0m    elif method == 'ohe':
+[0;43;30m!|[0m        encoder = OneHotEncoder(sparse[0;32m_output[0m=False)
+[0;100;30m |[0m        arr_ohe = encoder.fit_transform(arr)
+[0;100;30m |[0m        return arr_ohe

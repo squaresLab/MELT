@@ -1,0 +1,11 @@
+[0;31m------ [0m[0;1m/Users/anon/temp/eval/scipy-repos/dirichlet_python/dirichletcal/calib/multinomial.py[0m
+[0;32m++++++ [0m[0;1m/Users/anon/temp/eval/scipy-repos/dirichlet_python/dirichletcal/calib/multinomial.py[0m
+[0;100;30m@|[0m[0;1m-274,7 +274,7[0m ============================================================
+[0;100;30m |[0m            updates = gradient / hessian
+[0;100;30m |[0m        else:
+[0;100;30m |[0m            try:
+[0;41;30m-|[0m[0m[0;2m                inverse = scipy.linalg.[0m[0;31mpinv2[0m[0;2m(hessian)[0m[0m
+[0;42;30m+|[0m[0m                inverse = scipy.linalg.[0;32mpinv[0m(hessian)[0m
+[0;100;30m |[0m                updates = np.matmul(inverse, gradient)
+[0;100;30m |[0m            except (raw_np.linalg.LinAlgError, ValueError) as err:
+[0;100;30m |[0m                logging.error(err)

@@ -1,0 +1,10 @@
+[0;31m------ [0m[0;1m/Users/anon/temp/eval/scikit-repos/raymon/raymon/tests/profiling/houseprices_utils.py[0m
+[0;32m++++++ [0m[0;1m/Users/anon/temp/eval/scikit-repos/raymon/raymon/tests/profiling/houseprices_utils.py[0m
+[0;100;30m@|[0m[0;1m-57,7 +57,7[0m ============================================================
+[0;100;30m |[0m    # For categorical features: impute missing values as 'UNK', onehot encode
+[0;100;30m |[0m    cat_pipe = make_pipeline(
+[0;100;30m |[0m        SimpleImputer(strategy="constant", fill_value="UNK", verbose=1),
+[0;43;30m!|[0m        OneHotEncoder(sparse[0;32m_output[0m=False, handle_unknown="ignore"),  # May lead to silent failure!
+[0;100;30m |[0m    )
+[0;100;30m |[0m    # For numerical features: impute missing values as -1
+[0;100;30m |[0m    num_pipe = make_pipeline(

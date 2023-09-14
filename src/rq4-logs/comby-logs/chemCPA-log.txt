@@ -1,0 +1,10 @@
+[0;31m------ [0m[0;1m/Users/anon/temp/eval/scikit-repos/chemCPA/chemCPA/data.py[0m
+[0;32m++++++ [0m[0;1m/Users/anon/temp/eval/scikit-repos/chemCPA/chemCPA/data.py[0m
+[0;100;30m@|[0m[0;1m-212,7 +212,7[0m ============================================================
+[0;100;30m |[0m                self.covariate_names_unique[cov] = np.unique(self.covariate_names[cov])
+[0;100;30m |[0m
+[0;100;30m |[0m                names = self.covariate_names_unique[cov]
+[0;43;30m!|[0m                encoder_cov = OneHotEncoder(sparse[0;32m_output[0m=False)
+[0;100;30m |[0m                encoder_cov.fit(names.reshape(-1, 1))
+[0;100;30m |[0m
+[0;100;30m |[0m                self.atomic_сovars_dict[cov] = dict(

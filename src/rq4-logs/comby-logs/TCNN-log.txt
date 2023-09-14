@@ -1,0 +1,454 @@
+[0;31m------ [0m[0;1m/Users/anon/temp/eval/scikit-repos/TCNN/tool/imblearn/ensemble/tests/test_bagging.py[0m
+[0;32m++++++ [0m[0;1m/Users/anon/temp/eval/scikit-repos/TCNN/tool/imblearn/ensemble/tests/test_bagging.py[0m
+[0;100;30m@|[0m[0;1m-81,7 +81,7[0m ============================================================
+[0;100;30m |[0m        sampling_strategy={},
+[0;100;30m |[0m        random_state=0).fit(X_train, y_train)
+[0;100;30m |[0m
+[0;43;30m!|[0m    assert (ensemble.score(X_train, y_train) == [0;31mbase_[0mestimator.score(
+[0;100;30m |[0m        X_train, y_train))
+[0;100;30m |[0m
+[0;100;30m |[0m    # with bootstrap, trees are no longer perfect on the training set
+[0;100;30m@|[0m[0;1m-91,7 +91,7[0m ============================================================
+[0;100;30m |[0m        bootstrap=True,
+[0;100;30m |[0m        random_state=0).fit(X_train, y_train)
+[0;100;30m |[0m
+[0;43;30m!|[0m    assert (ensemble.score(X_train, y_train) < [0;31mbase_[0mestimator.score(
+[0;100;30m |[0m        X_train, y_train))
+[0;100;30m |[0m
+[0;100;30m |[0m
+[0;31m------ [0m[0;1m/Users/anon/temp/eval/scikit-repos/TCNN/tool/imblearn/utils/estimator_checks.py[0m
+[0;32m++++++ [0m[0;1m/Users/anon/temp/eval/scikit-repos/TCNN/tool/imblearn/utils/estimator_checks.py[0m
+[0;100;30m@|[0m[0;1m-283,7 +283,7[0m ============================================================
+[0;100;30m |[0m            Sampler(
+[0;100;30m |[0m                random_state=0,
+[0;100;30m |[0m                voting='soft',
+[0;43;30m!|[0m                estimator=KMeans(random_state=1[0;31m, algorithm='full'[0m))
+[0;100;30m |[0m        ]
+[0;100;30m |[0m    else:
+[0;100;30m |[0m        samplers = [Sampler()]
+[0;31m------ [0m[0;1m/Users/anon/temp/eval/scikit-repos/TCNN/tool/imblearn/under_sampling/_prototype_selection/_instance_hardness_threshold.py[0m
+[0;32m++++++ [0m[0;1m/Users/anon/temp/eval/scikit-repos/TCNN/tool/imblearn/under_sampling/_prototype_selection/_instance_hardness_threshold.py[0m
+[0;100;30m@|[0m[0;1m-136,10 +136,10[0m ============================================================
+[0;100;30m |[0m        probabilities = np.zeros(y.shape[0], dtype=float)
+[0;100;30m |[0m
+[0;100;30m |[0m        for train_index, test_index in skf:
+[0;43;30m!|[0m            X_train = safe_indexing(X, train_index[0;32m, axis=0[0m)
+[0;43;30m!|[0m            X_test = safe_indexing(X, test_index[0;32m, axis=0[0m)
+[0;43;30m!|[0m            y_train = safe_indexing(y, train_index[0;32m, axis=0[0m)
+[0;43;30m!|[0m            y_test = safe_indexing(y, test_index[0;32m, axis=0[0m)
+[0;100;30m |[0m
+[0;100;30m |[0m            self.estimator_.fit(X_train, y_train)
+[0;100;30m |[0m
+[0;100;30m@|[0m[0;1m-169,7 +169,7[0m ============================================================
+[0;100;30m |[0m                axis=0)
+[0;100;30m |[0m
+[0;100;30m |[0m        if self.return_indices:
+[0;43;30m!|[0m            return (safe_indexing(X, idx_under[0;32m, axis=0[0m), safe_indexing(y, idx_under[0;32m, axis=0[0m),
+[0;100;30m |[0m                    idx_under)
+[0;100;30m |[0m        else:
+[0;43;30m!|[0m            return safe_indexing(X, idx_under[0;32m, axis=0[0m), safe_indexing(y, idx_under[0;32m, axis=0[0m)
+[0;31m------ [0m[0;1m/Users/anon/temp/eval/scikit-repos/TCNN/tool/imblearn/under_sampling/_prototype_selection/_tomek_links.py[0m
+[0;32m++++++ [0m[0;1m/Users/anon/temp/eval/scikit-repos/TCNN/tool/imblearn/under_sampling/_prototype_selection/_tomek_links.py[0m
+[0;100;30m@|[0m[0;1m-148,7 +148,7[0m ============================================================
+[0;100;30m |[0m        idx_under = np.flatnonzero(np.logical_not(links))
+[0;100;30m |[0m
+[0;100;30m |[0m        if self.return_indices:
+[0;43;30m!|[0m            return (safe_indexing(X, idx_under[0;32m, axis=0[0m), safe_indexing(y, idx_under[0;32m, axis=0[0m),
+[0;100;30m |[0m                    idx_under)
+[0;100;30m |[0m        else:
+[0;43;30m!|[0m            return (safe_indexing(X, idx_under[0;32m, axis=0[0m), safe_indexing(y, idx_under[0;32m, axis=0[0m))
+[0;31m------ [0m[0;1m/Users/anon/temp/eval/scikit-repos/TCNN/tool/imblearn/under_sampling/_prototype_selection/_edited_nearest_neighbours.py[0m
+[0;32m++++++ [0m[0;1m/Users/anon/temp/eval/scikit-repos/TCNN/tool/imblearn/under_sampling/_prototype_selection/_edited_nearest_neighbours.py[0m
+[0;100;30m@|[0m[0;1m-148,8 +148,8[0m ============================================================
+[0;100;30m |[0m        for target_class in np.unique(y):
+[0;100;30m |[0m            if target_class in self.sampling_strategy_.keys():
+[0;100;30m |[0m                target_class_indices = np.flatnonzero(y == target_class)
+[0;43;30m!|[0m                X_class = safe_indexing(X, target_class_indices[0;32m, axis=0[0m)
+[0;43;30m!|[0m                y_class = safe_indexing(y, target_class_indices[0;32m, axis=0[0m)
+[0;100;30m |[0m                nnhood_idx = self.nn_.kneighbors(
+[0;100;30m |[0m                    X_class, return_distance=False)[:, 1:]
+[0;100;30m |[0m                nnhood_label = y[nnhood_idx]
+[0;100;30m@|[0m[0;1m-169,10 +169,10[0m ============================================================
+[0;100;30m |[0m                axis=0)
+[0;100;30m |[0m
+[0;100;30m |[0m        if self.return_indices:
+[0;43;30m!|[0m            return (safe_indexing(X, idx_under[0;32m, axis=0[0m), safe_indexing(y, idx_under[0;32m, axis=0[0m),
+[0;100;30m |[0m                    idx_under)
+[0;100;30m |[0m        else:
+[0;43;30m!|[0m            return safe_indexing(X, idx_under[0;32m, axis=0[0m), safe_indexing(y, idx_under[0;32m, axis=0[0m)
+[0;100;30m |[0m
+[0;100;30m |[0m
+[0;100;30m |[0m@Substitution(
+[0;31m------ [0m[0;1m/Users/anon/temp/eval/scikit-repos/TCNN/tool/imblearn/tensorflow/_generator.py[0m
+[0;32m++++++ [0m[0;1m/Users/anon/temp/eval/scikit-repos/TCNN/tool/imblearn/tensorflow/_generator.py[0m
+[0;100;30m@|[0m[0;1m-142,15 +142,15[0m ============================================================
+[0;100;30m |[0m    def generator(X, y, sample_weight, indices, batch_size):
+[0;100;30m |[0m        while True:
+[0;100;30m |[0m            for index in range(0, len(indices), batch_size):
+[0;43;30m!|[0m                X_res = safe_indexing(X, indices[index:index + batch_size][0;32m, axis=0[0m)
+[0;43;30m!|[0m                y_res = safe_indexing(y, indices[index:index + batch_size][0;32m, axis=0[0m)
+[0;100;30m |[0m                if issparse(X_res) and not keep_sparse:
+[0;100;30m |[0m                    X_res = X_res.toarray()
+[0;100;30m |[0m                if sample_weight is None:
+[0;100;30m |[0m                    yield X_res, y_res
+[0;100;30m |[0m                else:
+[0;100;30m |[0m                    sw_res = safe_indexing(sample_weight,
+[0;43;30m!|[0m                                           indices[index:index + batch_size][0;32m, axis=0[0m)
+[0;100;30m |[0m                    yield X_res, y_res, sw_res
+[0;100;30m |[0m
+[0;100;30m |[0m    return (generator(X, y, sample_weight, indices, batch_size),
+[0;31m------ [0m[0;1m/Users/anon/temp/eval/scikit-repos/TCNN/tool/imblearn/under_sampling/_prototype_selection/_random_under_sampler.py[0m
+[0;32m++++++ [0m[0;1m/Users/anon/temp/eval/scikit-repos/TCNN/tool/imblearn/under_sampling/_prototype_selection/_random_under_sampler.py[0m
+[0;100;30m@|[0m[0;1m-119,7 +119,7[0m ============================================================
+[0;100;30m |[0m                axis=0)
+[0;100;30m |[0m
+[0;100;30m |[0m        if self.return_indices:
+[0;43;30m!|[0m            return (safe_indexing(X, idx_under[0;32m, axis=0[0m), safe_indexing(y, idx_under[0;32m, axis=0[0m),
+[0;100;30m |[0m                    idx_under)
+[0;100;30m |[0m        else:
+[0;43;30m!|[0m            return safe_indexing(X, idx_under[0;32m, axis=0[0m), safe_indexing(y, idx_under[0;32m, axis=0[0m)
+[0;31m------ [0m[0;1m/Users/anon/temp/eval/scikit-repos/TCNN/tool/imblearn/over_sampling/_adasyn.py[0m
+[0;32m++++++ [0m[0;1m/Users/anon/temp/eval/scikit-repos/TCNN/tool/imblearn/over_sampling/_adasyn.py[0m
+[0;100;30m@|[0m[0;1m-117,7 +117,7[0m ============================================================
+[0;100;30m |[0m            if n_samples == 0:
+[0;100;30m |[0m                continue
+[0;100;30m |[0m            target_class_indices = np.flatnonzero(y == class_sample)
+[0;43;30m!|[0m            X_class = safe_indexing(X, target_class_indices[0;32m, axis=0[0m)
+[0;100;30m |[0m
+[0;100;30m |[0m            self.nn_.fit(X)
+[0;100;30m |[0m            _, nn_index = self.nn_.kneighbors(X_class)
+[0;31m------ [0m[0;1m/Users/anon/temp/eval/scikit-repos/TCNN/tool/imblearn/under_sampling/_prototype_selection/_one_sided_selection.py[0m
+[0;32m++++++ [0m[0;1m/Users/anon/temp/eval/scikit-repos/TCNN/tool/imblearn/under_sampling/_prototype_selection/_one_sided_selection.py[0m
+[0;100;30m@|[0m[0;1m-145,14 +145,14[0m ============================================================
+[0;100;30m |[0m
+[0;100;30m |[0m                # create the set composed of all minority samples and one
+[0;100;30m |[0m                # sample from the current class.
+[0;43;30m!|[0m                C_x = safe_indexing(X, C_indices[0;32m, axis=0[0m)
+[0;43;30m!|[0m                C_y = safe_indexing(y, C_indices[0;32m, axis=0[0m)
+[0;100;30m |[0m
+[0;100;30m |[0m                # create the set S with removing the seed from S
+[0;100;30m |[0m                # since that it will be added anyway
+[0;100;30m |[0m                idx_maj_extracted = np.delete(idx_maj, sel_idx_maj, axis=0)
+[0;43;30m!|[0m                S_x = safe_indexing(X, idx_maj_extracted[0;32m, axis=0[0m)
+[0;43;30m!|[0m                S_y = safe_indexing(y, idx_maj_extracted[0;32m, axis=0[0m)
+[0;100;30m |[0m                self.estimator_.fit(C_x, C_y)
+[0;100;30m |[0m                pred_S_y = self.estimator_.predict(S_x)
+[0;100;30m |[0m
+[0;100;30m@|[0m[0;1m-164,8 +164,8[0m ============================================================
+[0;100;30m |[0m                idx_under = np.concatenate(
+[0;100;30m |[0m                    (idx_under, np.flatnonzero(y == target_class)), axis=0)
+[0;100;30m |[0m
+[0;43;30m!|[0m        X_resampled = safe_indexing(X, idx_under[0;32m, axis=0[0m)
+[0;43;30m!|[0m        y_resampled = safe_indexing(y, idx_under[0;32m, axis=0[0m)
+[0;100;30m |[0m
+[0;100;30m |[0m        # apply Tomek cleaning
+[0;100;30m |[0m        tl = TomekLinks(
+[0;100;30m@|[0m[0;1m-174,7 +174,7[0m ============================================================
+[0;100;30m |[0m        X_cleaned, y_cleaned, idx_cleaned = tl.fit_resample(
+[0;100;30m |[0m            X_resampled, y_resampled)
+[0;100;30m |[0m
+[0;43;30m!|[0m        idx_under = safe_indexing(idx_under, idx_cleaned[0;32m, axis=0[0m)
+[0;100;30m |[0m        if self.return_indices:
+[0;100;30m |[0m            return (X_cleaned, y_cleaned, idx_under)
+[0;100;30m |[0m        else:
+[0;31m------ [0m[0;1m/Users/anon/temp/eval/scikit-repos/TCNN/tool/imblearn/under_sampling/_prototype_generation/_cluster_centroids.py[0m
+[0;32m++++++ [0m[0;1m/Users/anon/temp/eval/scikit-repos/TCNN/tool/imblearn/under_sampling/_prototype_generation/_cluster_centroids.py[0m
+[0;100;30m@|[0m[0;1m-125,7 +125,7[0m ============================================================
+[0;100;30m |[0m            nearest_neighbors.fit(X, y)
+[0;100;30m |[0m            indices = nearest_neighbors.kneighbors(
+[0;100;30m |[0m                centroids, return_distance=False)
+[0;43;30m!|[0m            X_new = safe_indexing(X, np.squeeze(indices)[0;32m, axis=0[0m)
+[0;100;30m |[0m        else:
+[0;100;30m |[0m            if sparse.issparse(X):
+[0;100;30m |[0m                X_new = sparse.csr_matrix(centroids, dtype=X.dtype)
+[0;100;30m@|[0m[0;1m-162,8 +162,8[0m ============================================================
+[0;100;30m |[0m                y_resampled.append(y_new)
+[0;100;30m |[0m            else:
+[0;100;30m |[0m                target_class_indices = np.flatnonzero(y == target_class)
+[0;43;30m!|[0m                X_resampled.append(safe_indexing(X, target_class_indices[0;32m, axis=0[0m))
+[0;43;30m!|[0m                y_resampled.append(safe_indexing(y, target_class_indices[0;32m, axis=0[0m))
+[0;100;30m |[0m
+[0;100;30m |[0m        if sparse.issparse(X):
+[0;100;30m |[0m            X_resampled = sparse.vstack(X_resampled)
+[0;31m------ [0m[0;1m/Users/anon/temp/eval/scikit-repos/TCNN/tool/imblearn/over_sampling/_smote.py[0m
+[0;32m++++++ [0m[0;1m/Users/anon/temp/eval/scikit-repos/TCNN/tool/imblearn/over_sampling/_smote.py[0m
+[0;100;30m@|[0m[0;1m-293,7 +293,7[0m ============================================================
+[0;100;30m |[0m            if n_samples == 0:
+[0;100;30m |[0m                continue
+[0;100;30m |[0m            target_class_indices = np.flatnonzero(y == class_sample)
+[0;43;30m!|[0m            X_class = safe_indexing(X, target_class_indices[0;32m, axis=0[0m)
+[0;100;30m |[0m
+[0;100;30m |[0m            self.nn_m_.fit(X)
+[0;100;30m |[0m            danger_index = self._in_danger_noise(
+[0;100;30m@|[0m[0;1m-303,14 +303,14[0m ============================================================
+[0;100;30m |[0m
+[0;100;30m |[0m            self.nn_k_.fit(X_class)
+[0;100;30m |[0m            nns = self.nn_k_.kneighbors(
+[0;43;30m!|[0m                safe_indexing(X_class, danger_index[0;32m, axis=0[0m),
+[0;100;30m |[0m                return_distance=False)[:, 1:]
+[0;100;30m |[0m
+[0;100;30m |[0m            # divergence between borderline-1 and borderline-2
+[0;100;30m |[0m            if self.kind == 'borderline-1':
+[0;100;30m |[0m                # Create synthetic samples for borderline points.
+[0;100;30m |[0m                X_new, y_new = self._make_samples(
+[0;43;30m!|[0m                    safe_indexing(X_class, danger_index[0;32m, axis=0[0m), y.dtype,
+[0;100;30m |[0m                    class_sample, X_class, nns, n_samples)
+[0;100;30m |[0m                if sparse.issparse(X_new):
+[0;100;30m |[0m                    X_resampled = sparse.vstack([X_resampled, X_new])
+[0;100;30m@|[0m[0;1m-324,7 +324,7[0m ============================================================
+[0;100;30m |[0m
+[0;100;30m |[0m                # only minority
+[0;100;30m |[0m                X_new_1, y_new_1 = self._make_samples(
+[0;43;30m!|[0m                    safe_indexing(X_class, danger_index[0;32m, axis=0[0m),
+[0;100;30m |[0m                    y.dtype,
+[0;100;30m |[0m                    class_sample,
+[0;100;30m |[0m                    X_class,
+[0;100;30m@|[0m[0;1m-336,10 +336,10[0m ============================================================
+[0;100;30m |[0m                # new samples will be created considering not only the majority
+[0;100;30m |[0m                # class but all over classes.
+[0;100;30m |[0m                X_new_2, y_new_2 = self._make_samples(
+[0;43;30m!|[0m                    safe_indexing(X_class, danger_index[0;32m, axis=0[0m),
+[0;100;30m |[0m                    y.dtype,
+[0;100;30m |[0m                    class_sample,
+[0;43;30m!|[0m                    safe_indexing(X, np.flatnonzero(y != class_sample)[0;32m, axis=0[0m),
+[0;100;30m |[0m                    nns,
+[0;100;30m |[0m                    int((1 - fractions) * n_samples),
+[0;100;30m |[0m                    step_size=0.5)
+[0;100;30m@|[0m[0;1m-480,18 +480,18[0m ============================================================
+[0;100;30m |[0m            if n_samples == 0:
+[0;100;30m |[0m                continue
+[0;100;30m |[0m            target_class_indices = np.flatnonzero(y == class_sample)
+[0;43;30m!|[0m            X_class = safe_indexing(X, target_class_indices[0;32m, axis=0[0m)
+[0;100;30m |[0m
+[0;100;30m |[0m            self.svm_estimator_.fit(X, y)
+[0;100;30m |[0m            support_index = self.svm_estimator_.support_[y[
+[0;100;30m |[0m                self.svm_estimator_.support_] == class_sample]
+[0;43;30m!|[0m            support_vector = safe_indexing(X, support_index[0;32m, axis=0[0m)
+[0;100;30m |[0m
+[0;100;30m |[0m            self.nn_m_.fit(X)
+[0;100;30m |[0m            noise_bool = self._in_danger_noise(
+[0;100;30m |[0m                self.nn_m_, support_vector, class_sample, y, kind='noise')
+[0;100;30m |[0m            support_vector = safe_indexing(
+[0;43;30m!|[0m                support_vector, np.flatnonzero(np.logical_not(noise_bool))[0;32m, axis=0[0m)
+[0;100;30m |[0m            danger_bool = self._in_danger_noise(
+[0;100;30m |[0m                self.nn_m_, support_vector, class_sample, y, kind='danger')
+[0;100;30m |[0m            safety_bool = np.logical_not(danger_bool)
+[0;100;30m@|[0m[0;1m-501,11 +501,11[0m ============================================================
+[0;100;30m |[0m            n_generated_samples = int(fractions * (n_samples + 1))
+[0;100;30m |[0m            if np.count_nonzero(danger_bool) > 0:
+[0;100;30m |[0m                nns = self.nn_k_.kneighbors(
+[0;43;30m!|[0m                    safe_indexing(support_vector, np.flatnonzero(danger_bool)[0;32m, axis=0[0m),
+[0;100;30m |[0m                    return_distance=False)[:, 1:]
+[0;100;30m |[0m
+[0;100;30m |[0m                X_new_1, y_new_1 = self._make_samples(
+[0;43;30m!|[0m                    safe_indexing(support_vector, np.flatnonzero(danger_bool)[0;32m, axis=0[0m),
+[0;100;30m |[0m                    y.dtype,
+[0;100;30m |[0m                    class_sample,
+[0;100;30m |[0m                    X_class,
+[0;100;30m@|[0m[0;1m-515,11 +515,11[0m ============================================================
+[0;100;30m |[0m
+[0;100;30m |[0m            if np.count_nonzero(safety_bool) > 0:
+[0;100;30m |[0m                nns = self.nn_k_.kneighbors(
+[0;43;30m!|[0m                    safe_indexing(support_vector, np.flatnonzero(safety_bool)[0;32m, axis=0[0m),
+[0;100;30m |[0m                    return_distance=False)[:, 1:]
+[0;100;30m |[0m
+[0;100;30m |[0m                X_new_2, y_new_2 = self._make_samples(
+[0;43;30m!|[0m                    safe_indexing(support_vector, np.flatnonzero(safety_bool)[0;32m, axis=0[0m),
+[0;100;30m |[0m                    y.dtype,
+[0;100;30m |[0m                    class_sample,
+[0;100;30m |[0m                    X_class,
+[0;100;30m@|[0m[0;1m-752,7 +752,7[0m ============================================================
+[0;100;30m |[0m            if n_samples == 0:
+[0;100;30m |[0m                continue
+[0;100;30m |[0m            target_class_indices = np.flatnonzero(y == class_sample)
+[0;43;30m!|[0m            X_class = safe_indexing(X, target_class_indices[0;32m, axis=0[0m)
+[0;100;30m |[0m
+[0;100;30m |[0m            self.nn_k_.fit(X_class)
+[0;100;30m |[0m            nns = self.nn_k_.kneighbors(X_class, return_distance=False)[:, 1:]
+[0;31m------ [0m[0;1m/Users/anon/temp/eval/scikit-repos/TCNN/tool/imblearn/under_sampling/_prototype_selection/_condensed_nearest_neighbour.py[0m
+[0;32m++++++ [0m[0;1m/Users/anon/temp/eval/scikit-repos/TCNN/tool/imblearn/under_sampling/_prototype_selection/_condensed_nearest_neighbour.py[0m
+[0;100;30m@|[0m[0;1m-149,13 +149,13[0m ============================================================
+[0;100;30m |[0m                # Create the set C - One majority samples and all minority
+[0;100;30m |[0m                C_indices = np.append(
+[0;100;30m |[0m                    np.flatnonzero(y == class_minority), idx_maj_sample)
+[0;43;30m!|[0m                C_x = safe_indexing(X, C_indices[0;32m, axis=0[0m)
+[0;43;30m!|[0m                C_y = safe_indexing(y, C_indices[0;32m, axis=0[0m)
+[0;100;30m |[0m
+[0;100;30m |[0m                # Create the set S - all majority samples
+[0;100;30m |[0m                S_indices = np.flatnonzero(y == target_class)
+[0;43;30m!|[0m                S_x = safe_indexing(X, S_indices[0;32m, axis=0[0m)
+[0;43;30m!|[0m                S_y = safe_indexing(y, S_indices[0;32m, axis=0[0m)
+[0;100;30m |[0m
+[0;100;30m |[0m                # fit knn on C
+[0;100;30m |[0m                self.estimator_.fit(C_x, C_y)
+[0;100;30m@|[0m[0;1m-182,8 +182,8[0m ============================================================
+[0;100;30m |[0m
+[0;100;30m |[0m                        # Update C
+[0;100;30m |[0m                        C_indices = np.append(C_indices, idx_maj[idx_sam])
+[0;43;30m!|[0m                        C_x = safe_indexing(X, C_indices[0;32m, axis=0[0m)
+[0;43;30m!|[0m                        C_y = safe_indexing(y, C_indices[0;32m, axis=0[0m)
+[0;100;30m |[0m
+[0;100;30m |[0m                        # fit a knn on C
+[0;100;30m |[0m                        self.estimator_.fit(C_x, C_y)
+[0;100;30m@|[0m[0;1m-202,7 +202,7[0m ============================================================
+[0;100;30m |[0m                    (idx_under, np.flatnonzero(y == target_class)), axis=0)
+[0;100;30m |[0m
+[0;100;30m |[0m        if self.return_indices:
+[0;43;30m!|[0m            return (safe_indexing(X, idx_under[0;32m, axis=0[0m), safe_indexing(y, idx_under[0;32m, axis=0[0m),
+[0;100;30m |[0m                    idx_under)
+[0;100;30m |[0m        else:
+[0;43;30m!|[0m            return safe_indexing(X, idx_under[0;32m, axis=0[0m), safe_indexing(y, idx_under[0;32m, axis=0[0m)
+[0;31m------ [0m[0;1m/Users/anon/temp/eval/scikit-repos/TCNN/tool/imblearn/under_sampling/_prototype_selection/_nearmiss.py[0m
+[0;32m++++++ [0m[0;1m/Users/anon/temp/eval/scikit-repos/TCNN/tool/imblearn/under_sampling/_prototype_selection/_nearmiss.py[0m
+[0;100;30m@|[0m[0;1m-162,7 +162,7[0m ============================================================
+[0;100;30m |[0m
+[0;100;30m |[0m        target_class_indices = np.flatnonzero(y == key)
+[0;100;30m |[0m        if (dist_vec.shape[0] != safe_indexing(X,
+[0;43;30m!|[0m                                               target_class_indices[0;32m, axis=0[0m).shape[0]):
+[0;100;30m |[0m            raise RuntimeError('The samples to be selected do not correspond'
+[0;100;30m |[0m                               ' to the distance matrix given. Ensure that'
+[0;100;30m |[0m                               ' both `X[y == key]` and `dist_vec` are'
+[0;100;30m@|[0m[0;1m-220,14 +220,14[0m ============================================================
+[0;100;30m |[0m        class_minority = min(target_stats, key=target_stats.get)
+[0;100;30m |[0m        minority_class_indices = np.flatnonzero(y == class_minority)
+[0;100;30m |[0m
+[0;43;30m!|[0m        self.nn_.fit(safe_indexing(X, minority_class_indices[0;32m, axis=0[0m))
+[0;100;30m |[0m
+[0;100;30m |[0m        for target_class in np.unique(y):
+[0;100;30m |[0m            if target_class in self.sampling_strategy_.keys():
+[0;100;30m |[0m                n_samples = self.sampling_strategy_[target_class]
+[0;100;30m |[0m                target_class_indices = np.flatnonzero(y == target_class)
+[0;43;30m!|[0m                X_class = safe_indexing(X, target_class_indices[0;32m, axis=0[0m)
+[0;43;30m!|[0m                y_class = safe_indexing(y, target_class_indices[0;32m, axis=0[0m)
+[0;100;30m |[0m
+[0;100;30m |[0m                if self.version == 1:
+[0;100;30m |[0m                    dist_vec, idx_vec = self.nn_.kneighbors(
+[0;100;30m@|[0m[0;1m-252,10 +252,10[0m ============================================================
+[0;100;30m |[0m                elif self.version == 3:
+[0;100;30m |[0m                    self.nn_ver3_.fit(X_class)
+[0;100;30m |[0m                    dist_vec, idx_vec = self.nn_ver3_.kneighbors(
+[0;43;30m!|[0m                        safe_indexing(X, minority_class_indices[0;32m, axis=0[0m))
+[0;100;30m |[0m                    idx_vec_farthest = np.unique(idx_vec.reshape(-1))
+[0;43;30m!|[0m                    X_class_selected = safe_indexing(X_class, idx_vec_farthest[0;32m, axis=0[0m)
+[0;43;30m!|[0m                    y_class_selected = safe_indexing(y_class, idx_vec_farthest[0;32m, axis=0[0m)
+[0;100;30m |[0m
+[0;100;30m |[0m                    dist_vec, idx_vec = self.nn_.kneighbors(
+[0;100;30m |[0m                        X_class_selected, n_neighbors=self.nn_.n_neighbors)
+[0;100;30m@|[0m[0;1m-278,7 +278,7[0m ============================================================
+[0;100;30m |[0m                axis=0)
+[0;100;30m |[0m
+[0;100;30m |[0m        if self.return_indices:
+[0;43;30m!|[0m            return (safe_indexing(X, idx_under[0;32m, axis=0[0m), safe_indexing(y, idx_under[0;32m, axis=0[0m),
+[0;100;30m |[0m                    idx_under)
+[0;100;30m |[0m        else:
+[0;43;30m!|[0m            return safe_indexing(X, idx_under[0;32m, axis=0[0m), safe_indexing(y, idx_under[0;32m, axis=0[0m)
+[0;31m------ [0m[0;1m/Users/anon/temp/eval/scikit-repos/TCNN/tool/imblearn/over_sampling/_random_over_sampler.py[0m
+[0;32m++++++ [0m[0;1m/Users/anon/temp/eval/scikit-repos/TCNN/tool/imblearn/over_sampling/_random_over_sampler.py[0m
+[0;100;30m@|[0m[0;1m-103,8 +103,8[0m ============================================================
+[0;100;30m |[0m                                       target_class_indices[indices])
+[0;100;30m |[0m
+[0;100;30m |[0m        if self.return_indices:
+[0;43;30m!|[0m            return (safe_indexing(X, sample_indices[0;32m, axis=0[0m), safe_indexing(
+[0;43;30m!|[0m                    y, sample_indices[0;32m, axis=0[0m), sample_indices)
+[0;43;30m!|[0m        else:
+[0;43;30m!|[0m            return (safe_indexing(X, sample_indices[0;32m, axis=0[0m), safe_indexing(
+[0;43;30m!|[0m                    y, sample_indices[0;32m, axis=0[0m))
+[0;31m------ [0m[0;1m/Users/anon/temp/eval/scikit-repos/TCNN/tool/imblearn/under_sampling/_prototype_selection/_neighbourhood_cleaning_rule.py[0m
+[0;32m++++++ [0m[0;1m/Users/anon/temp/eval/scikit-repos/TCNN/tool/imblearn/under_sampling/_prototype_selection/_neighbourhood_cleaning_rule.py[0m
+[0;100;30m@|[0m[0;1m-164,8 +164,8[0m ============================================================
+[0;100;30m |[0m        ]
+[0;100;30m |[0m        self.nn_.fit(X)
+[0;100;30m |[0m        class_minority_indices = np.flatnonzero(y == class_minority)
+[0;43;30m!|[0m        X_class = safe_indexing(X, class_minority_indices[0;32m, axis=0[0m)
+[0;43;30m!|[0m        y_class = safe_indexing(y, class_minority_indices[0;32m, axis=0[0m)
+[0;100;30m |[0m        nnhood_idx = self.nn_.kneighbors(X_class, return_distance=False)[:, 1:]
+[0;100;30m |[0m        nnhood_label = y[nnhood_idx]
+[0;100;30m |[0m        if self.kind_sel == 'mode':
+[0;100;30m@|[0m[0;1m-187,8 +187,8[0m ============================================================
+[0;100;30m |[0m        index_target_class = np.flatnonzero(selected_samples)
+[0;100;30m |[0m
+[0;100;30m |[0m        if self.return_indices:
+[0;43;30m!|[0m            return (safe_indexing(X, index_target_class[0;32m, axis=0[0m), safe_indexing(
+[0;43;30m!|[0m                y, index_target_class[0;32m, axis=0[0m), index_target_class)
+[0;43;30m!|[0m        else:
+[0;43;30m!|[0m            return (safe_indexing(X, index_target_class[0;32m, axis=0[0m), safe_indexing(
+[0;43;30m!|[0m                y, index_target_class[0;32m, axis=0[0m))
+[0;31m------ [0m[0;1m/Users/anon/temp/eval/scikit-repos/TCNN/tool/imblearn/ensemble/_balance_cascade.py[0m
+[0;32m++++++ [0m[0;1m/Users/anon/temp/eval/scikit-repos/TCNN/tool/imblearn/ensemble/_balance_cascade.py[0m
+[0;100;30m@|[0m[0;1m-144,7 +144,7[0m ============================================================
+[0;100;30m |[0m        b_subset_search = True
+[0;100;30m |[0m        while b_subset_search:
+[0;100;30m |[0m            target_stats = Counter(
+[0;43;30m!|[0m                safe_indexing(y, np.flatnonzero(samples_mask)[0;32m, axis=0[0m))
+[0;100;30m |[0m            # store the index of the data to under-sample
+[0;100;30m |[0m            index_under_sample = np.empty((0, ), dtype=np.int)
+[0;100;30m |[0m            # value which will be picked at each round
+[0;100;30m@|[0m[0;1m-157,7 +157,7[0m ============================================================
+[0;100;30m |[0m                    index_class = np.flatnonzero(y == target_class)
+[0;100;30m |[0m                    index_class_interest = index_class[samples_mask[
+[0;100;30m |[0m                        y == target_class]]
+[0;43;30m!|[0m                    y_class = safe_indexing(y, index_class_interest[0;32m, axis=0[0m)
+[0;100;30m |[0m                    # select randomly the desired features
+[0;100;30m |[0m                    index_target_class = random_state.choice(
+[0;100;30m |[0m                        range(y_class.size), size=n_samples, replace=False)
+[0;100;30m@|[0m[0;1m-177,13 +177,13[0m ============================================================
+[0;100;30m |[0m            idx_under.append(subset_indices)
+[0;100;30m |[0m
+[0;100;30m |[0m            # fit and predict using cross validation
+[0;43;30m!|[0m            X_subset = safe_indexing(X, subset_indices[0;32m, axis=0[0m)
+[0;43;30m!|[0m            y_subset = safe_indexing(y, subset_indices[0;32m, axis=0[0m)
+[0;100;30m |[0m            pred = cross_val_predict(self.estimator_, X_subset, y_subset, cv=3)
+[0;100;30m |[0m            # extract the prediction about the targeted classes only
+[0;100;30m |[0m            pred_target = pred[:index_under_sample.size]
+[0;100;30m |[0m            index_classified = index_under_sample[pred_target == safe_indexing(
+[0;43;30m!|[0m                y_subset, range(index_under_sample.size)[0;32m, axis=0[0m)]
+[0;100;30m |[0m            samples_mask[index_classified] = False
+[0;100;30m |[0m
+[0;100;30m |[0m            # check the stopping criterion
+[0;100;30m@|[0m[0;1m-192,7 +192,7[0m ============================================================
+[0;100;30m |[0m                    b_subset_search = False
+[0;100;30m |[0m            # check that there is enough samples for another round
+[0;100;30m |[0m            target_stats = Counter(
+[0;43;30m!|[0m                safe_indexing(y, np.flatnonzero(samples_mask)[0;32m, axis=0[0m))
+[0;100;30m |[0m            for target_class in self.sampling_strategy_.keys():
+[0;100;30m |[0m                if (target_stats[target_class] <
+[0;100;30m |[0m                        self.sampling_strategy_[target_class]):
+[0;100;30m@|[0m[0;1m-200,8 +200,8[0m ============================================================
+[0;100;30m |[0m
+[0;100;30m |[0m        X_resampled, y_resampled = [], []
+[0;100;30m |[0m        for indices in idx_under:
+[0;43;30m!|[0m            X_resampled.append(safe_indexing(X, indices[0;32m, axis=0[0m))
+[0;43;30m!|[0m            y_resampled.append(safe_indexing(y, indices[0;32m, axis=0[0m))
+[0;100;30m |[0m
+[0;100;30m |[0m        if self.return_indices:
+[0;100;30m |[0m            return (np.array(X_resampled), np.array(y_resampled),
+[0;31m------ [0m[0;1m/Users/anon/temp/eval/scikit-repos/TCNN/tool/imblearn/keras/_generator.py[0m
+[0;32m++++++ [0m[0;1m/Users/anon/temp/eval/scikit-repos/TCNN/tool/imblearn/keras/_generator.py[0m
+[0;100;30m@|[0m[0;1m-140,17 +140,17[0m ============================================================
+[0;100;30m |[0m    def __getitem__(self, index):
+[0;100;30m |[0m        X_resampled = safe_indexing(
+[0;100;30m |[0m            self.X, self.indices_[index * self.batch_size:
+[0;43;30m!|[0m                                  (index + 1) * self.batch_size][0;32m, axis=0[0m)
+[0;100;30m |[0m        y_resampled = safe_indexing(
+[0;100;30m |[0m            self.y, self.indices_[index * self.batch_size:
+[0;43;30m!|[0m                                  (index + 1) * self.batch_size][0;32m, axis=0[0m)
+[0;100;30m |[0m        if issparse(X_resampled) and not self.keep_sparse:
+[0;100;30m |[0m            X_resampled = X_resampled.toarray()
+[0;100;30m |[0m        if self.sample_weight is not None:
+[0;100;30m |[0m            sample_weight_resampled = safe_indexing(
+[0;100;30m |[0m                self.sample_weight,
+[0;100;30m |[0m                self.indices_[index * self.batch_size:
+[0;43;30m!|[0m                              (index + 1) * self.batch_size][0;32m, axis=0[0m)
+[0;100;30m |[0m
+[0;100;30m |[0m        if self.sample_weight is None:
+[0;100;30m |[0m            return X_resampled, y_resampled
+[0;31m------ [0m[0;1m/Users/anon/temp/eval/scikit-repos/TCNN/tool/imblearn/ensemble/_forest.py[0m
+[0;32m++++++ [0m[0;1m/Users/anon/temp/eval/scikit-repos/TCNN/tool/imblearn/ensemble/_forest.py[0m
+[0;100;30m@|[0m[0;1m-38,7 +38,7[0m ============================================================
+[0;100;30m |[0m    # resample before to fit the tree
+[0;100;30m |[0m    X_resampled, y_resampled, selected_idx = sampler.fit_sample(X, y)
+[0;100;30m |[0m    if sample_weight is not None:
+[0;43;30m!|[0m        sample_weight = safe_indexing(sample_weight, selected_idx[0;32m, axis=0[0m)
+[0;100;30m |[0m    tree = _parallel_build_trees(tree, forest, X_resampled, y_resampled,
+[0;100;30m |[0m                                 sample_weight, tree_idx, n_trees,
+[0;100;30m |[0m                                 verbose=verbose, class_weight=class_weight)

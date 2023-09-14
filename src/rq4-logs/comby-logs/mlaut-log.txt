@@ -1,0 +1,10 @@
+[0;31m------ [0m[0;1m/Users/anon/temp/eval/scikit-repos/mlaut/mlaut/highlevel/strategies.py[0m
+[0;32m++++++ [0m[0;1m/Users/anon/temp/eval/scikit-repos/mlaut/mlaut/highlevel/strategies.py[0m
+[0;100;30m@|[0m[0;1m-362,7 +362,7[0m ============================================================
+[0;100;30m |[0m        """
+[0;100;30m |[0m        X = data[self._task.features]
+[0;100;30m |[0m        y = data[self._task.target]
+[0;43;30m!|[0m        onehot_encoder = OneHotEncoder(sparse[0;32m_output[0m=False)
+[0;100;30m |[0m        reshaped_y = np.array(y).reshape(len(y), 1)
+[0;100;30m |[0m        y_onehot_encoded = onehot_encoder.fit_transform(reshaped_y)
+[0;100;30m |[0m        input_dim = X.shape[1]

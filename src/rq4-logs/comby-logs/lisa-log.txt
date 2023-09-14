@@ -1,0 +1,121 @@
+[0;31m------ [0m[0;1m/Users/anon/temp/eval/scipy-repos/lisa/lisa/texture_analysis.py[0m
+[0;32m++++++ [0m[0;1m/Users/anon/temp/eval/scipy-repos/lisa/lisa/texture_analysis.py[0m
+[0;100;30m@|[0m[0;1m-33,7 +33,7[0m ============================================================
+[0;100;30m |[0m    
+[0;100;30m |[0m    params[2] = 0
+[0;100;30m |[0m    data3d = data3d * segmentation;
+[0;43;30m!|[0m    data3d = sp.ndimage.[0;31mfilters.[0mgaussian_filter(data3d,params*2.5)  
+[0;100;30m |[0m    pyed = sed3.sed3(data3d)
+[0;100;30m |[0m    pyed.show()
+[0;100;30m |[0m    
+[0;31m------ [0m[0;1m/Users/anon/temp/eval/scipy-repos/lisa/lisa/organ_seeds.py[0m
+[0;32m++++++ [0m[0;1m/Users/anon/temp/eval/scipy-repos/lisa/lisa/organ_seeds.py[0m
+[0;100;30m@|[0m[0;1m-50,7 +50,7[0m ============================================================
+[0;100;30m |[0m    import scipy
+[0;100;30m |[0m
+[0;100;30m |[0m    # seed tam, kde je to nejpravděpodovnější - moc nefunguje při blbém natrénování
+[0;43;30m!|[0m    dst = scipy.ndimage.[0;31mfilters.[0mgaussian_filter(dl, sigma=gaussian_sigma_mm/working_voxelsize_mm)
+[0;100;30m |[0m    # seed1 = np.unravel_index(np.argmax(dl), dl.shape)
+[0;100;30m |[0m
+[0;100;30m |[0m    # escte jinak
+[0;31m------ [0m[0;1m/Users/anon/temp/eval/scipy-repos/lisa/lisa/body_navigation.py[0m
+[0;32m++++++ [0m[0;1m/Users/anon/temp/eval/scipy-repos/lisa/lisa/body_navigation.py[0m
+[0;100;30m@|[0m[0;1m-46,7 +46,7[0m ============================================================
+[0;100;30m |[0m
+[0;100;30m |[0m    def get_spine(self):
+[0;100;30m |[0m
+[0;43;30m!|[0m        spine = scipy.ndimage.[0;31mfilters.[0mgaussian_filter(self.data3dr, sigma=[20, 5, 5]) > 200
+[0;100;30m |[0m        self.spine = spine
+[0;100;30m |[0m
+[0;100;30m |[0m        self.spine_center = np.mean(np.nonzero(self.spine), 1)
+[0;100;30m@|[0m[0;1m-54,7 +54,7[0m ============================================================
+[0;100;30m |[0m        return imma.image.resize_to_shape(spine, self.orig_shape)
+[0;100;30m |[0m
+[0;100;30m |[0m    def get_body(self):
+[0;43;30m!|[0m        body = scipy.ndimage.[0;31mfilters.[0mgaussian_filter(self.data3dr, sigma=2) > -150
+[0;100;30m |[0m        body[0, :, :] = 1
+[0;100;30m |[0m        body[-1, :, :] = 1
+[0;100;30m |[0m
+[0;100;30m@|[0m[0;1m-62,7 +62,7[0m ============================================================
+[0;100;30m |[0m        return imma.image.resize_to_shape(self.body, self.orig_shape)
+[0;100;30m |[0m
+[0;100;30m |[0m    def get_lungs(self):
+[0;43;30m!|[0m        lungs = scipy.ndimage.[0;31mfilters.[0mgaussian_filter(self.data3dr, sigma=[4, 2, 2]) > -150
+[0;100;30m |[0m        lungs[0, :, :] = 1
+[0;100;30m |[0m
+[0;100;30m |[0m        lungs = scipy.ndimage.morphology.binary_fill_holes(lungs)
+[0;100;30m@|[0m[0;1m-381,7 +381,7[0m ============================================================
+[0;100;30m |[0m        # doplnime praznda mista v ploche mape podle nejblizsi oblasi
+[0;100;30m |[0m        # filter with big mask
+[0;100;30m |[0m        ou = fill_nan_with_nearest(flat.copy())
+[0;43;30m!|[0m        ou = scipy.ndimage.[0;31mfilters.[0mgaussian_filter(ou, sigma=5)
+[0;100;30m |[0m
+[0;100;30m |[0m
+[0;100;30m |[0m        # get back valid values on its places
+[0;100;30m@|[0m[0;1m-392,7 +392,7[0m ============================================================
+[0;100;30m |[0m        ou = fill_nan_with_nearest(ou)
+[0;100;30m |[0m        # overal filter
+[0;100;30m |[0m        ou = scipy.ndimage.filters.median_filter(ou, size=(5,5))
+[0;43;30m!|[0m        ou = scipy.ndimage.[0;31mfilters.[0mgaussian_filter(ou, sigma=3)
+[0;100;30m |[0m
+[0;100;30m |[0m        # ou = self.__filter_diaphragm_profile_image(ou, axis)
+[0;100;30m |[0m        return ou
+[0;31m------ [0m[0;1m/Users/anon/temp/eval/scipy-repos/lisa/lisa/organ_model.py[0m
+[0;32m++++++ [0m[0;1m/Users/anon/temp/eval/scipy-repos/lisa/lisa/organ_model.py[0m
+[0;100;30m@|[0m[0;1m-88,8 +88,8[0m ============================================================
+[0;100;30m |[0m
+[0;100;30m |[0m    #         print "po importech"
+[0;100;30m |[0m    fv = []
+[0;43;30m!|[0m    f0 = scipy.ndimage.[0;31mfilters.[0mgaussian_filter(data3dr, sigma=0.5).reshape(-1, 1)
+[0;43;30m!|[0m    f1 = scipy.ndimage[0;31m.filters[0m.gaussian_filter(data3dr, sigma=3).reshape(-1, 1)
+[0;100;30m |[0m    #f2 = scipy.ndimage.filters.gaussian_filter(data3dr, sigma=5).reshape(-1, 1) - f0
+[0;100;30m |[0m    #f3 = scipy.ndimage.filters.gaussian_filter(data3dr, sigma=10).reshape(-1, 1) - f0
+[0;100;30m |[0m    #f4 = scipy.ndimage.filters.gaussian_filter(data3dr, sigma=20).reshape(-1, 1) - f0
+[0;100;30m@|[0m[0;1m-104,9 +104,9[0m ============================================================
+[0;100;30m |[0m    #fd6 = ss.dist_diaphragm().reshape(-1, 1)
+[0;100;30m |[0m
+[0;100;30m |[0m    #         print "pred f6"
+[0;43;30m!|[0m    f6 = scipy.ndimage.[0;31mfilters.[0mgaussian_filter(data3dr, sigma=[20, 1, 1]).reshape(-1, 1) - f1
+[0;43;30m!|[0m    f7 = scipy.ndimage[0;31m.filters[0m.gaussian_filter(data3dr, sigma=[1, 20, 1]).reshape(-1, 1) - f1
+[0;43;30m!|[0m    f8 = scipy.ndimage[0;31m.filters[0m.gaussian_filter(data3dr, sigma=[1, 1, 20]).reshape(-1, 1) - f1
+[0;100;30m |[0m
+[0;100;30m |[0m    #         print "pred organ_localizator"
+[0;100;30m |[0m    ol = organ_localizator.OrganLocalizator()
+[0;100;30m@|[0m[0;1m-206,8 +206,8[0m ============================================================
+[0;100;30m |[0m    except:
+[0;100;30m |[0m        import organ_localizator
+[0;100;30m |[0m
+[0;43;30m!|[0m    f0 = scipy.ndimage.[0;31mfilters.[0mgaussian_filter(data3dr, sigma=0.5).reshape(-1, 1)
+[0;43;30m!|[0m    f1 = scipy.ndimage[0;31m.filters[0m.gaussian_filter(data3dr, sigma=3).reshape(-1, 1)
+[0;100;30m |[0m    import organ_localizator
+[0;100;30m |[0m    fvall = organ_localizator.localization_fv(data3dr, voxelsize_mm)
+[0;100;30m |[0m    # fvall = organ_localizator.localization_intensity_fv(data3dr, voxelsize_mm)
+[0;100;30m@|[0m[0;1m-253,8 +253,8[0m ============================================================
+[0;100;30m |[0m
+[0;100;30m |[0m#         print "po importech"
+[0;100;30m |[0m    fv = []
+[0;43;30m!|[0m    f0 = scipy.ndimage.[0;31mfilters.[0mgaussian_filter(data3dr, sigma=0.5).reshape(-1, 1)
+[0;43;30m!|[0m    f1 = scipy.ndimage[0;31m.filters[0m.gaussian_filter(data3dr, sigma=3).reshape(-1, 1)
+[0;100;30m |[0m    # f2 = scipy.ndimage.filters.gaussian_filter(data3dr, sigma=5).reshape(-1, 1) - f0
+[0;100;30m |[0m    # f3 = scipy.ndimage.filters.gaussian_filter(data3dr, sigma=10).reshape(-1, 1) - f0
+[0;100;30m |[0m    # f4 = scipy.ndimage.filters.gaussian_filter(data3dr, sigma=20).reshape(-1, 1) - f0
+[0;31m------ [0m[0;1m/Users/anon/temp/eval/scipy-repos/lisa/lisa/segmentation_general.py[0m
+[0;32m++++++ [0m[0;1m/Users/anon/temp/eval/scipy-repos/lisa/lisa/segmentation_general.py[0m
+[0;100;30m@|[0m[0;1m-66,7 +66,7[0m ============================================================
+[0;100;30m |[0m    vol1 = np.sum(segmentation_selection)
+[0;100;30m |[0m    wvol = vol1 * volume_blowup
+[0;100;30m |[0m    logger.debug('unique segm ' + str(np.unique(segmentation)))
+[0;43;30m!|[0m    segsmooth = scipy.ndimage.[0;31mfilters.[0mgaussian_filter(
+[0;100;30m |[0m        segmentation_selection.astype(np.float32), sigma)
+[0;100;30m |[0m    logger.debug('unique segsmooth ' + str(np.unique(segsmooth)))
+[0;100;30m |[0m    # import ipdb; ipdb.set_trace()
+[0;31m------ [0m[0;1m/Users/anon/temp/eval/scipy-repos/lisa/lisa/body_navigation.py[0m
+[0;32m++++++ [0m[0;1m/Users/anon/temp/eval/scipy-repos/lisa/lisa/body_navigation.py[0m
+[0;100;30m@|[0m[0;1m-391,7 +391,7[0m ============================================================
+[0;100;30m |[0m
+[0;100;30m |[0m        ou = fill_nan_with_nearest(ou)
+[0;100;30m |[0m        # overal filter
+[0;43;30m!|[0m        ou = scipy.ndimage.[0;31mfilters.[0mmedian_filter(ou, size=(5,5))
+[0;100;30m |[0m        ou = scipy.ndimage.filters.gaussian_filter(ou, sigma=3)
+[0;100;30m |[0m
+[0;100;30m |[0m        # ou = self.__filter_diaphragm_profile_image(ou, axis)

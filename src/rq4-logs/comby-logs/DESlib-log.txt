@@ -1,0 +1,22 @@
+[0;31m------ [0m[0;1m/Users/anon/temp/eval/scikit-repos/DESlib/examples/example_calibrating_classifiers.py[0m
+[0;32m++++++ [0m[0;1m/Users/anon/temp/eval/scikit-repos/DESlib/examples/example_calibrating_classifiers.py[0m
+[0;100;30m@|[0m[0;1m-93,7 +93,7[0m ============================================================
+[0;100;30m |[0m# DS methods.
+[0;100;30m |[0mcalibrated_pool = []
+[0;100;30m |[0mfor clf in pool_classifiers:
+[0;43;30m!|[0m    calibrated = CalibratedClassifierCV([0;31mbase_[0mestimator=clf, cv='prefit')
+[0;100;30m |[0m    calibrated.fit(X_dsel, y_dsel)
+[0;100;30m |[0m    calibrated_pool.append(calibrated)
+[0;100;30m |[0m
+[0;31m------ [0m[0;1m/Users/anon/temp/eval/scikit-repos/DESlib/examples/plot_comparing_dynamic_static.py[0m
+[0;32m++++++ [0m[0;1m/Users/anon/temp/eval/scikit-repos/DESlib/examples/plot_comparing_dynamic_static.py[0m
+[0;100;30m@|[0m[0;1m-96,8 +96,7[0m ============================================================
+[0;100;30m |[0m                                                    test_size=0.50,
+[0;100;30m |[0m                                                    random_state=rng)
+[0;100;30m |[0m
+[0;41;30m-|[0m[0m[0;2mpool_classifiers = BaggingClassifier([0m[0;31mbase_[0m[0;2mestimator=DecisionTreeClassifier(),[0m[0m
+[0;41;30m-|[0m[0m[0;7;31m                                     [0m[0;2mn_estimators=100,[0m[0m
+[0;42;30m+|[0m[0mpool_classifiers = BaggingClassifier(estimator=DecisionTreeClassifier(),[0;7;32m [0mn_estimators=100,[0m
+[0;100;30m |[0m                                     random_state=rng)
+[0;100;30m |[0mpool_classifiers.fit(X_train, y_train)
+[0;100;30m |[0m
