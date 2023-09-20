@@ -18,12 +18,10 @@ from src.inference.type_annotations import *
 from collections import defaultdict
 from requests import *
 
-# First create a Github instance:
 
 # using an access token
-PRIVATE_KEY = "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"
+PRIVATE_KEY = ""
 
-# Github Enterprise with custom hostname
 
 
 class Line:

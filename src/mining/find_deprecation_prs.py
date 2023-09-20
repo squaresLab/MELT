@@ -6,7 +6,7 @@ from requests.structures import CaseInsensitiveDict
 import csv
 import argparse
 
-GITHUB_ACCESS_TOKEN = "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"
+GITHUB_ACCESS_TOKEN = ""
 
 
 def find_deprecation_prs(repository_owner, repository_name, access_token, out_dir):

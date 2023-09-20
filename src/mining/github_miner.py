@@ -26,16 +26,8 @@ import time
 # First create a Github instance:
 
 PRIVATE_KEYS = [
-    "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",
-    "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",
-    "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",
-    "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",
-    "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",
-    "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",
-    "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",
-    "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",
-    "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",
 ]
+
 random.seed(time.process_time())
 
 
