@@ -20,3 +20,25 @@ This script is designed to infer comby rules for Python code from unidiffs in a 
 
 ## Disclaimer
 This is a research prototype. If you have any problems setting an environment for MELT to work feel free to reach out or open an issue
+
+### Set up your environment:
+
+1. Create a python env.
+```bash
+python -m venv melt_env
+source melt_env/bin/activate
+```
+
+2. Go to MELT's directory and install dependencies 
+
+```bash
+cd MELT
+pip install -r requirements.txt
+```
+
+3. Add MELT to PYTHONPATH
+```bash
+export PYTHONPATH=$PYTHONPATH:`pwd`
+```
+Set up GitHub API keys:
+Before running the script, ensure you've set up your GitHub API keys. They can be added to the appropriate configuration file or set as an environment variable. The script requires access to the GitHub API for mining changes.
