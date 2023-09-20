@@ -59,6 +59,3 @@ This script is designed to infer comby rules for Python code from unidiffs in a 
 
 ## Disclaimer
 This is a research prototype. If you have any problems setting an environment for MELT to work feel free to reach out or open an issue.
-"""
-
-print(README_content)
