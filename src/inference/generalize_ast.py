@@ -4,7 +4,6 @@ from src.inference.body import Body
 from utils import *
 from src.inference.infer import *
 from src.inference.rule import *
-from src.classification.parse_response import *
 
 VERBOSE = False
 

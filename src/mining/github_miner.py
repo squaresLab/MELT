@@ -23,22 +23,13 @@ from loguru import logger
 import random
 import time
 
-# First create a Github instance:
-
-PRIVATE_KEYS = [
-]
-
-random.seed(time.process_time())
-
-
-PRIVATE_KEY = PRIVATE_KEYS[random.randint(0, len(PRIVATE_KEYS)-1)]
 
 # using an access token
 
 class GithubMiner:
-    def __init__(self, repo_name: str, version: str):
+    def __init__(self, repo_name: str, version: str, gh_key: str):
         self.repo_name: str = repo_name
-        self.connector: Github = Github(PRIVATE_KEY)
+        self.connector: Github = Github(gh_key)
         self.repo = self.connector.get_repo(self.repo_name)
         self.version = version
 
