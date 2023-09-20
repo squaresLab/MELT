@@ -18,3 +18,5 @@ Please make sure to provide the required arguments when running the script, and 
 This script is designed to infer comby rules for Python code from unidiffs in a given GitHub repository. It mines and generalizes Abstract Syntax Trees (AST) from changes in the code to generate rules for code modification. Before running the script, make sure you have provided your GitHub API keys in the appropriate configuration file or environment variable, as the script requires access to the GitHub API.
 
 
+## Disclaimer
+This is a research prototype. If you have any problems setting an environment for MELT to work feel free to reach out or open an issue
