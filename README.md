@@ -1,5 +1,7 @@
 # MELT
 
+The github action for MELT is found here: https://github.com/squaresLab/melt_action
+
 ## Set up your environment:
 
 1. Create a python env.
