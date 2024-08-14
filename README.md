@@ -46,9 +46,6 @@ python3 src/inference/main.py --library pandas-dev/pandas --pr 44539 --gh_key gh
 
 Currently, it is necessary to provide the name of the deprecated API for which we want to mine rules. The zenodo versions contains the heuristics, including an NLP-based approach for identifying the relevant API names. 
 
-## Comments
-This script is designed to infer comby rules for Python code from unidiffs in a given GitHub repository. It mines and generalizes Abstract Syntax Trees (AST) from changes in the code to generate rules for code modification. To read more about how it works read our ASE23 paper!
-
 ## How to cite
 ```latex
 @inproceedings{ramos2023melt,
